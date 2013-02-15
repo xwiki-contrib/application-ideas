@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>Ideas</web>
+<name>IdeasSheet</name>
+<language></language>
+<defaultLanguage></defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.IdeasClass</parent>
+<creator>XWiki.Admin</creator>
+<author>XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>XWiki.Admin</contentAuthor>
+<creationDate>1356994800000</creationDate>
+<date>1356994800000</date>
+<contentUpdateDate>1356994800000</contentUpdateDate>
+<version>1.1</version>
+<title></title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>true</hidden><attachment>
+<filename>voted.png</filename>
+<filesize>868</filesize>
+<author>XWiki.fveron</author>
+<date>1360841377000</date>
+<version>1.1</version>
+<comment></comment><content>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
+WXMAAABIAAAASABGyWs+AAAACXZwQWcAAAAQAAAAEABcxq3DAAACaElEQVQ4y2NgoBeo2DyHwaMj
+VSJ2Vo29RV0Mn0t/NvGa81dPZHBqS1Zcf3bP5jsvH3ydf3jjDOlsH0GbjiyIgp3PzzMETizSrFs/
+NSdgUqH6wnPb4ZrTlnQyWDfGKS49sWnb808P/3/99er/g3fX/tRtbJ/BGGcmzNC8bx6DU0e63owD
+S0/svbHv//T9S4/ZtSXrVGyawhA1p57BuCZSccaBJdtuvjr7/+mnS/+ffT73//ybSf+XXyr65deX
+XMEgX+xhWLam7fjqcyv/r7mw/P/6i6v/d26fdsysMc5SuzrCAMjefuLhjv/XXu/5f+Ptzv8nXnT/
+3/Eo8X/r9tRP2nEO5QyGDQHTvKd5/i/fmP9/6qHe//NOTPq/5PSM//17J7yatH/i8+03Fv479mjp
+/+NP5v/f87Dq/+b7cf9rN8d9Vo+y7gT6UJZBocjNV6/R7qF1n9H/pGVB/1t2Ff6ferT2/8Izrf9X
+X+78v+F6+/8NN2r+r76Z/H/Nrcj/JWvDP8uHmnYBNUvCwolRNNUmSKfe6onrVMP/0Uus/xdu8vnf
+tCfsf++RyP9TToX9n3sx6P+ya2H/c1cGfZYI1AdplkLEkZMK3BCbTpfHMUut/2ett/lfscPpf/sh
+9//Tzvj+X3Ql7H/BqrDPUkEGaJphwAFiiHy2S1DozODHpVvd/zfuc/0/4YT3//kXw/5XbYj/rBhm
+hkMzDNgpgg0xLA8KKlyd9qTvWND/OedD/7ftyP6sG+dAQDMMWMuDDXFpTgju2Fn2sGdnyUfLVK9O
+5AAjDCxkQHYxmWUFWmr42UQxcLBKUpKHGGmeSwEfySkyCqmEbwAAACV0RVh0ZGF0ZTpjcmVhdGUA
+MjAwOS0wOS0xNVQwOTowNDo1MCswMjowMABKEC4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMDktMDkt
+MTVUMDk6MDQ6NTArMDI6MDBxF6iSAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48
+GgAAAABJRU5ErkJggg==
+</content></attachment>
+<content>{{velocity}}
+{{html wiki="true"}}
+$xwiki.ssx.use('AppWithinMinutes.ClassSheetGenerator')
+#set($discard = $doc.use('Ideas.IdeasClass'))
+## We don't have access to the form element to set the CSS class for the vertical form layout standard.
+#if($context.action=="view")
+$doc.display("nbvotes")
+#end
+(% class="xform" %)
+(((
+#if($context.action=="edit")
+  ; &lt;label for="Ideas.IdeasClass_0_title1"&gt;$msg.get('ideas.form.idea')&lt;/label&gt;##
+    (% class="xHint" %)$msg.get('')
+  : $doc.display('title1')
+  ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;$msg.get('ideas.form.description')&lt;/label&gt;##
+    (% class="xHint" %)$msg.get('')
+#end
+  : $doc.display('content1')
+#if($context.action=="view" &amp;&amp; $xwiki.checkAuth())
+&lt;br/&gt;&lt;br/&gt;
+----
+  #set($userList = $doc.getValue('supporters'))
+  #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
+[[image:Ideas.IdeasSheet@voted.png]] $msg.get('ideas.ideassheet.voted')
+  #end
+  ; &lt;label for="Ideas.IdeasClass_0_supporters"&gt;$msg.get('ideas.ideassheet.supporters')&lt;/label&gt;##
+    (% class="xHint" %)$msg.get('')
+  : $doc.display('supporters')
+#end
+)))
+{{/html}}
+{{/velocity}}</content></xwikidoc>

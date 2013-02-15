@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>Ideas</web>
+<name>ideasTranslations</name>
+<language>fr</language>
+<defaultLanguage>en</defaultLanguage>
+<translation>1</translation>
+<parent></parent>
+<creator>XWiki.Admin</creator>
+<author>XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>XWiki.Admin</contentAuthor>
+<creationDate>1356994800000</creationDate>
+<date>1356994800000</date>
+<contentUpdateDate>1356994800000</contentUpdateDate>
+<version>1.1</version>
+<title>ideasTranslations</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>ideas.home.description=Partagez vos idées
+
+ideas.message.guess=Vous devez vous connecter pour pouvoir voter
+ideas.message.error=Erreur inattendue lors du traitement du vote
+
+ideas.ideassheet.voted=Vous supportez cette idée
+ideas.ideassheet.supporters=Supporteurs
+
+ideas.livetable.votes=Votes
+ideas.livetable.idea=Idée
+
+ideas.form.idea=Idée
+ideas.form.description=Description</content></xwikidoc>

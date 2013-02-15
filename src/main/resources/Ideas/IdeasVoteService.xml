@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>Ideas</web>
+<name>IdeasVoteService</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>XWiki.Admin</creator>
+<author>XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>XWiki.Admin</contentAuthor>
+<creationDate>1356994800000</creationDate>
+<date>1356994800000</date>
+<contentUpdateDate>1356994800000</contentUpdateDate>
+<version>1.1</version>
+<title>IdeaVoteService</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>false</hidden>
+<content>{{groovy}}
+import org.xwiki.velocity.tools.JSONTool;
+import org.apache.commons.lang3.StringUtils;
+
+def lock = "lock"
+
+def result = new HashMap();
+try {
+if(request.page &amp;&amp; request.action) {
+  synchronized(lock) {
+  def mydoc = xwiki.getDocument(request.page);
+  if(!mydoc.isNew() &amp;&amp; null != mydoc.getObject("Ideas.IdeasClass") &amp;&amp; xcontext.user != "XWiki.XWikiGuest") {
+    def userList = mydoc.getValue("supporters");
+    def nbvotes = mydoc.getValue("nbvotes");
+    def doRemove = false;
+    // Action : Add a supporter (vote)
+    if(request.action == "addVote") {
+      mydoc.use("Ideas.IdeasClass");
+      if(StringUtils.contains(userList, xwiki.checkAuth().toString())) {
+        doRemove = true;
+      }
+      else {
+        // Add user in userList
+        userList = userList + "," + xwiki.checkAuth();
+        mydoc.set("supporters", userList);
+        // Increase vote by one
+        if(!nbvotes) {
+          nbvotes = 1;
+        } else {
+        nbvotes = nbvotes + 1;
+        }
+        mydoc.set("nbvotes", nbvotes);
+        // Save document
+        mydoc.saveWithProgrammingRights();
+        result.put("result", true);
+        result.put("nbvotes", nbvotes);
+      }
+    }
+    // Action : Remove a supporter (vote)
+    if(request.action == "removeVote" || doRemove){
+      // Remove user from user list
+      def theUser = xwiki.checkAuth();
+      def newUserList = StringUtils.replaceOnce(userList, ","+theUser.toString(), "");
+      newUserList = StringUtils.replaceOnce(newUserList , theUser.toString()+",", "");
+      newUserList = StringUtils.replaceOnce(newUserList , theUser.toString(), "");
+      mydoc.set("supporters", newUserList);
+      // Decrease vote by one
+      nbvotes = nbvotes - 1;
+      mydoc.set("nbvotes", nbvotes);
+      // Save document
+      mydoc.saveWithProgrammingRights();
+      result.put("result", true);
+      result.put("nbvotes", nbvotes);
+    }
+  } else if (xcontext.user == "XWiki.XWikiGuest") {
+    result.put("result", false);
+    result.put("msg", xcontext.context.getMessageTool().get('ideas.message.guess'));
+  } else {
+    result.put("result", false);
+    result.put("msg", xcontext.context.getMessageTool().get('ideas.message.error'));
+  }
+}
+} else {
+  result.put("result", false);
+  result.put("msg", "Dev error : Missing parameters")
+}
+
+// Format JSON response
+response.setContentType("application/json");
+def json = new JSONTool();
+println json.serialize(result);
+}
+catch (Exception exception) {
+  println "Message : " + exception.getMessage();
+  println "StackTrace : " + exception.printStackTrace();
+}
+{{/groovy}}</content></xwikidoc>
