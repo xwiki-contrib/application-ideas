@@ -60,7 +60,7 @@
   </object>
   <content>ideas.home.description=Ideas worth spreading
 
-ideas.message.guess=Guess can't vote
+ideas.message.guess=You must log-in to vote
 ideas.message.error=Error while operating Ideas
 
 ideas.ideassheet.voted=You support this idea
