@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+  <web>Ideas</web>
+  <name>FixIdeas</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <parent>Ideas.WebHome</parent>
+  <creator>xwiki:XWiki.Admin</creator>
+  <author>xwiki:XWiki.Admin</author>
+  <customClass/>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <creationDate>1379336425000</creationDate>
+  <date>1379337437000</date>
+  <contentUpdateDate>1379337416000</contentUpdateDate>
+  <version>1.1</version>
+  <title>Install Ideas Application</title>
+  <template/>
+  <defaultTemplate/>
+  <validationScript/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>false</hidden>
+  <content>{{velocity}}
+#set($hql = ",BaseObject as obj where doc.fullName=obj.name and obj.className='Ideas.IdeasClass' and obj.id not in (select obj2.id from BaseObject as obj2, StringProperty as prop where obj2.className='Ideas.IdeasClass' and obj2.id=prop.id.id and prop.id.name='status')")
+#set($list = $xwiki.searchDocuments($hql))
+#if($list.size()==0)
+The ideas application is already upgraded
+#elseif($request.confirm=="1")
+ #foreach($item in $list)
+* upgrading [[$item]]
+#set($itemdoc = $xwiki.getDocument($item))
+#set($ok = $itemdoc.use("Ideas.IdeasClass"))
+#set($ok = $itemdoc.set("status", "open"))
+#set($ok = $itemdoc.save())
+#end
+#set($list = $xwiki.searchDocuments($hql))
+#if($list.size()==0)
+The ideas application has been upgraded successfully.
+#else
+Upgrade has failed
+#end
+#else
+The ideas application needs to be upgraded. Click [[confirm&gt;&gt;||queryString="confirm=1"]] to upgrade.
+#end
+{{/velocity}}
+</content>
+</xwikidoc>

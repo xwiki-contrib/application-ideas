@@ -2,38 +2,75 @@
 
 <xwikidoc>
   <web>Ideas</web>
-  <name>ideasTranslations</name>
+  <name>IdeasTranslations</name>
   <language>fr</language>
   <defaultLanguage/>
   <translation>1</translation>
-  <parent>XWiki.IdeasClass</parent>
+  <parent>Ideas.WebHome</parent>
   <creator>xwiki:XWiki.Admin</creator>
   <author>xwiki:XWiki.Admin</author>
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <creationDate>1356994800000</creationDate>
-  <date>1356994800000</date>
-  <contentUpdateDate>1356994800000</contentUpdateDate>
+  <creationDate>1374503492000</creationDate>
+  <date>1375262666000</date>
+  <contentUpdateDate>1375262666000</contentUpdateDate>
   <version>1.1</version>
-  <title>ideasTranslations</title>
-  <template/>
+  <title/>
   <defaultTemplate/>
   <validationScript/>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
-  <hidden>false</hidden>
-  <content>ideas.home.description=Partagez vos idées
+  <hidden>true</hidden>
+  <content># Class fields
+Ideas.IdeasClass_title1=Idée
+Ideas.IdeasClass_content1=Description
+Ideas.IdeasClass_nbvotes=Votes
+Ideas.IdeasClass_supporters=Supporteurs
+Ideas.IdeasClass_against=Opposants
+Ideas.IdeasClass_status_open=Ouvert
+Ideas.IdeasClass_status_close=Fermé
+Ideas.IdeasClass_status_rejected=Rejeté
 
+# Live table generic keys
+ideas.livetable.doc.title=Idée
+ideas.livetable.doc.name=Nom de la page
+ideas.livetable.doc.space=Espace
+ideas.livetable.doc.fullname=Nom complet de la page
+ideas.livetable.doc.author=Dernier auteur
+ideas.livetable.doc.creator=Créateur
+ideas.livetable.doc.date=Date de dernière mise à jour
+ideas.livetable.doc.creationDate=Date de création
+ideas.livetable._avatar=Avatar
+ideas.livetable._images=Images
+ideas.livetable._attachments=Pièces jointes
+ideas.livetable._actions=Actions
+ideas.livetable._actions.edit=Editer
+ideas.livetable._actions.delete=Supprimer
+ideas.livetable.emptyvalue=-
+
+# Live table specific keys
+ideas.livetable.title1=Idée
+ideas.livetable.content1=Description
+ideas.livetable.nbvotes=Votes
+ideas.livetable.nbagainst= Contre
+ideas.livetable.supporters=Supporters
+ideas.livetable.against=Opposant
+ideas.livetable.nbestimate=Coût estimé
+ideas.livetable.priority=Priorité
+ideas.livetable.status=Statut
+ideas.livetable.assignement=Assigné à
+
+# Ideas application keys
+ideas.home.description=Partagez vos idées
 ideas.message.guess=Vous devez vous connecter pour pouvoir voter
 ideas.message.error=Erreur inattendue lors du traitement du vote
-
 ideas.ideassheet.voted=Vous supportez cette idée
-ideas.ideassheet.supporters=Supporteurs
-
-ideas.livetable.votes=Votes
-ideas.livetable.idea=Idée
-
-ideas.form.idea=Idée
-ideas.form.description=Description</content>
+ideas.ideassheet.votedagainst=Vous êtes contre cette idée
+ideas.ideassheet.assignement=Assigné à :
+ideas.ideassheet.priority=Priorité :
+ideas.ideassheet.stat=Statut :
+ideas.ideassheet.estimated=Cout estimé :
+ideas.ideassheet.hidesupp=Afficher/Cacher la liste des supporteurs.
+ideas.ideassheet.hideagainst=Afficher/Cacher la liste des opposants.</content>
 </xwikidoc>
