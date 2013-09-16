@@ -2,73 +2,76 @@
 
 <xwikidoc>
   <web>Ideas</web>
-  <name>ideasTranslations</name>
-  <language/>
+  <name>IdeasTranslations</name>
+  <language>en</language>
   <defaultLanguage/>
-  <translation>0</translation>
+  <translation>1</translation>
   <parent>Ideas.WebHome</parent>
   <creator>xwiki:XWiki.Admin</creator>
   <author>xwiki:XWiki.Admin</author>
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <creationDate>1356994800000</creationDate>
-  <date>1356994800000</date>
-  <contentUpdateDate>1356994800000</contentUpdateDate>
+  <creationDate>1374503492000</creationDate>
+  <date>1375262623000</date>
+  <contentUpdateDate>1375262623000</contentUpdateDate>
   <version>1.1</version>
-  <title>ideasTranslations</title>
-  <template/>
+  <title/>
   <defaultTemplate/>
   <validationScript/>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
-  <hidden>false</hidden>
-  <object>
-    <class>
-      <name>XWiki.TranslationDocumentClass</name>
-      <customClass/>
-      <customMapping/>
-      <defaultViewSheet/>
-      <defaultEditSheet/>
-      <defaultWeb/>
-      <nameField/>
-      <validationScript/>
-      <scope>
-        <cache>0</cache>
-        <disabled>0</disabled>
-        <displayType>select</displayType>
-        <multiSelect>0</multiSelect>
-        <name>scope</name>
-        <number>1</number>
-        <prettyName>Scope</prettyName>
-        <relationalStorage>0</relationalStorage>
-        <separator> </separator>
-        <separators> ,|</separators>
-        <size>1</size>
-        <unmodifiable>0</unmodifiable>
-        <values>GLOBAL|WIKI|USER|ON_DEMAND</values>
-        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-      </scope>
-    </class>
-    <name>Ideas.ideasTranslations</name>
-    <number>0</number>
-    <className>XWiki.TranslationDocumentClass</className>
-    <guid>8453e4cb-2f3b-46a3-8294-364491d1a784</guid>
-    <property>
-      <scope>WIKI</scope>
-    </property>
-  </object>
-  <content>ideas.home.description=Ideas worth spreading
+  <hidden>true</hidden>
+  <content># Class fields
+Ideas.IdeasClass_title1=Idea
+Ideas.IdeasClass_content1=Description
+Ideas.IdeasClass_nbvotes=Votes
+Ideas.IdeasClass_supporters=Supporters
+Ideas.IdeasClass_against=Opponents
+Ideas.IdeasClass_priority=Priority
+Ideas.IdeasClass_status_open=Open
+Ideas.IdeasClass_status_closed=Closed
+Ideas.IdeasClass_status_rejected=Rejected
 
-ideas.message.guess=You must log-in to vote
+# Live table generic keys
+ideas.livetable.doc.title=Idea
+ideas.livetable.doc.name=Page name
+ideas.livetable.doc.space=Space
+ideas.livetable.doc.fullname=Page full name
+ideas.livetable.doc.author=Last Author
+ideas.livetable.doc.creator=Creator
+ideas.livetable.doc.date=Update date
+ideas.livetable.doc.creationDate=Creation date
+ideas.livetable._avatar=Avatar
+ideas.livetable._images=Images
+ideas.livetable._attachments=Attachments
+ideas.livetable._actions=Actions
+ideas.livetable._actions.edit=Edit
+ideas.livetable._actions.delete=Delete
+ideas.livetable.emptyvalue=-
+
+# Live table specific keys
+ideas.livetable.title1=Idea
+ideas.livetable.content1=Description
+ideas.livetable.nbvotes=Votes
+ideas.livetable.nbagainst= Against
+ideas.livetable.supporters=Supporters
+ideas.livetable.against=Against people
+ideas.livetable.nbestimate=Estimated cost
+ideas.livetable.status=Status
+ideas.livetable.assignement=Assigned to
+ideas.livetable.priority=Priority
+
+#Ideas application keys
+ideas.home.description=Ideas worth spreading
+ideas.message.guess=Guess can't vote
 ideas.message.error=Error while operating Ideas
-
 ideas.ideassheet.voted=You support this idea
-ideas.ideassheet.supporters=Supporters
-
-ideas.livetable.votes=Votes
-ideas.livetable.idea=Idea
-
-ideas.form.idea=Idea
-ideas.form.description=Description</content>
+ideas.ideassheet.votedagainst=You are against this idea
+ideas.ideassheet.estimated=Estimated cost :
+ideas.ideassheet.assignement=Assigned to :
+ideas.ideassheet.priority=Priority :
+ideas.ideassheet.stat=Status :
+ideas.ideassheet.hidesupp=Show/Hide supporters list.
+ideas.ideassheet.hideagainst=Show/Hide opponents list.</content>
 </xwikidoc>

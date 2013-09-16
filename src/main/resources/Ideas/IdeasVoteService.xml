@@ -11,12 +11,11 @@
   <author>xwiki:XWiki.Admin</author>
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <creationDate>1356994800000</creationDate>
-  <date>1356994800000</date>
-  <contentUpdateDate>1356994800000</contentUpdateDate>
+  <creationDate>1374503493000</creationDate>
+  <date>1374503493000</date>
+  <contentUpdateDate>1374503493000</contentUpdateDate>
   <version>1.1</version>
   <title>IdeaVoteService</title>
-  <template/>
   <defaultTemplate/>
   <validationScript/>
   <comment/>
@@ -27,25 +26,34 @@
 import org.xwiki.velocity.tools.JSONTool;
 import org.apache.commons.lang3.StringUtils;
 
-def lock = "lock"
+services.localization.use('document', 'Ideas.IdeasTranslations');
 
+def lock = "lock"
 def result = new HashMap();
 try {
 if(request.page &amp;&amp; request.action) {
   synchronized(lock) {
   def mydoc = xwiki.getDocument(request.page);
   if(!mydoc.isNew() &amp;&amp; null != mydoc.getObject("Ideas.IdeasClass") &amp;&amp; xcontext.user != "XWiki.XWikiGuest") {
-    def userList = mydoc.getValue("supporters");
-    def nbvotes = mydoc.getValue("nbvotes");
     def doRemove = false;
+    def doRemoveagainst = false;
     // Action : Add a supporter (vote)
     if(request.action == "addVote") {
       mydoc.use("Ideas.IdeasClass");
+      def userList = mydoc.getValue("supporters");
+      def userListSup = mydoc.getValue("against");
+      def nbvotes = mydoc.getValue("nbvotes");
+      def nbopp = mydoc.getValue("nbagainst");
       if(StringUtils.contains(userList, xwiki.checkAuth().toString())) {
         doRemove = true;
       }
       else {
         // Add user in userList
+		if (StringUtils.contains(userListSup, xwiki.checkAuth().toString())){
+		doRemoveagainst = true;
+        result.put("remove", true);
+        result.put("nbopp", nbopp - 1);
+		}
         userList = userList + "," + xwiki.checkAuth();
         mydoc.set("supporters", userList);
         // Increase vote by one
@@ -61,9 +69,47 @@ if(request.page &amp;&amp; request.action) {
         result.put("nbvotes", nbvotes);
       }
     }
+    else if(request.action == "addVoteOpp") {
+      mydoc.use("Ideas.IdeasClass");
+      def userList = mydoc.getValue("against");
+      def userListSup = mydoc.getValue("supporters");
+      def nbvotes = mydoc.getValue("nbagainst");
+      def nbopp = mydoc.getValue("nbvotes");
+      if(StringUtils.contains(userList, xwiki.checkAuth().toString())) {
+        doRemoveagainst = true;
+      }
+      else {
+        // Add user in userList
+		if (StringUtils.contains(userListSup, xwiki.checkAuth().toString())){
+		doRemove = true;
+        result.put("remove", true);
+        result.put("nbopp", nbopp - 1);
+	  	}
+		if (userList == null){
+			userList = "," + xwiki.checkAuth();
+		}
+		else{
+        	userList = userList + "," + xwiki.checkAuth();
+        }
+		mydoc.set("against", userList);
+        // Increase vote by one
+        if(!nbvotes) {
+          nbvotes = 1;
+        } else {
+        nbvotes = nbvotes + 1;
+        }
+        mydoc.set("nbagainst", nbvotes);
+        // Save document
+        mydoc.saveWithProgrammingRights();
+        result.put("result", true);
+        result.put("nbagainst", nbvotes);
+      }
+    }
     // Action : Remove a supporter (vote)
     if(request.action == "removeVote" || doRemove){
       // Remove user from user list
+      def userList = mydoc.getValue("supporters");
+      def nbvotes = mydoc.getValue("nbvotes");
       def theUser = xwiki.checkAuth();
       def newUserList = StringUtils.replaceOnce(userList, ","+theUser.toString(), "");
       newUserList = StringUtils.replaceOnce(newUserList , theUser.toString()+",", "");
@@ -76,6 +122,23 @@ if(request.page &amp;&amp; request.action) {
       mydoc.saveWithProgrammingRights();
       result.put("result", true);
       result.put("nbvotes", nbvotes);
+    }
+   	else if(doRemoveagainst){
+      // Remove user from user list
+      def userList = mydoc.getValue("against");
+      def nbvotes = mydoc.getValue("nbagainst");
+      def theUser = xwiki.checkAuth();
+      def newUserList = StringUtils.replaceOnce(userList, ","+theUser.toString(), "");
+      newUserList = StringUtils.replaceOnce(newUserList , theUser.toString()+",", "");
+      newUserList = StringUtils.replaceOnce(newUserList , theUser.toString(), "");
+      mydoc.set("against", newUserList);
+      // Decrease vote by one
+      nbvotes = nbvotes - 1;
+      mydoc.set("nbagainst", nbvotes);
+      // Save document
+      mydoc.saveWithProgrammingRights();
+      result.put("result", true);
+      result.put("nbagainst", nbvotes);
     }
   } else if (xcontext.user == "XWiki.XWikiGuest") {
     result.put("result", false);
