@@ -51,6 +51,7 @@
   <properties>
    <!-- Don't run CLIRR here since there's no Java code. -->
    <xwiki.clirr.skip>true</xwiki.clirr.skip>
+   <xwiki.extension.features>fveron:ideas</xwiki.extension.features>
   </properties>
   <build>
     <extensions>
