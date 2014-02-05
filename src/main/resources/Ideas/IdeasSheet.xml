@@ -12,10 +12,11 @@
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <creationDate>1374503492000</creationDate>
-  <date>1375262719000</date>
-  <contentUpdateDate>1375262719000</contentUpdateDate>
+  <date>1391597398000</date>
+  <contentUpdateDate>1391597359000</contentUpdateDate>
   <version>1.1</version>
   <title/>
+  <template/>
   <defaultTemplate/>
   <validationScript/>
   <comment/>
@@ -161,7 +162,6 @@ DolEWC3d3T6bbWtF2PwDnpnPHnHCLaAAAAAASUVORK5CYII=
 }
 .estimate_cost
 {
-  font-weight: bold;
   float:left;
 
 }
@@ -208,18 +208,22 @@ $doc.display("nbagainst")
 (% id="display_all" class="estimate_cost"%)
 (((
 &lt;table&gt;
-   &lt;tr&gt;
-       &lt;td&gt;$msg.get('ideas.ideassheet.estimated')&lt;/td&gt;
-       &lt;td&gt;$msg.get('ideas.ideassheet.stat')&lt;/td&gt;
-       &lt;td&gt;$msg.get('ideas.ideassheet.priority') &lt;/td&gt;
-       &lt;td&gt;$msg.get('ideas.ideassheet.assignement')&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-       &lt;td&gt;$doc.display("nbestimate")&lt;/td&gt;
-       &lt;td&gt;$doc.display('status')&lt;/td&gt;
-       &lt;td&gt;$doc.display("priority")&lt;/td&gt;
-       &lt;td&gt;$doc.display("assignement")&lt;/td&gt;
-   &lt;/tr&gt;
+   &lt;thead&gt;
+     &lt;tr&gt;
+         &lt;th&gt;$msg.get('ideas.ideassheet.estimated')&lt;/th&gt;
+         &lt;th&gt;$msg.get('ideas.ideassheet.stat')&lt;/th&gt;
+         &lt;th&gt;$msg.get('ideas.ideassheet.priority') &lt;/th&gt;
+         &lt;th&gt;$msg.get('ideas.ideassheet.assignement')&lt;/th&gt;
+     &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+     &lt;tr&gt;
+         &lt;td&gt;$doc.display("nbestimate")&lt;/td&gt;
+         &lt;td&gt;$doc.display('status')&lt;/td&gt;
+         &lt;td&gt;$doc.display("priority")&lt;/td&gt;
+         &lt;td&gt;$doc.display("assignement")&lt;/td&gt;
+     &lt;/tr&gt;
+   &lt;/tbody&gt;
 &lt;/table&gt;
 )))
 #end
