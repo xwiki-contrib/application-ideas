@@ -12,8 +12,8 @@
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <creationDate>1374503492000</creationDate>
-  <date>1391597398000</date>
-  <contentUpdateDate>1391597359000</contentUpdateDate>
+  <date>1391598076000</date>
+  <contentUpdateDate>1391598053000</contentUpdateDate>
   <version>1.1</version>
   <title/>
   <template/>
@@ -181,7 +181,10 @@ DolEWC3d3T6bbWtF2PwDnpnPHnHCLaAAAAAASUVORK5CYII=
   text-decoration: underline;
   color: blue;
   cursor: pointer;
+}
 
+.vote-image { 
+  height: 19px;
 }</code>
     </property>
     <property>
@@ -260,9 +263,11 @@ $doc.display("nbagainst")
 (((
   #set($userList = $doc.getValue('supporters'))
   #set ($nb_sup = $stringtool.countMatches($userList, ","))
-  #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
-[[image:Ideas.IdeasSheet@voted.png]] $msg.get('ideas.ideassheet.voted')
-  #end
+  &lt;div class="vote-image"&gt;
+    #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
+  [[image:Ideas.IdeasSheet@voted.png]] $msg.get('ideas.ideassheet.voted')
+    #end
+  &lt;/div&gt;
   #if ($nb_sup &lt; 6)
   ; &lt;label for="Ideas.IdeasClass_0_supporters"&gt;$escapetool.xml($doc.displayPrettyName('supporters', false, false))&lt;/label&gt;##
   (% class="xHint" %)$msg.get('')
@@ -285,9 +290,11 @@ $doc.display("nbagainst")
 (((
   #set($userList = $doc.getValue('against'))
   #set ($nb_aga = $stringtool.countMatches($userList, ","))
-  #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
-[[image:Ideas.IdeasSheet@votedagainst.png]] $msg.get('ideas.ideassheet.votedagainst')
-  #end
+  &lt;div class="vote-image"&gt;
+    #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
+  [[image:Ideas.IdeasSheet@votedagainst.png]] $msg.get('ideas.ideassheet.votedagainst')
+    #end
+  &lt;/div&gt;
   #if ($nb_aga &lt; 6)
   ; &lt;label for="Ideas.IdeasClass_0_against"&gt;$escapetool.xml($doc.displayPrettyName('against', false, false))&lt;/label&gt;##
   (% class="xHint" %)$msg.get('')
