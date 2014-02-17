@@ -35,6 +35,28 @@
   <packaging>xar</packaging>
   <name>Ideas Application</name>
   <description>Ideas Management Application</description>
+  <developers>
+    <developer>
+      <id>ldubost</id>
+      <name>Ludovic Dubost</name>
+    </developer>
+    <developer>
+      <id>chalx</id>
+      <name>Alexandru Chelariu</name>
+    </developer>
+    <developer>
+      <id>sorinello</id>
+      <name>Sorin Burjan</name>
+    </developer>
+    <developer>
+      <id>fveron</id>
+      <name>Florian Véron</name>
+    </developer>
+    <developer>
+      <id>tmortagne</id>
+      <name>Thomas Mortagne</name>
+    </developer>
+  </developers>
   <scm>
     <connection>scm:git:git://github.com/xwiki-contrib/application-ideas.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/application-ideas.git</developerConnection>
