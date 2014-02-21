@@ -1,7 +1,7 @@
 application-ideas
 =================
 
-link to xwiki.org extension page : http://extensions.xwiki.org/xwiki/bin/edit/Extension/Ideas
+Link to XWiki.org extension page : http://extensions.xwiki.org/xwiki/bin/view/Extension/Ideas
 
 Share your idea !
 == Description==
