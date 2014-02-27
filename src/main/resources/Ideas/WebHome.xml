@@ -205,6 +205,9 @@ $xwiki.jsx.use("Ideas.IdeasClass")
 $response.sendRedirect($xwiki.getURL('Ideas.WebHome', 'view', 'redir=yes#|t=Ideas.WebHome&amp;p=1&amp;l=15&amp;s=status&amp;d=asc&amp;status=open'))
 #end
 
+## Load the User Picker style for the "Assigned to" column
+#set($discard = $xwiki.ssfx.use('uicomponents/widgets/userpicker/userPicker.css'))
+
 #set ($discard = $services.localization.use('document', 'Ideas.IdeasTranslations'))
 #set ($columnsProperties = {
   'nbvotes': {"type":"number","size":10,"html":true},
