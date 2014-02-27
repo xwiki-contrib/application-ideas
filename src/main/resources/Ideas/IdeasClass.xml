@@ -61,7 +61,7 @@
       <name>assignement</name>
       <number>7</number>
       <picker>1</picker>
-      <prettyName>Assignement</prettyName>
+      <prettyName>Assignee</prettyName>
       <relationalStorage>0</relationalStorage>
       <separator> </separator>
       <separators/>

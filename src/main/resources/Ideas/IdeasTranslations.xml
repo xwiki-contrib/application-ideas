@@ -95,7 +95,7 @@ ideas.livetable.supporters=Supporters
 ideas.livetable.against=Against people
 ideas.livetable.nbestimate=Estimated cost
 ideas.livetable.status=Status
-ideas.livetable.assignement=Assigned to
+ideas.livetable.assignement=Assignee
 ideas.livetable.priority=Priority
 
 #Ideas application keys
@@ -105,7 +105,7 @@ ideas.message.error=Error while operating Ideas
 ideas.ideassheet.voted=You support this idea
 ideas.ideassheet.votedagainst=You are against this idea
 ideas.ideassheet.estimated=Estimated cost :
-ideas.ideassheet.assignement=Assigned to :
+ideas.ideassheet.assignement=Assignee :
 ideas.ideassheet.priority=Priority :
 ideas.ideassheet.stat=Status :
 ideas.ideassheet.hidesupp=Show/Hide supporters list.
