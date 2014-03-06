@@ -22,7 +22,7 @@
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
-  <hidden>false</hidden>
+  <hidden>true</hidden>
   <content>{{velocity}}
 #set($hql = ",BaseObject as obj where doc.fullName=obj.name and obj.className='Ideas.IdeasClass' and obj.id not in (select obj2.id from BaseObject as obj2, StringProperty as prop where obj2.className='Ideas.IdeasClass' and obj2.id=prop.id.id and prop.id.name='status')")
 #set($list = $xwiki.searchDocuments($hql))
