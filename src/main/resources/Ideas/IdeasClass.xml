@@ -205,7 +205,7 @@ $value
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
-      <values>Normal|Critical|High|Low</values>
+      <values>High|Medium|Low</values>
       <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
     </priority>
     <status>
