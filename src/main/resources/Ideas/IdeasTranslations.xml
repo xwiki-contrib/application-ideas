@@ -89,8 +89,8 @@ ideas.livetable.emptyvalue=-
 # Live table specific keys
 ideas.livetable.title1=Idea
 ideas.livetable.content1=Description
-ideas.livetable.nbvotes=Votes
-ideas.livetable.nbagainst= Against
+ideas.livetable.nbvotes=Yes
+ideas.livetable.nbagainst=No
 ideas.livetable.supporters=Supporters
 ideas.livetable.against=Against people
 ideas.livetable.nbestimate=Estimated cost
