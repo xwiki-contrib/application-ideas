@@ -56,6 +56,10 @@
       <id>tmortagne</id>
       <name>Thomas Mortagne</name>
     </developer>
+	<developer>
+      <id>msmeria</id>
+      <name>Manuel Smeria</name>
+    </developer>
   </developers>
   <scm>
     <connection>scm:git:git://github.com/xwiki-contrib/application-ideas.git</connection>
