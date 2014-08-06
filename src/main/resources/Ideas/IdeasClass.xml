@@ -11,8 +11,8 @@
   <parent>XWiki.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1407331055000</date>
-  <contentUpdateDate>1407331055000</contentUpdateDate>
+  <date>1407333068000</date>
+  <contentUpdateDate>1407333068000</contentUpdateDate>
   <version>1.1</version>
   <title>Ideas Class</title>
   <comment/>
@@ -223,7 +223,7 @@ $value
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
-      <values>High|Medium|Low</values>
+      <values>high=High|medium=Medium|low=Low</values>
       <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
     </priority>
     <status>

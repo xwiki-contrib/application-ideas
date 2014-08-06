@@ -11,8 +11,8 @@
   <parent>Ideas.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1375262666000</date>
-  <contentUpdateDate>1375262666000</contentUpdateDate>
+  <date>1407334237000</date>
+  <contentUpdateDate>1407334221000</contentUpdateDate>
   <version>1.1</version>
   <title/>
   <comment/>
@@ -28,6 +28,9 @@ Ideas.IdeasClass_against=Opposants
 Ideas.IdeasClass_status_open=Ouvert
 Ideas.IdeasClass_status_close=Fermé
 Ideas.IdeasClass_status_rejected=Rejeté
+Ideas.IdeasClass_priority_high=Élevée
+Ideas.IdeasClass_priority_medium=Moyenne
+Ideas.IdeasClass_priority_low=Faible
 
 # Live table generic keys
 ideas.livetable.doc.title=Idée
