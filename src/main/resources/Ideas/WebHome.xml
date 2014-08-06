@@ -11,8 +11,8 @@
   <parent>Main.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1375192101000</date>
-  <contentUpdateDate>1375192101000</contentUpdateDate>
+  <date>1407330996000</date>
+  <contentUpdateDate>1407330994000</contentUpdateDate>
   <version>1.1</version>
   <title>$msg.get('platform.appwithinminutes.appHomePageTitle', $doc.space)</title>
   <comment/>
@@ -21,7 +21,7 @@
   <hidden>false</hidden>
   <content>{{velocity}}
 $xwiki.jsx.use("Ideas.IdeasClass")
-
+$xwiki.ssx.use("Ideas.IdeasClass")
 #if (!$request.redir)
 $response.sendRedirect($xwiki.getURL('Ideas.WebHome', 'view', 'redir=yes#|t=Ideas.WebHome&amp;p=1&amp;l=15&amp;s=status&amp;d=asc&amp;status=open'))
 #end
