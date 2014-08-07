@@ -11,7 +11,7 @@
   <parent>XWiki.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1407399411000</date>
+  <date>1407400063000</date>
   <contentUpdateDate>1407333068000</contentUpdateDate>
   <version>1.1</version>
   <title>Ideas Class</title>
@@ -555,6 +555,7 @@ $value
   }); 
   return false;
 }
+
 function voteagainst(reflink, url, refresh, opp) {
   new Ajax.Request(url, { 
     onSuccess: function (response) {
