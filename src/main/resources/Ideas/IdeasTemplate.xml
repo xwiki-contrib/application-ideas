@@ -90,28 +90,38 @@
       </content1>
       <nbagainst>
         <customDisplay>{{velocity}}
-$xwiki.jsx.use("Ideas.IdeasClass")
-#set($pagename = $object.name)
-#set($hash = $pagename.hashCode())
-#set ($ref = 1)
-#if($type=="view")
-#if ($context.tdoc == $context.doc)
-#set ($ref = 0)
-#end
-#set($url = $xwiki.getURL("Ideas.IdeasVoteService", "get", "xpage=plain&amp;outputSyntax=plain&amp;page=${escapetool.url($pagename)}&amp;action=addVoteOpp"))
-(% class="xvote" style="border: 1px solid; border-radius: 10px; background-color: red; padding: 15px; font-size: 30px; width: 30px; height: 30px; color: white; text-align: center; float: left; margin: 8px; cursor:pointer;" onclick="voteagainst('against${hash}', '${url}', '$ref', 'nbvotes${hash}')" id="against${hash}"%)
-(((
-{{html clean=false}}
-#set($nbv = $value)
-#if(!$nbv)
- #set($nbv = 0)
-#end
-$nbv
-{{/html}}
-)))
-#else
-$value
-#end
+  $xwiki.jsx.use("Ideas.IdeasClass")
+  $xwiki.ssx.use("Ideas.IdeasClass")
+  #set ($pagename = $object.name)
+  #set ($hash = $pagename.hashCode())
+  #set ($ref = 1)
+  #if ($type == "view")
+    #if ($context.tdoc == $context.doc)
+      #set ($ref = 0)
+    #end
+    #set ($document = $xwiki.getDocument($pagename))
+    #set ($obj = $document.getObject('Ideas.IdeasClass'))
+    #set ($users = $obj.getProperty('against').value)
+    #set ($users = $users.split(",") )
+    #foreach ($user in $users)
+      #if ($user == $context.getLocalUser())
+        #set ($addclass = "voted-con")
+    #end
+  #end
+  #set ($url = $xwiki.getURL("Ideas.IdeasVoteService", "get", "xpage=plain&amp;outputSyntax=plain&amp;page=${escapetool.url($pagename)}&amp;action=addVoteOpp"))
+  (% class="xvote-con #if($addclass) $addclass #end " onclick="voteagainst('against${hash}', '${url}', '$ref', 'nbvotes${hash}')" id="against${hash}"%)
+  (((
+    {{html clean=false}}
+      #set ($nbv = $value)
+      #if(!$nbv)
+        #set ($nbv = 0)
+      #end
+      $nbv
+    {{/html}}
+  )))
+  #else
+    $value
+  #end
 {{/velocity}}</customDisplay>
         <disabled>0</disabled>
         <name>nbagainst</name>
@@ -156,28 +166,38 @@ $value €
       </nbestimate>
       <nbvotes>
         <customDisplay>{{velocity}}
-$xwiki.jsx.use("Ideas.IdeasClass")
-#set($pagename = $object.name)
-#set($hash = $pagename.hashCode())
-#set ($ref = 1)
-#if($type=="view")
-#if ($context.tdoc == $context.doc)
-#set ($ref = 0)
-#end
-#set($url = $xwiki.getURL("Ideas.IdeasVoteService", "get", "xpage=plain&amp;outputSyntax=plain&amp;page=${escapetool.url($pagename)}&amp;action=addVote"))
-(% class="xvote" style="border: 1px solid; border-radius: 10px; background-color: lightgreen; padding: 15px; font-size: 30px; width: 30px; height: 30px; color: white; text-align: center; float: left; margin: 8px; cursor:pointer;" onclick="votefor('nbvotes${hash}', '${url}', '$ref', 'against${hash}')" id="nbvotes${hash}"%)
-(((
-{{html clean=false}}
-#set($nbv = $value)
-#if(!$nbv)
- #set($nbv = 0)
-#end
-$nbv
-{{/html}}
-)))
-#else
-$value
-#end
+  $xwiki.jsx.use("Ideas.IdeasClass")
+  $xwiki.ssx.use("Ideas.IdeasClass")
+  #set ($pagename = $object.name)
+  #set ($hash = $pagename.hashCode())
+  #set ($ref = 1)
+  #if ($type == "view")
+    #if ($context.tdoc == $context.doc)
+      #set ($ref = 0)
+    #end
+    #set ($document = $xwiki.getDocument($pagename))
+    #set ($obj = $document.getObject('Ideas.IdeasClass'))
+    #set ($users = $obj.getProperty('supporters').value)
+    #set ($users = $users.split(",") )
+    #foreach ($user in $users)
+      #if ($user == $context.getLocalUser())
+        #set ($addclass = "voted-pro")
+      #end
+    #end
+    #set ($url = $xwiki.getURL("Ideas.IdeasVoteService", "get", "xpage=plain&amp;outputSyntax=plain&amp;page=${escapetool.url($pagename)}&amp;action=addVote"))
+    (% class="xvote-pro #if ($addclass) $addclass #end " onclick="votefor('nbvotes${hash}', '${url}', '$ref', 'against${hash}')" id="nbvotes${hash}"%)
+    (((
+      {{html clean=false}}
+        #set ($nbv = $value)
+        #if (!$nbv)
+          #set ($nbv = 0)
+        #end
+        $nbv
+      {{/html}}
+    )))
+  #else
+    $value
+  #end
 {{/velocity}}</customDisplay>
         <disabled>0</disabled>
         <name>nbvotes</name>
@@ -208,7 +228,7 @@ $value
         <unmodifiable>0</unmodifiable>
         <validationMessage/>
         <validationRegExp/>
-        <values>High|Medium|Low</values>
+        <values>high=High|medium=Medium|low=Low</values>
         <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
       </priority>
       <status>

@@ -11,8 +11,8 @@
   <parent>XWiki.IdeasClass</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1407330431000</date>
-  <contentUpdateDate>1407330431000</contentUpdateDate>
+  <date>1407429478000</date>
+  <contentUpdateDate>1407429478000</contentUpdateDate>
   <version>1.1</version>
   <title/>
   <comment/>
@@ -142,7 +142,7 @@ $doc.display("nbagainst")
   <attachment>
     <filename>voted.png</filename>
     <author>XWiki.Admin</author>
-    <date>1407330431000</date>
+    <date>1407429478000</date>
     <version>1.1</version>
     <comment/>
     <content>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAABIAAAASABGyWs+AAAACXZwQWcAAAAQAAAAEABcxq3DAAACaElEQVQ4y2NgoBeo2DyHwaMjVSJ2Vo29RV0Mn0t/NvGa81dPZHBqS1Zcf3bP5jsvH3ydf3jjDOlsH0GbjiyIgp3PzzMETizSrFs/NSdgUqH6wnPb4ZrTlnQyWDfGKS49sWnb808P/3/99er/g3fX/tRtbJ/BGGcmzNC8bx6DU0e63owDS0/svbHv//T9S4/ZtSXrVGyawhA1p57BuCZSccaBJdtuvjr7/+mnS/+ffT73//ybSf+XXyr65deXXMEgX+xhWLam7fjqcyv/r7mw/P/6i6v/d26fdsysMc5SuzrCAMjefuLhjv/XXu/5f+Ptzv8nXnT/3/Eo8X/r9tRP2nEO5QyGDQHTvKd5/i/fmP9/6qHe//NOTPq/5PSM//17J7yatH/i8+03Fv479mjp/+NP5v/f87Dq/+b7cf9rN8d9Vo+y7gT6UJZBocjNV6/R7qF1n9H/pGVB/1t2Ff6ferT2/8Izrf9XX+78v+F6+/8NN2r+r76Z/H/Nrcj/JWvDP8uHmnYBNUvCwolRNNUmSKfe6onrVMP/0Uus/xdu8vnftCfsf++RyP9TToX9n3sx6P+ya2H/c1cGfZYI1AdplkLEkZMK3BCbTpfHMUut/2ett/lfscPpf/sh9//Tzvj+X3Ql7H/BqrDPUkEGaJphwAFiiHy2S1DozODHpVvd/zfuc/0/4YT3//kXw/5XbYj/rBhmhkMzDNgpgg0xLA8KKlyd9qTvWND/OedD/7ftyP6sG+dAQDMMWMuDDXFpTgju2Fn2sGdnyUfLVK9O5AAjDCxkQHYxmWUFWmr42UQxcLBKUpKHGGmeSwEfySkyCqmEbwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAwOS0wOS0xNVQwOTowNDo1MCswMjowMABKEC4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMDktMDktMTVUMDk6MDQ6NTArMDI6MDBxF6iSAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg==</content>
@@ -151,7 +151,7 @@ $doc.display("nbagainst")
   <attachment>
     <filename>votedagainst.png</filename>
     <author>XWiki.Admin</author>
-    <date>1407330431000</date>
+    <date>1407429478000</date>
     <version>1.1</version>
     <comment/>
     <content>iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAIAAAC0tAIdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJkSURBVChTTZFdSJNhFMefpFk3eaMWzouELetCLeqmLNuQ9YFrQU4N5ywtyS8Qi81ZCoqZClEXMrKgkAS1yCwoaRe1shANt2y6vXs/nG4uZTr2+b5bGLHT804xn4s//3PO7znP4TwIth2/nfR8G3e+GVkYHsCKPc5sB9BGEOG4xVf9oelRWJgIGF6sDPUFDMPYh0yjzpf9HMtuYDwdYdmFxy1g7XNpi4x7d73dgV4jhNWYInBplDjvfNISjV/g6Xm9FsZK1+TpPxOQMQlR+5BTjGyp6GPyTksCWi1Ix9X5Xi1PBx0Me+8oVAtZIbIX5Tsnpqyyw949aLbk/LLFRlyS4DzcEHJdxwIMjdyDeniYB/JUJivJZZrFDYKLLnNDQzTEP73CLBE5KVCQjJlfg3pEacrgrgyuHlkvPUSUnfVT9NYSuDWvtUbFFR/EVcxQGhWaK5FChwJ056D9QkiZYWpqjMVxrObmW0FlBrTJ+WqHwloiRWRVIegk0HMm0nTc2ljOeVa3evtJiqhRrLeexFVollBVhcj96AGoRNB7wqbKXJ7hx4j6QmZdfYBxYO/8aqbVItDnQpnYrb+PAjTNZiWC9sCfgTyy9bJrfMp6W+29k0ZoChzvP1Ht6vXnp6Epk8tO9JMkv2+6rgKyBbGnavjeSbSV/x6ph8n2v2M3mU51bLIz9qwccgR09ZXN38H/NCM75dm/29dVC67PwNqBIyFMwNIXX3cdzv/Iz42Gw5s0PyvLmq5XfkBoWpxmKb44V1uJFXsDQqZrFZE4+p/eCHwEYenpeSeVDolEWC3d3T6bbWtF2PwDnpnPHnHCLaAAAAAASUVORK5CYII=</content>
