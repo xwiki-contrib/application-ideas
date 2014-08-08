@@ -11,8 +11,8 @@
   <parent>XWiki.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1407478746000</date>
-  <contentUpdateDate>1407478746000</contentUpdateDate>
+  <date>1407485441000</date>
+  <contentUpdateDate>1407485441000</contentUpdateDate>
   <version>1.1</version>
   <title>Ideas Class</title>
   <comment/>
@@ -94,8 +94,7 @@
     #if ($xcontext.tdoc == $xcontext.doc)
       #set ($ref = 0)
     #end
-    #set ($document = $xwiki.getDocument($pagename))
-    #set ($obj = $document.getObject('Ideas.IdeasClass'))
+    #set ($obj = $doc.getObject('Ideas.IdeasClass'))
     #set ($users = $obj.getProperty('against').value)
     #if ($users.contains($xcontext.getLocalUser()))
       #set ($addclass = "voted-con")
@@ -167,8 +166,7 @@ $value €
     #if ($xcontext.tdoc == $xcontext.doc)
       #set ($ref = 0)
     #end
-    #set ($document = $xwiki.getDocument($pagename))
-    #set ($obj = $document.getObject('Ideas.IdeasClass'))
+    #set ($obj = $doc.getObject('Ideas.IdeasClass'))
     #set ($users = $obj.getProperty('supporters').value)
     #if ($users.contains($xcontext.getLocalUser()))
       #set ($addclass = "voted-pro")
