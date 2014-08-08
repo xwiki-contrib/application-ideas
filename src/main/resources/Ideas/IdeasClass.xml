@@ -11,8 +11,8 @@
   <parent>XWiki.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1407478168000</date>
-  <contentUpdateDate>1407478168000</contentUpdateDate>
+  <date>1407478746000</date>
+  <contentUpdateDate>1407478746000</contentUpdateDate>
   <version>1.1</version>
   <title>Ideas Class</title>
   <comment/>
@@ -103,13 +103,13 @@
     #set ($url = $xwiki.getURL("Ideas.IdeasVoteService", "get", "xpage=plain&amp;outputSyntax=plain&amp;page=${escapetool.url($pagename)}&amp;action=addVoteOpp"))
 	  (% class="xvote-con #if($addclass) $addclass #end " onclick="voteagainst('against${hash}', '${url}', '$ref', 'nbvotes${hash}')" id="against${hash}"%)
     (((
-      {{html clean=false}}
-        #set ($nbv = $value)
-	#if(!$nbv)
-	  #set ($nbv = 0)
-	#end
-	$nbv
-      {{/html}}
+    {{html clean=false}}
+    #set ($nbv = $value)
+    #if(!$nbv)
+      #set ($nbv = 0)
+    #end
+    $nbv
+    {{/html}}
     )))
   #else
     $value
@@ -176,13 +176,13 @@ $value €
     #set ($url = $xwiki.getURL("Ideas.IdeasVoteService", "get", "xpage=plain&amp;outputSyntax=plain&amp;page=${escapetool.url($pagename)}&amp;action=addVote"))
     (% class="xvote-pro #if ($addclass) $addclass #end " onclick="votefor('nbvotes${hash}', '${url}', '$ref', 'against${hash}')" id="nbvotes${hash}"%)
     (((
-      {{html clean=false}}
-        #set ($nbv = $value)
-        #if (!$nbv)
-          #set ($nbv = 0)
-        #end
-        $nbv
-      {{/html}}
+    {{html clean=false}}
+    #set ($nbv = $value)
+    #if (!$nbv)
+      #set ($nbv = 0)
+    #end
+    $nbv
+    {{/html}}
     )))
   #else
     $value
