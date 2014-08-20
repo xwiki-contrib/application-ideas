@@ -126,24 +126,7 @@
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
     </nbagainst>
     <nbestimate>
-      <customDisplay>{{velocity}}
-#if ($context.action!="edit")
-#if ($value)
-$value €
-#else
--
-#end
-#else
-#if (!$value)
-#set ($value = '')
-#end
-{{html wiki="true"}}
-&lt;form&gt;
-&lt;input type="text" name="Ideas.IdeasClass_0_nbestimate" value='$value'&gt;
-&lt;/form&gt;
-{{/html}}
-#end
-{{/velocity}}</customDisplay>
+      <customDisplay/>
       <disabled>0</disabled>
       <name>nbestimate</name>
       <number>8</number>
