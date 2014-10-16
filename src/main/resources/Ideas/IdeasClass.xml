@@ -660,11 +660,13 @@ function voteagainst(reflink, url, refresh, opp) {
 .xvote-con, .xvote-pro {
   border: 2px solid #ffffff;
   border-radius: 10px;
+  box-sizing: content-box;
   color: white;
   cursor: pointer;
   float: left; 
   font-size: 30px; 
   height: 30px;
+  line-height: 30px;
   margin: 8px;
   opacity: 0.5; 
   padding: 15px; 
