@@ -55,6 +55,10 @@ $doc.display("nbagainst")
 (% class="xform" %)
 (((
 #if($context.action=="edit")
+  ## set the title value only on idea creation
+  #if("$!{doc.title}"=="")
+    #set($discard = $doc.setTitle("${doc.name}"))
+  #end
   ; &lt;label for="Ideas.IdeasClass_0_title1"&gt;$escapetool.xml($doc.displayPrettyName('title1', false, false))&lt;/label&gt;##
     (% class="xHint" %)$msg.get('')
   : $doc.display('title1')
