@@ -95,12 +95,17 @@
       #set ($ref = 0)
     #end
     #set ($obj = $doc.getObject('Ideas.IdeasClass'))
+    #set ($status = $obj.getProperty('status').value)
     #set ($users = $obj.getProperty('against').value)
     #if ($users.contains($xcontext.getLocalUser()))
       #set ($addclass = "voted-con")
     #end
     #set ($url = $xwiki.getURL("Ideas.IdeasVoteService", "get", "xpage=plain&amp;outputSyntax=plain&amp;page=${escapetool.url($pagename)}&amp;action=addVoteOpp"))
-	  (% class="xvote-con #if($addclass) $addclass #end " onclick="voteagainst('against${hash}', '${url}', '$ref', 'nbvotes${hash}')" id="against${hash}"%)
+    #if ($status == 'open')
+	    (% class="xvote-con #if($addclass) $addclass #end " onclick="voteagainst('against${hash}', '${url}', '$ref', 'nbvotes${hash}')" id="against${hash}"%)
+    #else
+      (% class="no-hover-con xvote-con #if($addclass) $addclass #end " id="against${hash}"%)
+    #end
     (((
     {{html clean=false}}
     #set ($nbv = $value)
@@ -150,12 +155,17 @@
       #set ($ref = 0)
     #end
     #set ($obj = $doc.getObject('Ideas.IdeasClass'))
+    #set ($status = $obj.getProperty('status').value)
     #set ($users = $obj.getProperty('supporters').value)
     #if ($users.contains($xcontext.getLocalUser()))
       #set ($addclass = "voted-pro")
     #end
     #set ($url = $xwiki.getURL("Ideas.IdeasVoteService", "get", "xpage=plain&amp;outputSyntax=plain&amp;page=${escapetool.url($pagename)}&amp;action=addVote"))
-    (% class="xvote-pro #if ($addclass) $addclass #end " onclick="votefor('nbvotes${hash}', '${url}', '$ref', 'against${hash}')" id="nbvotes${hash}"%)
+    #if($status == 'open')
+      (% class="xvote-pro #if ($addclass) $addclass #end " onclick="votefor('nbvotes${hash}', '${url}', '$ref', 'against${hash}')" id="nbvotes${hash}"%)
+    #else
+      (% class="no-hover-pro xvote-pro #if ($addclass) $addclass #end " id="nbvotes${hash}"%)
+    #end
     (((
     {{html clean=false}}
     #set ($nbv = $value)
@@ -673,10 +683,10 @@ function voteagainst(reflink, url, refresh, opp) {
   text-align: center;
   width: 30px;   
 }
-.xvote-con {
+.xvote-con, .no-hover-con {
   background-color: $theme.notificationErrorColor;
 }
-.xvote-pro { 
+.xvote-pro, .no-hover-pro {
   background-color: $theme.notificationSuccessColor; 
 }
 .voted-con, .voted-pro, .xvote-con:hover, .xvote-pro:hover {
@@ -687,6 +697,9 @@ function voteagainst(reflink, url, refresh, opp) {
 }
 .voted-pro{
   border: 2px solid #3ea73e;
+}
+.no-hover-con:hover, .no-hover-pro:hover {
+  opacity: 0.5;
 }
 </code>
     </property>
