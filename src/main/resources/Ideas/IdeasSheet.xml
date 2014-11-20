@@ -79,9 +79,7 @@ $doc.display("nbagainst")
 #end
 (% class="content_left"%)
 (((
-  ----
   : $doc.display('content1')
-  ----
   &lt;br&gt;
 )))
 #if($context.action=="view" &amp;&amp; $xwiki.checkAuth())
