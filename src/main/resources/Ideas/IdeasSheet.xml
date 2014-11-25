@@ -52,37 +52,59 @@ $doc.display("nbagainst")
 &lt;/table&gt;
 )))
 #end
+#if($context.action=="edit")
 (% class="xform" %)
 (((
-#if($context.action=="edit")
   ## set the title value only on idea creation
   #if("$!{doc.title}"=="")
     #set($discard = $doc.setTitle("${doc.name}"))
   #end
+ (% class="row" %)
+ (((
+  (% class="col-xs-12 col-md-12" %)
+  (((
   ; &lt;label for="Ideas.IdeasClass_0_title1"&gt;$escapetool.xml($doc.displayPrettyName('title1', false, false))&lt;/label&gt;##
     (% class="xHint" %)$msg.get('')
   : $doc.display('title1')
-  ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;$escapetool.xml($doc.displayPrettyName('nbestimate', false, false))&lt;/label&gt;##
-    (% class="xHint" %)$msg.get('')
-  : $doc.display('nbestimate')
-  ; &lt;label for="Ideas.IdeasClass_0_status"&gt;$escapetool.xml($doc.displayPrettyName('status', false, false))&lt;/label&gt;##
-    (% class="xHint" %)$msg.get('')
-  : $doc.display('status')
+  )))
+  (% class="col-xs-12 col-md-6" %)
+  (((
   ; &lt;label for="Ideas.IdeasClass_0_priority"&gt;$escapetool.xml($doc.displayPrettyName('priority', false, false))&lt;/label&gt;##
     (% class="xHint" %)$msg.get('')
   : $doc.display('priority')
+  )))
+  (% class="col-xs-12 col-md-6" %)
+  (((
+  ; &lt;label for="Ideas.IdeasClass_0_status"&gt;$escapetool.xml($doc.displayPrettyName('status', false, false))&lt;/label&gt;##
+    (% class="xHint" %)$msg.get('')
+  : $doc.display('status')
+  )))
+  (% class="col-xs-12 col-md-6" %)
+  (((
   ; &lt;label for="Ideas.IdeasClass_0_assignement"&gt;$escapetool.xml($doc.displayPrettyName('assignement', false, false))&lt;/label&gt;##
     (% class="xHint" %)$msg.get('')
   : $doc.display('assignement')
+  )))
+  (% class="col-xs-12 col-md-6" %)
+  (((
+  ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;$escapetool.xml($doc.displayPrettyName('nbestimate', false, false))&lt;/label&gt;##
+    (% class="xHint" %)$msg.get('')
+  : $doc.display('nbestimate')
+  )))
+  (% class="col-xs-12 col-md-12" %)
+  (((
   ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;$escapetool.xml($doc.displayPrettyName('content1', false, false))&lt;/label&gt;##
     (% class="xHint" %)$msg.get('')
+  : $doc.display('content1')
+  )))
+ )))
+)))
 #end
+#if($context.action=="view" &amp;&amp; $xwiki.checkAuth())
 (% class="content_left"%)
 (((
-  : $doc.display('content1')
-  &lt;br&gt;
+  $doc.display('content1')
 )))
-#if($context.action=="view" &amp;&amp; $xwiki.checkAuth())
 (% class="forvote"%)
 (((
   #set($userList = $doc.getValue('supporters'))
@@ -138,7 +160,6 @@ $doc.display("nbagainst")
   #end
 )))
 #end
-)))
 {{/html}}
 {{/velocity}}</content>
   <attachment>
