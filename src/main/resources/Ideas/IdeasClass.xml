@@ -631,16 +631,15 @@ function voteagainst(reflink, url, refresh, opp) {
 .voted-con {
   border: 2px solid #a73e3e;
 }
-.voted-pro{
+.voted-pro {
   border: 2px solid #3ea73e;
 }
 .no-hover-con:hover, .no-hover-pro:hover {
   opacity: 0.5;
-}
-</code>
+}</code>
     </property>
     <property>
-      <name/>
+      <name>SSX_Vote</name>
     </property>
     <property>
       <parse>1</parse>
