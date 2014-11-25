@@ -604,10 +604,10 @@ function voteagainst(reflink, url, refresh, opp) {
     <property>
       <code>#template('colorThemeInit.vm')
 .xvote-con, .xvote-pro {
-  border: 2px solid #ffffff;
+  border: 2px solid $theme.pageContentBackgroundColor;
   border-radius: 10px;
   box-sizing: content-box;
-  color: white;
+  color: $theme.pageContentBackgroundColor;
   cursor: pointer;
   float: left; 
   font-size: 30px; 
@@ -629,10 +629,10 @@ function voteagainst(reflink, url, refresh, opp) {
   opacity: 0.8;
 }
 .voted-con {
-  border: 2px solid #a73e3e;
+  border: 2px solid #e69999; // fade($theme.notificationErrorColor,50%)
 }
 .voted-pro {
-  border: 2px solid #3ea73e;
+  border: 2px solid #3ea73e; // fade($theme.notificationSuccessColor,50%)
 }
 .no-hover-con:hover, .no-hover-pro:hover {
   opacity: 0.5;
