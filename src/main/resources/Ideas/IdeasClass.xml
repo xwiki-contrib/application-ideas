@@ -300,38 +300,6 @@
   </object>
   <object>
     <name>Ideas.IdeasClass</name>
-    <number>1</number>
-    <className>XWiki.ClassSheetBinding</className>
-    <guid>87b62b19-7184-43d3-a92d-0e0ccfc3a51b</guid>
-    <class>
-      <name>XWiki.ClassSheetBinding</name>
-      <customClass/>
-      <customMapping/>
-      <defaultViewSheet/>
-      <defaultEditSheet/>
-      <defaultWeb/>
-      <nameField/>
-      <validationScript/>
-      <sheet>
-        <customDisplay/>
-        <disabled>0</disabled>
-        <name>sheet</name>
-        <number>1</number>
-        <picker>0</picker>
-        <prettyName>Sheet</prettyName>
-        <size>30</size>
-        <unmodifiable>0</unmodifiable>
-        <validationMessage/>
-        <validationRegExp/>
-        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-      </sheet>
-    </class>
-    <property>
-      <sheet/>
-    </property>
-  </object>
-  <object>
-    <name>Ideas.IdeasClass</name>
     <number>0</number>
     <className>XWiki.DocumentSheetBinding</className>
     <guid>c6b2b5d4-2785-4100-8a73-203d73769da2</guid>
@@ -392,38 +360,6 @@
     </class>
     <property>
       <sheet>XWiki.ClassSheet</sheet>
-    </property>
-  </object>
-  <object>
-    <name>Ideas.IdeasClass</name>
-    <number>2</number>
-    <className>XWiki.DocumentSheetBinding</className>
-    <guid>3e167e9b-2d9d-4931-bfb9-803445a47c28</guid>
-    <class>
-      <name>XWiki.DocumentSheetBinding</name>
-      <customClass/>
-      <customMapping/>
-      <defaultViewSheet/>
-      <defaultEditSheet/>
-      <defaultWeb/>
-      <nameField/>
-      <validationScript/>
-      <sheet>
-        <customDisplay/>
-        <disabled>0</disabled>
-        <name>sheet</name>
-        <number>1</number>
-        <picker>0</picker>
-        <prettyName>Sheet</prettyName>
-        <size>30</size>
-        <unmodifiable>0</unmodifiable>
-        <validationMessage/>
-        <validationRegExp/>
-        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-      </sheet>
-    </class>
-    <property>
-      <sheet/>
     </property>
   </object>
   <object>
