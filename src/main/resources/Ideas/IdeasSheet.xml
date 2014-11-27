@@ -38,37 +38,37 @@
     (% class="col-xs-12 col-md-12" %)
     (((
       ; &lt;label for="Ideas.IdeasClass_0_title1"&gt;#if($services.icon)$services.icon.render('font') #end$escapetool.xml($doc.displayPrettyName('title1', false, false))&lt;/label&gt;##
-        (% class="xHint" %)$msg.get('')
+        (% class="xHint" %)$services.localization.render('')
       : $doc.display('title1')
     )))
     (% class="col-xs-12 col-md-6" %)
     (((
       ; &lt;label for="Ideas.IdeasClass_0_priority"&gt;#if($services.icon)$services.icon.render('chart_bar') #end$escapetool.xml($doc.displayPrettyName('priority', false, false))&lt;/label&gt;##
-        (% class="xHint" %)$msg.get('')
+        (% class="xHint" %)$services.localization.render('')
       : $doc.display('priority')
     )))
     (% class="col-xs-12 col-md-6" %)
     (((
       ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$escapetool.xml($doc.displayPrettyName('status', false, false))&lt;/label&gt;##
-        (% class="xHint" %)$msg.get('')
+        (% class="xHint" %)$services.localization.render('')
       : $doc.display('status')
     )))
     (% class="col-xs-12 col-md-6" %)
     (((
       ; &lt;label for="Ideas.IdeasClass_0_assignement"&gt;#if($services.icon)$services.icon.render('user') #end$escapetool.xml($doc.displayPrettyName('assignement', false, false))&lt;/label&gt;##
-        (% class="xHint" %)$msg.get('')
+        (% class="xHint" %)$services.localization.render('')
       : $doc.display('assignement')
     )))
     (% class="col-xs-12 col-md-6" %)
     (((
       ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;#if($services.icon)$services.icon.render('money') #end$escapetool.xml($doc.displayPrettyName('nbestimate', false, false))&lt;/label&gt;##
-        (% class="xHint" %)$msg.get('')
+        (% class="xHint" %)$services.localization.render('')
       : $doc.display('nbestimate')
     )))
     (% class="col-xs-12 col-md-12" %)
     (((
       ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;#if($services.icon)$services.icon.render('application_view_list') #end$escapetool.xml($doc.displayPrettyName('content1', false, false))&lt;/label&gt;##
-        (% class="xHint" %)$msg.get('')
+        (% class="xHint" %)$services.localization.render('')
       : $doc.display('content1')
     )))
   )))
@@ -81,7 +81,7 @@
   (((
     (% class="col-xs-6 col-sm-3 col-md-3 votes-summary" %)
     (((
-      ; &lt;label&gt;#if($services.icon)$services.icon.render('group') #end$msg.get('ideas.ideassheet.votes')&lt;/label&gt;
+      ; &lt;label&gt;#if($services.icon)$services.icon.render('group') #end$services.localization.render('ideas.ideassheet.votes')&lt;/label&gt;
       (((
         $doc.display("nbvotes")
         $doc.display("nbagainst")
@@ -90,21 +90,21 @@
     )))
     (% class="col-xs-6 col-sm-3 col-md-3" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_assignement"&gt;#if($services.icon)$services.icon.render('user') #end$msg.get('ideas.ideassheet.assignement')&lt;/label&gt;
+      ; &lt;label for="Ideas.IdeasClass_0_assignement"&gt;#if($services.icon)$services.icon.render('user') #end$services.localization.render('ideas.ideassheet.assignement')&lt;/label&gt;
       #if ("$!doc.getValue('assignement')" != '')
         : $doc.display('assignement')
       #else
-        : $msg.get('ideas.ideassheet.unassigned')
+        : $services.localization.render('ideas.ideassheet.unassigned')
       #end
     )))
     (% class="col-xs-6 col-sm-3 col-md-3" %)
     (((
-      ; &lt;label for='Ideas.IdeasClass_0_priority'&gt;#if($services.icon)$services.icon.render('chart_bar') #end$msg.get('ideas.ideassheet.priority')&lt;/label&gt;
+      ; &lt;label for='Ideas.IdeasClass_0_priority'&gt;#if($services.icon)$services.icon.render('chart_bar') #end$services.localization.render('ideas.ideassheet.priority')&lt;/label&gt;
       : $doc.display('priority')
     )))
     (% class="col-xs-6 col-sm-3 col-md-3" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$msg.get('ideas.ideassheet.stat')&lt;/label&gt;
+      ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$services.localization.render('ideas.ideassheet.stat')&lt;/label&gt;
       : $doc.display('status')
     )))
   )))
@@ -122,7 +122,7 @@
       (% class="col-xs-12 col-sm-3 col-md-3" %)
       (((
         #if ("$!doc.getValue('nbestimate')" != '')
-          ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;#if($services.icon)$services.icon.render('money') #end$msg.get('ideas.ideassheet.estimated')&lt;/label&gt;
+          ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;#if($services.icon)$services.icon.render('money') #end$services.localization.render('ideas.ideassheet.estimated')&lt;/label&gt;
           : $doc.display('nbestimate')
         #end
       )))
@@ -146,7 +146,7 @@
           #set($userList = $doc.getValue('supporters'))
           #set ($nb_sup = $stringtool.countMatches($userList, ","))
           #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
-            (%class="result-own"%)$msg.get('ideas.ideassheet.voted')
+            (%class="result-own"%)$services.localization.render('ideas.ideassheet.voted')
           #end
         )))
         (% class="col-xs-4 col-sm-3 col-md-4 col-lg-3" %)
@@ -170,7 +170,7 @@
                 $doc.display('supporters')
               &lt;/div&gt;
               &lt;div onclick="toggleClass($('disp_sup'), 'hidden')"&gt;
-                (% class="on_hover"%)$msg.get('ideas.ideassheet.hidesupp')
+                (% class="on_hover"%)$services.localization.render('ideas.ideassheet.hidesupp')
               &lt;/div&gt;
             )))
           #end
@@ -191,7 +191,7 @@
           #set($userList = $doc.getValue('against'))
           #set ($nb_aga = $stringtool.countMatches($userList, ","))
           #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
-            (%class="result-own"%)$msg.get('ideas.ideassheet.votedagainst')
+            (%class="result-own"%)$services.localization.render('ideas.ideassheet.votedagainst')
           #end
         )))
         (% class="col-xs-4 col-sm-3 col-md-4 col-lg-3" %)
@@ -215,7 +215,7 @@
                 $doc.display('against')
               &lt;/div&gt;
               &lt;div onclick="toggleClass($('disp_aga'), 'hidden')"&gt;
-                (% class="on_hover"%)$msg.get('ideas.ideassheet.hideagainst')
+                (% class="on_hover"%)$services.localization.render('ideas.ideassheet.hideagainst')
               &lt;/div&gt;
             )))
           #end
