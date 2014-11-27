@@ -21,37 +21,11 @@
   <hidden>true</hidden>
   <content>{{velocity}}
 {{html wiki="true"}}
-$xwiki.ssx.use("Ideas.IdeasSheet")
-#set ($discard = $services.localization.use('document', 'Ideas.IdeasTranslations'))
-$xwiki.ssx.use('AppWithinMinutes.ClassSheetGenerator')
+#set($discard = $xwiki.ssx.use("Ideas.IdeasSheet"))
+#set($discard = $services.localization.use('document', 'Ideas.IdeasTranslations'))
+#set($discard = $xwiki.ssx.use('AppWithinMinutes.ClassSheetGenerator'))
 #set($discard = $doc.use('Ideas.IdeasClass'))
-## We don't have access to the form element to set the CSS class for the vertical form layout standard.
-#if($context.action=="view")
-$doc.display("nbvotes")
-$doc.display("nbagainst")
 
-(% id="display_all" class="estimate_cost"%)
-(((
-&lt;table&gt;
-   &lt;thead&gt;
-     &lt;tr&gt;
-         &lt;th&gt;$msg.get('ideas.ideassheet.estimated')&lt;/th&gt;
-         &lt;th&gt;$msg.get('ideas.ideassheet.stat')&lt;/th&gt;
-         &lt;th&gt;$msg.get('ideas.ideassheet.priority') &lt;/th&gt;
-         &lt;th&gt;$msg.get('ideas.ideassheet.assignement')&lt;/th&gt;
-     &lt;/tr&gt;
-   &lt;/thead&gt;
-   &lt;tbody&gt;
-     &lt;tr&gt;
-         &lt;td&gt;$doc.display("nbestimate")&lt;/td&gt;
-         &lt;td&gt;$doc.display('status')&lt;/td&gt;
-         &lt;td&gt;$doc.display("priority")&lt;/td&gt;
-         &lt;td&gt;$doc.display("assignement")&lt;/td&gt;
-     &lt;/tr&gt;
-   &lt;/tbody&gt;
-&lt;/table&gt;
-)))
-#end
 #if($context.action=="edit")
 (% class="xform" %)
 (((
@@ -59,127 +33,200 @@ $doc.display("nbagainst")
   #if("$!{doc.title}"=="")
     #set($discard = $doc.setTitle("${doc.name}"))
   #end
- (% class="row" %)
- (((
-  (% class="col-xs-12 col-md-12" %)
+  (% class="row" %)
   (((
-  ; &lt;label for="Ideas.IdeasClass_0_title1"&gt;$escapetool.xml($doc.displayPrettyName('title1', false, false))&lt;/label&gt;##
-    (% class="xHint" %)$msg.get('')
-  : $doc.display('title1')
+    (% class="col-xs-12 col-md-12" %)
+    (((
+      ; &lt;label for="Ideas.IdeasClass_0_title1"&gt;#if($services.icon)$services.icon.render('font') #end$escapetool.xml($doc.displayPrettyName('title1', false, false))&lt;/label&gt;##
+        (% class="xHint" %)$msg.get('')
+      : $doc.display('title1')
+    )))
+    (% class="col-xs-12 col-md-6" %)
+    (((
+      ; &lt;label for="Ideas.IdeasClass_0_priority"&gt;#if($services.icon)$services.icon.render('chart_bar') #end$escapetool.xml($doc.displayPrettyName('priority', false, false))&lt;/label&gt;##
+        (% class="xHint" %)$msg.get('')
+      : $doc.display('priority')
+    )))
+    (% class="col-xs-12 col-md-6" %)
+    (((
+      ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$escapetool.xml($doc.displayPrettyName('status', false, false))&lt;/label&gt;##
+        (% class="xHint" %)$msg.get('')
+      : $doc.display('status')
+    )))
+    (% class="col-xs-12 col-md-6" %)
+    (((
+      ; &lt;label for="Ideas.IdeasClass_0_assignement"&gt;#if($services.icon)$services.icon.render('user') #end$escapetool.xml($doc.displayPrettyName('assignement', false, false))&lt;/label&gt;##
+        (% class="xHint" %)$msg.get('')
+      : $doc.display('assignement')
+    )))
+    (% class="col-xs-12 col-md-6" %)
+    (((
+      ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;#if($services.icon)$services.icon.render('money') #end$escapetool.xml($doc.displayPrettyName('nbestimate', false, false))&lt;/label&gt;##
+        (% class="xHint" %)$msg.get('')
+      : $doc.display('nbestimate')
+    )))
+    (% class="col-xs-12 col-md-12" %)
+    (((
+      ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;#if($services.icon)$services.icon.render('application_view_list') #end$escapetool.xml($doc.displayPrettyName('content1', false, false))&lt;/label&gt;##
+        (% class="xHint" %)$msg.get('')
+      : $doc.display('content1')
+    )))
   )))
-  (% class="col-xs-12 col-md-6" %)
-  (((
-  ; &lt;label for="Ideas.IdeasClass_0_priority"&gt;$escapetool.xml($doc.displayPrettyName('priority', false, false))&lt;/label&gt;##
-    (% class="xHint" %)$msg.get('')
-  : $doc.display('priority')
-  )))
-  (% class="col-xs-12 col-md-6" %)
-  (((
-  ; &lt;label for="Ideas.IdeasClass_0_status"&gt;$escapetool.xml($doc.displayPrettyName('status', false, false))&lt;/label&gt;##
-    (% class="xHint" %)$msg.get('')
-  : $doc.display('status')
-  )))
-  (% class="col-xs-12 col-md-6" %)
-  (((
-  ; &lt;label for="Ideas.IdeasClass_0_assignement"&gt;$escapetool.xml($doc.displayPrettyName('assignement', false, false))&lt;/label&gt;##
-    (% class="xHint" %)$msg.get('')
-  : $doc.display('assignement')
-  )))
-  (% class="col-xs-12 col-md-6" %)
-  (((
-  ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;$escapetool.xml($doc.displayPrettyName('nbestimate', false, false))&lt;/label&gt;##
-    (% class="xHint" %)$msg.get('')
-  : $doc.display('nbestimate')
-  )))
-  (% class="col-xs-12 col-md-12" %)
-  (((
-  ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;$escapetool.xml($doc.displayPrettyName('content1', false, false))&lt;/label&gt;##
-    (% class="xHint" %)$msg.get('')
-  : $doc.display('content1')
-  )))
- )))
 )))
 #end
+#if($context.action=="view")
+(% class="xform well well-sm" %)
+(((
+  (% class="row" %)
+  (((
+    (% class="col-xs-6 col-sm-3 col-md-3 votes-summary" %)
+    (((
+      ; &lt;label&gt;#if($services.icon)$services.icon.render('group') #end$msg.get('ideas.ideassheet.votes')&lt;/label&gt;
+      (((
+        $doc.display("nbvotes")
+        $doc.display("nbagainst")
+        (%class='clearfloats'%)((()))
+      )))
+    )))
+    (% class="col-xs-6 col-sm-3 col-md-3" %)
+    (((
+      ; &lt;label for="Ideas.IdeasClass_0_assignement"&gt;#if($services.icon)$services.icon.render('user') #end$msg.get('ideas.ideassheet.assignement')&lt;/label&gt;
+      #if ("$!doc.getValue('assignement')" != '')
+        : $doc.display('assignement')
+      #else
+        : $msg.get('ideas.ideassheet.unassigned')
+      #end
+    )))
+    (% class="col-xs-6 col-sm-3 col-md-3" %)
+    (((
+      ; &lt;label for='Ideas.IdeasClass_0_priority'&gt;#if($services.icon)$services.icon.render('chart_bar') #end$msg.get('ideas.ideassheet.priority')&lt;/label&gt;
+      : $doc.display('priority')
+    )))
+    (% class="col-xs-6 col-sm-3 col-md-3" %)
+    (((
+      ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$msg.get('ideas.ideassheet.stat')&lt;/label&gt;
+      : $doc.display('status')
+    )))
+  )))
+)))
+#if ("$!doc.display('content1')" != '')
+  (% class="xform well well-sm" %)
+  (((
+    (% class="row" %)
+    (((
+      (% class="col-xs-12 col-sm-9 col-md-9" %)
+      (((
+        ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;#if($services.icon)$services.icon.render('application_view_list') #end$escapetool.xml($doc.displayPrettyName('content1', false, false))&lt;/label&gt;
+        : $doc.display('content1')
+      )))
+      (% class="col-xs-12 col-sm-3 col-md-3" %)
+      (((
+        #if ("$!doc.getValue('nbestimate')" != '')
+          ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;#if($services.icon)$services.icon.render('money') #end$msg.get('ideas.ideassheet.estimated')&lt;/label&gt;
+          : $doc.display('nbestimate')
+        #end
+      )))
+    )))
+  )))
+#end
+#end
 #if($context.action=="view" &amp;&amp; $xwiki.checkAuth())
-(% class="content_left"%)
+(% class="row" %)
 (((
-  $doc.display('content1')
-)))
-(% class="forvote"%)
-(((
-  #set($userList = $doc.getValue('supporters'))
-  #set ($nb_sup = $stringtool.countMatches($userList, ","))
-  &lt;div class="vote-image"&gt;
-    #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
-  [[image:Ideas.IdeasSheet@voted.png]] $msg.get('ideas.ideassheet.voted')
-    #end
-  &lt;/div&gt;
-  #if ($nb_sup &lt; 6)
-  ; &lt;label for="Ideas.IdeasClass_0_supporters"&gt;$escapetool.xml($doc.displayPrettyName('supporters', false, false))&lt;/label&gt;##
-  (% class="xHint" %)$msg.get('')
-  : $doc.display('supporters')
-  #else
-  &lt;div id="disp_sup" class="hidden"&gt;
-  ; &lt;label for="Ideas.IdeasClass_0_supporters"&gt;$escapetool.xml($doc.displayPrettyName('supporters', false, false))&lt;/label&gt;##
-  (% class="xHint" %)$msg.get('')
-  : $doc.display('supporters')
-  &lt;/div&gt;
-  &lt;div onclick="toggleClass($('disp_sup'), 'hidden')"&gt;
-  (% class="on_hover"%)
+  (% class="col-xs-12 col-sm-6 col-md-6"  %)
   (((
-  &lt;br&gt;$msg.get('ideas.ideassheet.hidesupp')
+    (% class="well well-sm" %)
+    (((
+      (% class="row" %)
+      (((
+        (% class="col-xs-8 col-sm-9 col-md-8 col-lg-9" %)
+        (((
+          (%class='result-pro'%)
+          === #if($services.icon)$services.icon.render('accept') #end$escapetool.xml($doc.displayPrettyName('supporters', false, false)) ===
+          #set($userList = $doc.getValue('supporters'))
+          #set ($nb_sup = $stringtool.countMatches($userList, ","))
+          #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
+            (%class="result-own"%)$msg.get('ideas.ideassheet.voted')
+          #end
+        )))
+        (% class="col-xs-4 col-sm-3 col-md-4 col-lg-3" %)
+        (((
+          $doc.display("nbvotes")
+          (%class='clearfloats'%)((()))
+        )))
+        (% class="col-xs-12" %)
+        (((
+          #if ($nb_sup &lt; 6)
+            #if ($nb_sup &gt; 0)
+              (% class="result-participants" %)
+              (((
+              $doc.display('supporters')
+              )))
+            #end
+          #else
+            (% class="result-participants" %)
+            (((
+              &lt;div id="disp_sup" class="hidden"&gt;
+                $doc.display('supporters')
+              &lt;/div&gt;
+              &lt;div onclick="toggleClass($('disp_sup'), 'hidden')"&gt;
+                (% class="on_hover"%)$msg.get('ideas.ideassheet.hidesupp')
+              &lt;/div&gt;
+            )))
+          #end
+        )))
+      )))
+    )))
   )))
-  &lt;/div&gt;
-  #end
-)))
-(% class="againstvote"%)
-(((
-  #set($userList = $doc.getValue('against'))
-  #set ($nb_aga = $stringtool.countMatches($userList, ","))
-  &lt;div class="vote-image"&gt;
-    #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
-  [[image:Ideas.IdeasSheet@votedagainst.png]] $msg.get('ideas.ideassheet.votedagainst')
-    #end
-  &lt;/div&gt;
-  #if ($nb_aga &lt; 6)
-  ; &lt;label for="Ideas.IdeasClass_0_against"&gt;$escapetool.xml($doc.displayPrettyName('against', false, false))&lt;/label&gt;##
-  (% class="xHint" %)$msg.get('')
-  : $doc.display('against')
-  #else
-  &lt;div id="disp_aga" class="hidden"&gt;
-  ; &lt;label for="Ideas.IdeasClass_0_against"&gt;$escapetool.xml($doc.displayPrettyName('against', false, false))&lt;/label&gt;##
-  (% class="xHint" %)$msg.get('')
-  : $doc.display('against')
-  &lt;/div&gt;
-  &lt;div onclick="toggleClass($('disp_aga'), 'hidden')"&gt;
-  (% class="on_hover"%)
+  (% class="col-xs-12 col-sm-6 col-md-6" %)
   (((
-  &lt;br&gt;$msg.get('ideas.ideassheet.hideagainst')
+    (% class="well well-sm"%)
+    (((
+      (% class="row" %)
+      (((
+        (% class="col-xs-8 col-sm-9 col-md-8 col-lg-9" %)
+        (((
+          (%class='result-against'%)
+          === #if($services.icon)$services.icon.render('cross') #end$escapetool.xml($doc.displayPrettyName('against', false, false)) ===
+          #set($userList = $doc.getValue('against'))
+          #set ($nb_aga = $stringtool.countMatches($userList, ","))
+          #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
+            (%class="result-own"%)$msg.get('ideas.ideassheet.votedagainst')
+          #end
+        )))
+        (% class="col-xs-4 col-sm-3 col-md-4 col-lg-3" %)
+        (((
+          $doc.display("nbagainst")
+          (%class='clearfloats'%)((()))
+        )))
+        (% class="col-xs-12" %)
+        (((
+          #if ($nb_aga &lt; 6)
+            #if ($nb_aga &gt; 0)
+              (% class="result-participants" %)
+              (((
+              $doc.display('against')
+              )))
+            #end
+          #else
+            (% class="result-participants" %)
+            (((
+              &lt;div id="disp_aga" class="hidden"&gt;
+                $doc.display('against')
+              &lt;/div&gt;
+              &lt;div onclick="toggleClass($('disp_aga'), 'hidden')"&gt;
+                (% class="on_hover"%)$msg.get('ideas.ideassheet.hideagainst')
+              &lt;/div&gt;
+            )))
+          #end
+        )))
+      )))
+    )))
   )))
-  &lt;/div&gt;
-  #end
 )))
 #end
 {{/html}}
 {{/velocity}}</content>
-  <attachment>
-    <filename>voted.png</filename>
-    <author>XWiki.Admin</author>
-    <date>1407429478000</date>
-    <version>1.1</version>
-    <comment/>
-    <content>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAABIAAAASABGyWs+AAAACXZwQWcAAAAQAAAAEABcxq3DAAACaElEQVQ4y2NgoBeo2DyHwaMjVSJ2Vo29RV0Mn0t/NvGa81dPZHBqS1Zcf3bP5jsvH3ydf3jjDOlsH0GbjiyIgp3PzzMETizSrFs/NSdgUqH6wnPb4ZrTlnQyWDfGKS49sWnb808P/3/99er/g3fX/tRtbJ/BGGcmzNC8bx6DU0e63owDS0/svbHv//T9S4/ZtSXrVGyawhA1p57BuCZSccaBJdtuvjr7/+mnS/+ffT73//ybSf+XXyr65deXXMEgX+xhWLam7fjqcyv/r7mw/P/6i6v/d26fdsysMc5SuzrCAMjefuLhjv/XXu/5f+Ptzv8nXnT/3/Eo8X/r9tRP2nEO5QyGDQHTvKd5/i/fmP9/6qHe//NOTPq/5PSM//17J7yatH/i8+03Fv479mjp/+NP5v/f87Dq/+b7cf9rN8d9Vo+y7gT6UJZBocjNV6/R7qF1n9H/pGVB/1t2Ff6ferT2/8Izrf9XX+78v+F6+/8NN2r+r76Z/H/Nrcj/JWvDP8uHmnYBNUvCwolRNNUmSKfe6onrVMP/0Uus/xdu8vnftCfsf++RyP9TToX9n3sx6P+ya2H/c1cGfZYI1AdplkLEkZMK3BCbTpfHMUut/2ett/lfscPpf/sh9//Tzvj+X3Ql7H/BqrDPUkEGaJphwAFiiHy2S1DozODHpVvd/zfuc/0/4YT3//kXw/5XbYj/rBhmhkMzDNgpgg0xLA8KKlyd9qTvWND/OedD/7ftyP6sG+dAQDMMWMuDDXFpTgju2Fn2sGdnyUfLVK9O5AAjDCxkQHYxmWUFWmr42UQxcLBKUpKHGGmeSwEfySkyCqmEbwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAwOS0wOS0xNVQwOTowNDo1MCswMjowMABKEC4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMDktMDktMTVUMDk6MDQ6NTArMDI6MDBxF6iSAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg==</content>
-    <filesize>868</filesize>
-  </attachment>
-  <attachment>
-    <filename>votedagainst.png</filename>
-    <author>XWiki.Admin</author>
-    <date>1407429478000</date>
-    <version>1.1</version>
-    <comment/>
-    <content>iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAIAAAC0tAIdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJkSURBVChTTZFdSJNhFMefpFk3eaMWzouELetCLeqmLNuQ9YFrQU4N5ywtyS8Qi81ZCoqZClEXMrKgkAS1yCwoaRe1shANt2y6vXs/nG4uZTr2+b5bGLHT804xn4s//3PO7znP4TwIth2/nfR8G3e+GVkYHsCKPc5sB9BGEOG4xVf9oelRWJgIGF6sDPUFDMPYh0yjzpf9HMtuYDwdYdmFxy1g7XNpi4x7d73dgV4jhNWYInBplDjvfNISjV/g6Xm9FsZK1+TpPxOQMQlR+5BTjGyp6GPyTksCWi1Ix9X5Xi1PBx0Me+8oVAtZIbIX5Tsnpqyyw949aLbk/LLFRlyS4DzcEHJdxwIMjdyDeniYB/JUJivJZZrFDYKLLnNDQzTEP73CLBE5KVCQjJlfg3pEacrgrgyuHlkvPUSUnfVT9NYSuDWvtUbFFR/EVcxQGhWaK5FChwJ056D9QkiZYWpqjMVxrObmW0FlBrTJ+WqHwloiRWRVIegk0HMm0nTc2ljOeVa3evtJiqhRrLeexFVollBVhcj96AGoRNB7wqbKXJ7hx4j6QmZdfYBxYO/8aqbVItDnQpnYrb+PAjTNZiWC9sCfgTyy9bJrfMp6W+29k0ZoChzvP1Ht6vXnp6Epk8tO9JMkv2+6rgKyBbGnavjeSbSV/x6ph8n2v2M3mU51bLIz9qwccgR09ZXN38H/NCM75dm/29dVC67PwNqBIyFMwNIXX3cdzv/Iz42Gw5s0PyvLmq5XfkBoWpxmKb44V1uJFXsDQqZrFZE4+p/eCHwEYenpeSeVDolEWC3d3T6bbWtF2PwDnpnPHnHCLaAAAAAASUVORK5CYII=</content>
-    <filesize>719</filesize>
-  </attachment>
   <object>
     <name>Ideas.IdeasSheet</name>
     <number>0</number>
@@ -260,48 +307,62 @@ $doc.display("nbagainst")
       <cache>long</cache>
     </property>
     <property>
-      <code>.forvote
-{
-  float:left;
-  width:50%;
+      <code>#template('colorThemeInit.vm')
+
+/* Voting Summary */
+.votes-summary dl {
+  margin-bottom: 0;
 }
 
-.againstvote
-{
-  margin-left: 50%;
-}
-.estimate_cost
-{
-  float:left;
-
-}
-.assign_class
-{
-  font-weight: bold;
-  margin-left: 400px;
-  margin-top: 10px;
-}
-.content_left
-{
-  clear : left;
+.votes-summary .xvote-pro, .votes-summary .xvote-con {
+  margin-top: .1em;
+  margin-left: 0;
+  margin-bottom: .5em;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 15px;
+  padding: 6px;
 }
 
-.on_hover:hover
-{
-  text-decoration: underline;
-  color: blue;
+/* Participants Results */
+.result-pro {
+  color: $theme.notificationSuccessColor;
+}
+
+.result-against {
+  color: $theme.notificationErrorColor;
+}
+
+.result-own {
+  display: block;
+  color: $theme.textSecondaryColor;
+  text-indent: 2em;
+}
+
+.result-participants {
+  border-top: 1px solid $theme.borderColor;
+  margin: 1em 0 0;
+  padding: 1em 0 0;
+}
+
+/* Show/Hide Participants */
+.on_hover {
+  display: block;
+  margin-top: .5em;
+}
+
+.on_hover:hover {
+  color: $theme.linkColor;
   cursor: pointer;
-}
-
-.vote-image { 
-  height: 19px;
+  text-decoration: underline;
 }</code>
     </property>
     <property>
-      <name>FloatingPart</name>
+      <name/>
     </property>
     <property>
-      <parse>0</parse>
+      <parse>1</parse>
     </property>
     <property>
       <use>onDemand</use>
