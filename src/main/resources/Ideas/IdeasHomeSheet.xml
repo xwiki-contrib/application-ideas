@@ -22,6 +22,7 @@
   <content>{{include reference="AppWithinMinutes.LiveTableViewSheet" /}}
 
 {{velocity}}
+#set($discard = $xwiki.ssfx.use('uicomponents/pagination/pagination.css', 'true'))
 #set($docextras = [])
 {{/velocity}}</content>
 </xwikidoc>
