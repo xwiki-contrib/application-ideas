@@ -131,7 +131,15 @@
       <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
     </nbagainst>
     <nbestimate>
-      <customDisplay/>
+      <customDisplay>{{velocity}}
+{{html wiki="true"}}
+#if($type == 'edit')
+  &lt;input class="form-control" id="Ideas.IdeasClass_0_nbestimate" name="Ideas.IdeasClass_0_nbestimate" type="number" value="${value}" /&gt;
+#elseif ($type == 'view')
+  $!{value}
+#end
+{{/html}}
+{{/velocity}}</customDisplay>
       <disabled>0</disabled>
       <name>nbestimate</name>
       <number>8</number>
