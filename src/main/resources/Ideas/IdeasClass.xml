@@ -132,7 +132,7 @@
     </nbagainst>
     <nbestimate>
       <customDisplay>{{velocity}}
-{{html wiki="true"}}
+{{html}}
 #if($type == 'edit')
   &lt;input class="form-control" id="Ideas.IdeasClass_0_nbestimate" name="Ideas.IdeasClass_0_nbestimate" type="number" value="${value}" /&gt;
 #elseif ($type == 'view')
