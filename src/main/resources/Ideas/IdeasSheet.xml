@@ -37,37 +37,37 @@
   (((
     (% class="col-xs-12 col-md-12" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_title1"&gt;#if($services.icon)$services.icon.render('font') #end$escapetool.xml($doc.displayPrettyName('title1', false, false))&lt;/label&gt;##
+      ; &lt;label for="Ideas.IdeasClass_0_title1"&gt;#if($services.icon)$services.icon.render('font') #end$services.localization.render('Ideas.IdeasClass_title1')&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
       : $doc.display('title1')
     )))
     (% class="col-xs-12 col-md-6" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_priority"&gt;#if($services.icon)$services.icon.render('chart_bar') #end$escapetool.xml($doc.displayPrettyName('priority', false, false))&lt;/label&gt;##
+      ; &lt;label for="Ideas.IdeasClass_0_priority"&gt;#if($services.icon)$services.icon.render('chart_bar') #end$services.localization.render('ideas.ideassheet.priority')&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
       : $doc.display('priority')
     )))
     (% class="col-xs-12 col-md-6" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$escapetool.xml($doc.displayPrettyName('status', false, false))&lt;/label&gt;##
+      ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$services.localization.render('ideas.ideassheet.stat')&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
       : $doc.display('status')
     )))
     (% class="col-xs-12 col-md-6" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_assignement"&gt;#if($services.icon)$services.icon.render('user') #end$escapetool.xml($doc.displayPrettyName('assignement', false, false))&lt;/label&gt;##
+      ; &lt;label for="Ideas.IdeasClass_0_assignement"&gt;#if($services.icon)$services.icon.render('user') #end$services.localization.render('ideas.ideassheet.assignement')&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
       : $doc.display('assignement')
     )))
     (% class="col-xs-12 col-md-6" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;#if($services.icon)$services.icon.render('money') #end$escapetool.xml($doc.displayPrettyName('nbestimate', false, false))&lt;/label&gt;##
+      ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;#if($services.icon)$services.icon.render('money') #end$services.localization.render('ideas.ideassheet.estimated')&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
       : $doc.display('nbestimate')
     )))
     (% class="col-xs-12 col-md-12" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;#if($services.icon)$services.icon.render('application_view_list') #end$escapetool.xml($doc.displayPrettyName('content1', false, false))&lt;/label&gt;##
+      ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;#if($services.icon)$services.icon.render('application_view_list') #end$services.localization.render('Ideas.IdeasClass_content1')&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
       : $doc.display('content1')
     )))
@@ -116,7 +116,7 @@
     (((
       (% class="col-xs-12 col-sm-9 col-md-9" %)
       (((
-        ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;#if($services.icon)$services.icon.render('application_view_list') #end$escapetool.xml($doc.displayPrettyName('content1', false, false))&lt;/label&gt;
+        ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;#if($services.icon)$services.icon.render('application_view_list') #end$services.localization.render('Ideas.IdeasClass_content1')&lt;/label&gt;
         : $doc.display('content1')
       )))
       (% class="col-xs-12 col-sm-3 col-md-3" %)
@@ -142,7 +142,7 @@
         (% class="col-xs-8 col-sm-9 col-md-8 col-lg-9" %)
         (((
           (%class='result-pro'%)
-          === #if($services.icon)$services.icon.render('accept') #end$escapetool.xml($doc.displayPrettyName('supporters', false, false)) ===
+          === #if($services.icon)$services.icon.render('accept') #end$services.localization.render('Ideas.IdeasClass_supporters') ===
           #set($userList = $doc.getValue('supporters'))
           #set ($nb_sup = $stringtool.countMatches($userList, ","))
           #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
@@ -187,7 +187,7 @@
         (% class="col-xs-8 col-sm-9 col-md-8 col-lg-9" %)
         (((
           (%class='result-against'%)
-          === #if($services.icon)$services.icon.render('cross') #end$escapetool.xml($doc.displayPrettyName('against', false, false)) ===
+          === #if($services.icon)$services.icon.render('cross') #end$services.localization.render('Ideas.IdeasClass_against') ===
           #set($userList = $doc.getValue('against'))
           #set ($nb_aga = $stringtool.countMatches($userList, ","))
           #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
