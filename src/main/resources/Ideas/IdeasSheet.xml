@@ -11,8 +11,8 @@
   <parent>Ideas.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1407429478000</date>
-  <contentUpdateDate>1407429478000</contentUpdateDate>
+  <date>1418394104000</date>
+  <contentUpdateDate>1418394104000</contentUpdateDate>
   <version>1.1</version>
   <title/>
   <comment/>
@@ -37,37 +37,37 @@
   (((
     (% class="col-xs-12 col-md-12" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_title1"&gt;#if($services.icon)$services.icon.render('font') #end$escapetool.xml($doc.displayPrettyName('title1', false, false))&lt;/label&gt;##
+      ; &lt;label for="Ideas.IdeasClass_0_title1"&gt;#if($services.icon)$services.icon.render('font') #end$escapetool.xml($doc.displayPrettyName('title1'))&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
       : $doc.display('title1')
     )))
     (% class="col-xs-12 col-md-6" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_priority"&gt;#if($services.icon)$services.icon.render('chart_bar') #end$escapetool.xml($doc.displayPrettyName('priority', false, false))&lt;/label&gt;##
+      ; &lt;label for="Ideas.IdeasClass_0_priority"&gt;#if($services.icon)$services.icon.render('chart_bar') #end$escapetool.xml($doc.displayPrettyName('priority'))&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
       : $doc.display('priority')
     )))
     (% class="col-xs-12 col-md-6" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$escapetool.xml($doc.displayPrettyName('status', false, false))&lt;/label&gt;##
+      ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$escapetool.xml($doc.displayPrettyName('status'))&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
       : $doc.display('status')
     )))
     (% class="col-xs-12 col-md-6" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_assignement"&gt;#if($services.icon)$services.icon.render('user') #end$escapetool.xml($doc.displayPrettyName('assignement', false, false))&lt;/label&gt;##
+      ; &lt;label for="Ideas.IdeasClass_0_assignement"&gt;#if($services.icon)$services.icon.render('user') #end$escapetool.xml($doc.displayPrettyName('assignement'))&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
       : $doc.display('assignement')
     )))
     (% class="col-xs-12 col-md-6" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;#if($services.icon)$services.icon.render('money') #end$escapetool.xml($doc.displayPrettyName('nbestimate', false, false))&lt;/label&gt;##
+      ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;#if($services.icon)$services.icon.render('money') #end$escapetool.xml($doc.displayPrettyName('nbestimate'))&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
       : $doc.display('nbestimate')
     )))
     (% class="col-xs-12 col-md-12" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;#if($services.icon)$services.icon.render('application_view_list') #end$escapetool.xml($doc.displayPrettyName('content1', false, false))&lt;/label&gt;##
+      ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;#if($services.icon)$services.icon.render('application_view_list') #end$escapetool.xml($doc.displayPrettyName('content1'))&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
       : $doc.display('content1')
     )))
@@ -81,7 +81,7 @@
   (((
     (% class="col-xs-6 col-sm-3 col-md-3 votes-summary" %)
     (((
-      ; &lt;label&gt;#if($services.icon)$services.icon.render('group') #end$services.localization.render('ideas.ideassheet.votes')&lt;/label&gt;
+      ; &lt;label&gt;#if($services.icon)$services.icon.render('group') #end$escapetool.xml($doc.displayPrettyName('nbvotes'))&lt;/label&gt;
       (((
         $doc.display("nbvotes")
         $doc.display("nbagainst")
@@ -90,7 +90,7 @@
     )))
     (% class="col-xs-6 col-sm-3 col-md-3" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_assignement"&gt;#if($services.icon)$services.icon.render('user') #end$services.localization.render('ideas.ideassheet.assignement')&lt;/label&gt;
+      ; &lt;label for="Ideas.IdeasClass_0_assignement"&gt;#if($services.icon)$services.icon.render('user') #end$escapetool.xml($doc.displayPrettyName('assignement'))&lt;/label&gt;
       #if ("$!doc.getValue('assignement')" != '')
         : $doc.display('assignement')
       #else
@@ -99,12 +99,12 @@
     )))
     (% class="col-xs-6 col-sm-3 col-md-3" %)
     (((
-      ; &lt;label for='Ideas.IdeasClass_0_priority'&gt;#if($services.icon)$services.icon.render('chart_bar') #end$services.localization.render('ideas.ideassheet.priority')&lt;/label&gt;
+      ; &lt;label for='Ideas.IdeasClass_0_priority'&gt;#if($services.icon)$services.icon.render('chart_bar') #end$escapetool.xml($doc.displayPrettyName('priority'))&lt;/label&gt;
       : $doc.display('priority')
     )))
     (% class="col-xs-6 col-sm-3 col-md-3" %)
     (((
-      ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$services.localization.render('ideas.ideassheet.stat')&lt;/label&gt;
+      ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$escapetool.xml($doc.displayPrettyName('status'))&lt;/label&gt;
       : $doc.display('status')
     )))
   )))
@@ -116,13 +116,13 @@
     (((
       (% class="col-xs-12 col-sm-9 col-md-9" %)
       (((
-        ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;#if($services.icon)$services.icon.render('application_view_list') #end$escapetool.xml($doc.displayPrettyName('content1', false, false))&lt;/label&gt;
+        ; &lt;label for="Ideas.IdeasClass_0_content1"&gt;#if($services.icon)$services.icon.render('application_view_list') #end$escapetool.xml($doc.displayPrettyName('content1'))&lt;/label&gt;
         : $doc.display('content1')
       )))
       (% class="col-xs-12 col-sm-3 col-md-3" %)
       (((
         #if ("$!doc.getValue('nbestimate')" != '')
-          ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;#if($services.icon)$services.icon.render('money') #end$services.localization.render('ideas.ideassheet.estimated')&lt;/label&gt;
+          ; &lt;label for="Ideas.IdeasClass_0_nbestimate"&gt;#if($services.icon)$services.icon.render('money') #end$escapetool.xml($doc.displayPrettyName('nbestimate'))&lt;/label&gt;
           : $doc.display('nbestimate')
         #end
       )))
@@ -142,7 +142,7 @@
         (% class="col-xs-8 col-sm-9 col-md-8 col-lg-9" %)
         (((
           (%class='result-pro'%)
-          === #if($services.icon)$services.icon.render('accept') #end$escapetool.xml($doc.displayPrettyName('supporters', false, false)) ===
+          === #if($services.icon)$services.icon.render('accept') #end$escapetool.xml($doc.displayPrettyName('supporters')) ===
           #set($userList = $doc.getValue('supporters'))
           #set ($nb_sup = $stringtool.countMatches($userList, ","))
           #if($stringtool.contains("$userList","$xwiki.checkAuth()"))
@@ -187,7 +187,7 @@
         (% class="col-xs-8 col-sm-9 col-md-8 col-lg-9" %)
         (((
           (%class='result-against'%)
-          === #if($services.icon)$services.icon.render('cross') #end$escapetool.xml($doc.displayPrettyName('against', false, false)) ===
+          === #if($services.icon)$services.icon.render('cross') #end$escapetool.xml($doc.displayPrettyName('against')) ===
           #set($userList = $doc.getValue('against'))
           #set ($nb_aga = $stringtool.countMatches($userList, ","))
           #if($stringtool.contains("$userList","$xwiki.checkAuth()"))

@@ -11,8 +11,8 @@
   <parent>Ideas.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1407334237000</date>
-  <contentUpdateDate>1407334221000</contentUpdateDate>
+  <date>1418393679000</date>
+  <contentUpdateDate>1418393679000</contentUpdateDate>
   <version>1.1</version>
   <title/>
   <comment/>
@@ -25,12 +25,16 @@ Ideas.IdeasClass_content1=Description
 Ideas.IdeasClass_nbvotes=Votes
 Ideas.IdeasClass_supporters=Supporteurs
 Ideas.IdeasClass_against=Opposants
+Ideas.IdeasClass_status=Statut
 Ideas.IdeasClass_status_open=Ouvert
 Ideas.IdeasClass_status_close=Fermé
 Ideas.IdeasClass_status_rejected=Rejeté
+Ideas.IdeasClass_priority=Priorité
 Ideas.IdeasClass_priority_high=Élevée
 Ideas.IdeasClass_priority_medium=Moyenne
 Ideas.IdeasClass_priority_low=Faible
+Ideas.IdeasClass_nbestimate=Cout estimé
+Ideas.IdeasClass_assignement=Assigné à
 
 # Live table generic keys
 ideas.livetable.doc.title=Idée
@@ -53,13 +57,13 @@ ideas.livetable.emptyvalue=-
 ideas.livetable.title1=Idée
 ideas.livetable.content1=Description
 ideas.livetable.nbvotes=Votes
-ideas.livetable.nbagainst= Contre
+ideas.livetable.nbagainst=Contre
 ideas.livetable.supporters=Supporters
 ideas.livetable.against=Opposant
 ideas.livetable.nbestimate=Coût estimé
-ideas.livetable.priority=Priorité
 ideas.livetable.status=Statut
 ideas.livetable.assignement=Assigné à
+ideas.livetable.priority=Priorité
 
 # Ideas application keys
 ideas.home.description=Partagez vos idées
@@ -67,10 +71,7 @@ ideas.message.guess=Vous devez vous connecter pour pouvoir voter
 ideas.message.error=Erreur inattendue lors du traitement du vote
 ideas.ideassheet.voted=Vous supportez cette idée
 ideas.ideassheet.votedagainst=Vous êtes contre cette idée
-ideas.ideassheet.assignement=Assigné à :
-ideas.ideassheet.priority=Priorité :
-ideas.ideassheet.stat=Statut :
-ideas.ideassheet.estimated=Cout estimé :
 ideas.ideassheet.hidesupp=Afficher/Cacher la liste des supporteurs.
-ideas.ideassheet.hideagainst=Afficher/Cacher la liste des opposants.</content>
+ideas.ideassheet.hideagainst=Afficher/Cacher la liste des opposants.
+ideas.ideassheet.unassigned=Non assigné</content>
 </xwikidoc>
