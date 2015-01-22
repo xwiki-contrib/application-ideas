@@ -372,6 +372,38 @@
   color: $theme.linkColor;
   cursor: pointer;
   text-decoration: underline;
+}
+
+.recent {
+  line-height: 30px;
+}
+
+.recent .xvote-pro, .recent .xvote-con {
+  margin: .1em .3em .5em 0;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 15px;
+  padding: 1px;
+  border-radius: 0;
+  font-size: .8em;
+}
+
+.ideas-recent {
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.ideas-recent .recent {
+  height: 100%;
+  width: 100% !important;
+  list-style-type: none;
+  padding: 0.1em 0;
+}
+
+.ideas-recent .recent:last-of-type {
+  margin-top: 10px;
+  line-height: initial;
 }</code>
     </property>
     <property>

@@ -73,5 +73,15 @@ ideas.ideassheet.voted=Vous supportez cette idée
 ideas.ideassheet.votedagainst=Vous êtes contre cette idée
 ideas.ideassheet.hidesupp=Afficher/Cacher la liste des supporteurs.
 ideas.ideassheet.hideagainst=Afficher/Cacher la liste des opposants.
-ideas.ideassheet.unassigned=Non assigné</content>
+ideas.ideassheet.unassigned=Non assigné
+
+# Generic
+ideas.author=par {0}
+ideas.date=le {0}
+ideas.nofiles=Il n'y a pas de idées
+ideas.addfiles=Ajouter idée
+ideas.seeallfiles=Voir toutes les idées
+
+#Recent ideas macro
+ideas.recentideas.title=idées récents</content>
 </xwikidoc>
