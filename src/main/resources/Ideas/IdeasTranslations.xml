@@ -116,7 +116,7 @@ ideas.recentideas.title=Recent ideas</content>
       </scope>
     </class>
     <property>
-      <scope>ON_DEMAND</scope>
+      <scope>WIKI</scope>
     </property>
   </object>
 </xwikidoc>

@@ -139,7 +139,6 @@
 #set($discard = $doc.use('Ideas.IdeasClass'))
 #set($discard = $xwiki.jsx.use('Ideas.IdeasClass'))
 #set($discard = $xwiki.ssx.use('Ideas.IdeasSheet'))
-#set($discard = $services.localization.use('document', 'Ideas.IdeasTranslations'))
 ##
 #set($hql = ", BaseObject obj where doc.fullName=obj.name and obj.className='Ideas.IdeasClass' and doc.name!='IdeasTemplate' order by doc.creationDate desc")
 #set($results = $services.query.hql($hql).execute())

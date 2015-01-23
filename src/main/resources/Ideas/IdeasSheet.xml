@@ -22,7 +22,6 @@
   <content>{{velocity}}
 {{html wiki="true"}}
 #set($discard = $xwiki.ssx.use("Ideas.IdeasSheet"))
-#set($discard = $services.localization.use('document', 'Ideas.IdeasTranslations'))
 #set($discard = $xwiki.ssx.use('AppWithinMinutes.ClassSheetGenerator'))
 #set($discard = $doc.use('Ideas.IdeasClass'))
 
@@ -395,12 +394,12 @@
 
 .ideas-recent {
   overflow: hidden;
-  padding: 0 !important;
+  padding: 0;
 }
 
 .ideas-recent .recent {
   height: 100%;
-  width: 100% !important;
+  width: 100%;
   list-style-type: none;
   padding: 0.1em 0;
 }

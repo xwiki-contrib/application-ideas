@@ -78,10 +78,10 @@ ideas.ideassheet.unassigned=Non assigné
 # Generic
 ideas.author=par {0}
 ideas.date=le {0}
-ideas.nofiles=Il n'y a pas de idées
-ideas.addfiles=Ajouter idée
+ideas.nofiles=Il n'y a pas d'idées
+ideas.addfiles=Ajouter une idée
 ideas.seeallfiles=Voir toutes les idées
 
 #Recent ideas macro
-ideas.recentideas.title=idées récents</content>
+ideas.recentideas.title=Idées récents</content>
 </xwikidoc>
