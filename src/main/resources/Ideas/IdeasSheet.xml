@@ -389,6 +389,10 @@
   font-size: .8em;
 }
 
+.recent .noitems {
+  font-size: inherit;
+}
+
 .ideas-recent {
   overflow: hidden;
   padding: 0 !important;

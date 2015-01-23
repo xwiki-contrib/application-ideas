@@ -152,10 +152,12 @@
   #foreach($item in $results)
     #set($document = $xwiki.getDocument($item))
     #if($document.hasAccessLevel('view', $xcontext.user) == 'true')
-      (% class = "recent" %)
+      (% class = "recent noitems" %)
       (((
-        $document.display("nbvotes")
-        $document.display("nbagainst")
+        #if($context.action == "view")
+          $document.display("nbvotes")
+          $document.display("nbagainst")
+        #end
         [[$document.title&gt;&gt;$item]] $services.localization.render('ideas.author', ["[[$xwiki.getUserName($document.author, false)&gt;&gt;$document.author]]"]) $services.localization.render('ideas.date', [$xwiki.formatDate($document.date, 'dd/MM/yyyy hh:mm')])
       )))
       #set($i = $i + 1)
@@ -165,7 +167,7 @@
     #end
   #end
   #if($i == 0)
-    (% class = "recent" %)((($services.localization.render('ideas.nofiles'))))
+    (% class = "recent noitems" %)((($services.localization.render('ideas.nofiles'))))
     (% class = "recent" %)((([[$services.localization.render('ideas.addfiles')&gt;&gt;Ideas.WebHome||queryString="#?driveNode=WebHome"]])))
   #else
     (% class = "recent" %)((([[$services.localization.render('ideas.seeallfiles')&gt;&gt;Ideas.WebHome||queryString="#?driveNode=%2FallFiles"]])))
