@@ -151,7 +151,7 @@
   #foreach($item in $results)
     #set($document = $xwiki.getDocument($item))
     #if($document.hasAccessLevel('view', $xcontext.user) == 'true')
-      (% class = "recent noitems" %)
+      (% class = "ideas secondary" %)
       (((
         #if($context.action == "view")
           $document.display("nbvotes")
@@ -166,10 +166,10 @@
     #end
   #end
   #if($i == 0)
-    (% class = "recent noitems" %)((($services.localization.render('ideas.nofiles'))))
-    (% class = "recent" %)((([[$services.localization.render('ideas.addfiles')&gt;&gt;Ideas.WebHome||queryString="#?driveNode=WebHome"]])))
+    (% class = "ideas secondary" %)((($services.localization.render('ideas.nofiles'))))
+    (% class = "ideas" %)((([[$services.localization.render('ideas.addfiles')&gt;&gt;Ideas.WebHome||queryString="#?driveNode=WebHome"]])))
   #else
-    (% class = "recent" %)((([[$services.localization.render('ideas.seeallfiles')&gt;&gt;Ideas.WebHome||queryString="#?driveNode=%2FallFiles"]])))
+    (% class = "ideas" %)((([[$services.localization.render('ideas.seeallfiles')&gt;&gt;Ideas.WebHome||queryString="#?driveNode=%2FallFiles"]])))
   #end
 {{/html}}
 {{/velocity}}</code>

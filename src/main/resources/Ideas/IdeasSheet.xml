@@ -373,11 +373,15 @@
   text-decoration: underline;
 }
 
-.recent {
+.ideas {
   line-height: 30px;
+  height: 100%;
+  width: 100%;
+  list-style-type: none;
+  padding: 0.1em 0;
 }
 
-.recent .xvote-pro, .recent .xvote-con {
+.ideas .xvote-pro, .ideas .xvote-con {
   margin: .1em .3em .5em 0;
   width: 15px;
   height: 15px;
@@ -388,8 +392,8 @@
   font-size: .8em;
 }
 
-.recent .noitems {
-  font-size: inherit;
+.ideas.secondary {
+  color: $theme.textSecondaryColor;
 }
 
 .ideas-recent {
@@ -397,14 +401,7 @@
   padding: 0;
 }
 
-.ideas-recent .recent {
-  height: 100%;
-  width: 100%;
-  list-style-type: none;
-  padding: 0.1em 0;
-}
-
-.ideas-recent .recent:last-of-type {
+.ideas-recent .ideas:last-of-type {
   margin-top: 10px;
   line-height: initial;
 }</code>
