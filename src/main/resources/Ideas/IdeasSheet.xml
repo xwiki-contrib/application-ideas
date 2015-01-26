@@ -22,7 +22,6 @@
   <content>{{velocity}}
 {{html wiki="true"}}
 #set($discard = $xwiki.ssx.use("Ideas.IdeasSheet"))
-#set($discard = $services.localization.use('document', 'Ideas.IdeasTranslations'))
 #set($discard = $xwiki.ssx.use('AppWithinMinutes.ClassSheetGenerator'))
 #set($discard = $doc.use('Ideas.IdeasClass'))
 
@@ -267,6 +266,22 @@
         <unmodifiable>0</unmodifiable>
         <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
       </code>
+      <contentType>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>contentType</name>
+        <number>6</number>
+        <prettyName>Content Type</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>CSS|LESS</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </contentType>
       <name>
         <disabled>0</disabled>
         <name>name</name>
@@ -356,7 +371,43 @@
   color: $theme.linkColor;
   cursor: pointer;
   text-decoration: underline;
+}
+
+.ideas {
+  line-height: 30px;
+  height: 100%;
+  width: 100%;
+  list-style-type: none;
+  padding: 0.1em 0;
+}
+
+.ideas .xvote-pro, .ideas .xvote-con {
+  margin: .1em .3em .5em 0;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 15px;
+  padding: 1px;
+  border-radius: 0;
+  font-size: .8em;
+}
+
+.ideas.secondary {
+  color: $theme.textSecondaryColor;
+}
+
+.ideas-recent {
+  overflow: hidden;
+  padding: 0;
+}
+
+.ideas-recent .ideas:last-of-type {
+  margin-top: 10px;
+  line-height: initial;
 }</code>
+    </property>
+    <property>
+      <contentType>CSS</contentType>
     </property>
     <property>
       <name/>
