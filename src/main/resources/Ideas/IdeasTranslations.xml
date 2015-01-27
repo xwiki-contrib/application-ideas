@@ -19,7 +19,11 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content># Class fields
+  <content>#Titles
+ideas.app.title=Ideas
+ideas.home.title=Ideas
+
+# Class fields
 Ideas.IdeasClass_title1=Idea
 Ideas.IdeasClass_content1=Description
 Ideas.IdeasClass_nbvotes=Votes
