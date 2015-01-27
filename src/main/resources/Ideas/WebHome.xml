@@ -258,7 +258,7 @@ $msg.get('ideas.home.description')
       <name>platform.panels.IdeasApplication</name>
     </property>
     <property>
-      <parameters>label=Ideas
+      <parameters>label=$services.localization.render('ideas.app.title')
 target=Ideas.WebHome
 icon=icon:lightbulb</parameters>
     </property>
