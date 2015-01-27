@@ -31,7 +31,7 @@
   
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>application-ideas</artifactId>
-  <version>1.8.1</version>
+  <version>1.8.2-SNAPSHOT</version>
   <packaging>xar</packaging>
   <name>Ideas Application</name>
   <description>Ideas Management Application</description>
@@ -69,7 +69,7 @@
     <connection>scm:git:git://github.com/xwiki-contrib/application-ideas.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/application-ideas.git</developerConnection>
     <url>https://github.com/xwiki-contrib/application-ideas</url>
-    <tag>application-ideas-1.8.1</tag>
+    <tag>HEAD</tag>
   </scm>
   <distributionManagement>
    <repository>
