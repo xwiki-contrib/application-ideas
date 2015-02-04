@@ -87,7 +87,7 @@ ideas.addfiles=Add idea
 ideas.seeallfiles=See all ideas
 
 #Recent ideas macro
-ideas.recentideas.title=Recent ideas</content>
+ideas.recentideas.title=Recent Ideas</content>
   <object>
     <name>Ideas.IdeasTranslations</name>
     <number>0</number>
