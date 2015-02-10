@@ -167,7 +167,8 @@
   #end
   #if($i == 0)
     (% class = "ideas secondary" %)((($services.localization.render('ideas.nofiles'))))
-    #if($hasEdit)
+    #set($spaceReference = $services.model.resolveSpace("Ideas"))
+    #if($services.security.authorization.hasAccess("edit", $spaceReference))
       (% class = "ideas" %)((([[$services.localization.render('ideas.addfiles')&gt;&gt;Ideas.WebHome||queryString="#?driveNode=WebHome"]])))
     #end
   #else
