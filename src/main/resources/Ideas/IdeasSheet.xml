@@ -25,7 +25,7 @@
 #set($discard = $xwiki.ssx.use('AppWithinMinutes.ClassSheetGenerator'))
 #set($discard = $doc.use('Ideas.IdeasClass'))
 
-#if($context.action=="edit")
+#if($xcontext.action=="edit")
 (% class="xform" %)
 (((
   ## set the title value only on idea creation
@@ -73,7 +73,7 @@
   )))
 )))
 #end
-#if($context.action=="view")
+#if($xcontext.action=="view")
 (% class="xform well well-sm" %)
 (((
   (% class="row" %)
@@ -129,7 +129,7 @@
   )))
 #end
 #end
-#if($context.action=="view" &amp;&amp; $xwiki.checkAuth())
+#if($xcontext.action=="view" &amp;&amp; $xwiki.checkAuth())
 (% class="row" %)
 (((
   (% class="col-xs-12 col-sm-6 col-md-6"  %)
