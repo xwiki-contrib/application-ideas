@@ -44,7 +44,6 @@ $response.sendRedirect($xwiki.getURL('Ideas.WebHome', 'view', 'redir=yes#|t=Idea
 
 #set ($options = {
   'className': 'Ideas.IdeasClass',
-  'resultPage': 'Ideas.IdeasLiveTableResults',
   'translationPrefix': 'ideas.livetable.',
   'tagCloud': true,
   'rowCount': 15,
