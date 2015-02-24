@@ -96,7 +96,7 @@
   #set ($hash = $pagename.hashCode())
   #set ($ref = 1)
   #if ($type == "view")
-    #if ($context.tdoc == $context.doc)
+    #if ($xcontext.tdoc == $xcontext.doc)
       #set ($ref = 0)
     #end
     #set ($document = $xwiki.getDocument($pagename))
@@ -104,7 +104,7 @@
     #set ($users = $obj.getProperty('against').value)
     #set ($users = $users.split(",") )
     #foreach ($user in $users)
-      #if ($user == $context.getLocalUser())
+      #if ($user == $xcontext.getLocalUser())
         #set ($addclass = "voted-con")
     #end
   #end
@@ -155,7 +155,7 @@
   #set ($hash = $pagename.hashCode())
   #set ($ref = 1)
   #if ($type == "view")
-    #if ($context.tdoc == $context.doc)
+    #if ($xcontext.tdoc == $xcontext.doc)
       #set ($ref = 0)
     #end
     #set ($document = $xwiki.getDocument($pagename))
@@ -163,7 +163,7 @@
     #set ($users = $obj.getProperty('supporters').value)
     #set ($users = $users.split(",") )
     #foreach ($user in $users)
-      #if ($user == $context.getLocalUser())
+      #if ($user == $xcontext.getLocalUser())
         #set ($addclass = "voted-pro")
       #end
     #end

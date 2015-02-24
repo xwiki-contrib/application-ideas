@@ -23,8 +23,6 @@
 import org.xwiki.velocity.tools.JSONTool;
 import org.apache.commons.lang3.StringUtils;
 
-services.localization.use('document', 'Ideas.IdeasTranslations');
-
 def lock = "lock"
 def result = new HashMap();
 try {
@@ -139,10 +137,10 @@ if(request.page &amp;&amp; request.action) {
     }
   } else if (xcontext.user == "XWiki.XWikiGuest") {
     result.put("result", false);
-    result.put("msg", xcontext.context.getMessageTool().get('ideas.message.guess'));
+    result.put("msg", services.localization.render('ideas.message.guess'));
   } else {
     result.put("result", false);
-    result.put("msg", xcontext.context.getMessageTool().get('ideas.message.error'));
+    result.put("msg", services.localization.render('ideas.message.error'));
   }
 }
 } else {

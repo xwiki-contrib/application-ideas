@@ -21,7 +21,7 @@
   <hidden>true</hidden>
   <content>{{velocity}}
 #set($hql = ",BaseObject as obj where doc.fullName=obj.name and obj.className='Ideas.IdeasClass' and obj.id not in (select obj2.id from BaseObject as obj2, StringProperty as prop where obj2.className='Ideas.IdeasClass' and obj2.id=prop.id.id and prop.id.name='status')")
-#set($list = $xwiki.searchDocuments($hql))
+#set($list = $services.query.hql($hql).execute())
 #if($list.size()==0)
 The ideas application is already upgraded
 #elseif($request.confirm=="1")
@@ -32,7 +32,7 @@ The ideas application is already upgraded
 #set($ok = $itemdoc.set("status", "open"))
 #set($ok = $itemdoc.save())
 #end
-#set($list = $xwiki.searchDocuments($hql))
+#set($list = $services.query.hql($hql).execute())
 #if($list.size()==0)
 The ideas application has been upgraded successfully.
 #else
