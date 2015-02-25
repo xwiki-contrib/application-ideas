@@ -14,12 +14,12 @@
   <date>1418394453000</date>
   <contentUpdateDate>1418394453000</contentUpdateDate>
   <version>1.1</version>
-  <title/>
+  <title>Ideas Translations</title>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>#Titles
+  <content># Titles
 ideas.app.title=Ideas
 ideas.home.title=Ideas
 
@@ -69,7 +69,7 @@ ideas.livetable.status=Status
 ideas.livetable.assignement=Assignee
 ideas.livetable.priority=Priority
 
-#Ideas application keys
+# Ideas application keys
 ideas.home.description=Ideas worth spreading
 ideas.message.guess=Guest can't vote
 ideas.message.error=Error while operating Ideas
@@ -86,8 +86,12 @@ ideas.nofiles=There are no ideas yet
 ideas.addfiles=Add idea
 ideas.seeallfiles=See all ideas
 
-#Recent ideas macro
-ideas.recentideas.title=Recent Ideas</content>
+# Recent ideas macro
+ideas.recentideas.title=Recent Ideas
+rendering.macro.ideasrecent.name=Recent Ideas
+rendering.macro.ideasrecent.description=Displays the N most recent ideas.
+rendering.macro.ideasrecent.parameter.limit.name=Limit
+rendering.macro.ideasrecent.parameter.limit.description=Number of maximum entries.</content>
   <object>
     <name>Ideas.IdeasTranslations</name>
     <number>0</number>
@@ -112,7 +116,7 @@ ideas.recentideas.title=Recent Ideas</content>
         <prettyName>Scope</prettyName>
         <relationalStorage>0</relationalStorage>
         <separator> </separator>
-        <separators> ,|</separators>
+        <separators>|, </separators>
         <size>1</size>
         <unmodifiable>0</unmodifiable>
         <values>GLOBAL|WIKI|USER|ON_DEMAND</values>
