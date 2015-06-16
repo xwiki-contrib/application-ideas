@@ -50,7 +50,15 @@
     (((
       ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$escapetool.xml($doc.displayPrettyName('status'))&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
-      : $doc.display('status')
+      #if($doc.isNew())
+        &lt;select id="Ideas.IdeasClass_0_status" name="Ideas.IdeasClass_0_status"&gt;
+          &lt;option label="Open" value="open"&gt;Open&lt;/option&gt;
+          &lt;option label="Closed" value="close" disabled &gt;Closed&lt;/option&gt;
+          &lt;option label="Rejected" value="rejected" disabled&gt;Rejected&lt;/option&gt;
+        &lt;/select&gt;
+      #else
+        : $doc.display('status')
+      #end
     )))
     (% class="col-xs-12 col-md-6" %)
     (((
