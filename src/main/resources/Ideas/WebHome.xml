@@ -42,9 +42,6 @@
   <content>{{velocity}}
 $xwiki.jsx.use("Ideas.IdeasClass")
 $xwiki.ssx.use("Ideas.IdeasClass")
-#if (!$request.redir)
-$response.sendRedirect($xwiki.getURL('Ideas.WebHome', 'view', 'redir=yes#|t=Ideas.WebHome&amp;p=1&amp;l=15&amp;s=status&amp;d=asc&amp;status=open'))
-#end
 
 ## Load the User Picker style for the "Assigned to" column
 #set($discard = $xwiki.ssfx.use('uicomponents/widgets/userpicker/userPicker.css'))
@@ -56,7 +53,7 @@ $response.sendRedirect($xwiki.getURL('Ideas.WebHome', 'view', 'redir=yes#|t=Idea
   'doc.title': {"type":"text","size":20,"link":"view"},
   'status': {"type":"list","size":20}, 
   'priority': {"type":"list","size":20},
-  'assignement': {"type":"list","size":20,"link":"field", "html":true},
+  'assignement': {"type":"text","size":20,"link":"field", "html":true},
   'doc.date': {"type":"text","size":10},
   'doc.author': {"type":"text","size":10,"link":"author"},
   '_actions': {"sortable":false,"filterable":false,"html":true,"actions":["edit","delete"]}
@@ -70,7 +67,7 @@ $response.sendRedirect($xwiki.getURL('Ideas.WebHome', 'view', 'redir=yes#|t=Idea
   'maxPages': 10,
   'selectedColumn': 'status',
   'defaultOrder': 'asc',
-  'extraParams': ''
+  'extraParams': '&amp;status=open'
 })
 
 #set ($columns = ['nbvotes','nbagainst','doc.title','nbestimate','status','priority','assignement','doc.date', 'doc.author', '_actions'])
