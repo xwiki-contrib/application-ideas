@@ -53,7 +53,7 @@ $xwiki.ssx.use("Ideas.IdeasClass")
   'doc.title': {"type":"text","size":20,"link":"view"},
   'status': {"type":"list","size":20}, 
   'priority': {"type":"list","size":20},
-  'assignement': {"type":"list","size":20,"link":"field", "html":true},
+  'assignement': {"type":"text","size":20,"link":"field", "html":true},
   'doc.date': {"type":"text","size":10},
   'doc.author': {"type":"text","size":10,"link":"author"},
   '_actions': {"sortable":false,"filterable":false,"html":true,"actions":["edit","delete"]}
