@@ -111,7 +111,11 @@ ideas.recentideas.title=Recent Ideas
 rendering.macro.ideasrecent.name=Recent Ideas
 rendering.macro.ideasrecent.description=Displays the N most recent ideas.
 rendering.macro.ideasrecent.parameter.limit.name=Limit
-rendering.macro.ideasrecent.parameter.limit.description=Number of maximum entries.</content>
+rendering.macro.ideasrecent.parameter.limit.description=Number of maximum entries.
+
+# Template Provider
+templateProvider.idea.name=Idea
+templateProvider.idea.description=Share an idea</content>
   <object>
     <name>Ideas.IdeasTranslations</name>
     <number>0</number>
