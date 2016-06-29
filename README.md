@@ -2,12 +2,15 @@
 
 This application allows you to suggest ideas.
  
-* Extension Page: http://extensions.xwiki.org/xwiki/bin/view/Extension/Ideas
-* Bug Tracker: http://jira.xwiki.org/browse/IDEAS.
+* Project Lead: [Ludovic Dubost](http://www.xwiki.org/xwiki/bin/view/XWiki/ludovic)
+* [Documentation & Download](http://extensions.xwiki.org/xwiki/bin/view/Extension/Ideas)
+* [Issue Tracker](http://jira.xwiki.org/browse/IDEAS)
+* Communication: [Mailing List](http://dev.xwiki.org/xwiki/bin/view/Community/MailingLists>), [IRC]( http://dev.xwiki.org/xwiki/bin/view/Community/IRC)
+* [Development Practices](http://dev.xwiki.org)
+* Minimal XWiki version supported: XWiki 5.4.1
 * License: LGPL 2.1+.
-
-## Status
-[![Build Status](http://ci.xwiki.org/buildStatus/icon?job=Contrib%20-%20Ideas%20Application)](http://ci.xwiki.org/job/Contrib%20-%20Ideas%20Application/)
+* [Translations](http://l10n.xwiki.org/xwiki/bin/view/Contrib/IdeasIdeasTranslations)
+* Continuous Integration Status: [![Build Status](http://ci.xwiki.org/buildStatus/icon?job=Contrib%20-%20Ideas%20Application)](http://ci.xwiki.org/job/Contrib%20-%20Ideas%20Application/)
 
 ## Ideas Listing
 
