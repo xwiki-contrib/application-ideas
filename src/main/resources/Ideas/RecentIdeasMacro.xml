@@ -156,43 +156,37 @@
     </class>
     <property>
       <code>{{velocity}}
-#set($discard = $doc.use('Ideas.IdeasClass'))
 #set($discard = $xwiki.jsx.use('Ideas.IdeasClass'))
 #set($discard = $xwiki.ssx.use('Ideas.IdeasSheet'))
+#set($limit = $xcontext.macro.params.limit)
 ##
-#set($hql = ", BaseObject obj where doc.fullName=obj.name and obj.className='Ideas.IdeasClass' and doc.name!='IdeasTemplate' order by doc.creationDate desc")
-#set($results = $services.query.hql($hql).execute())
-#set($i = 0)
-#set ($obj = $document.getObject('Ideas.IdeasClass'))
+#set($query = "from doc.object(Ideas.IdeasClass) as idea where doc.fullName &lt;&gt; 'Ideas.IdeasTemplate' order by doc.creationDate desc")
+#set($results = $services.query.xwql($query).setLimit($limit).execute())
 ##
-{{html wiki="true"}}
+{{html wiki=true}}
   (% class="ideas-recent" %)
   (((
-  #foreach($item in $results)
-    #set($document = $xwiki.getDocument($item))
+  #foreach($idea in $results)
+    #set($document = $xwiki.getDocument($idea))
     #if($document.hasAccessLevel('view', $xcontext.user) == 'true')
       (% class = "ideas secondary" %)
       (((
-        #if($xcontext.action == "view")
-          $document.display("nbvotes")
-          $document.display("nbagainst")
+        #if($xcontext.action == 'view')
+          $document.display('nbvotes')
+          $document.display('nbagainst')
         #end
-        [[$document.title&gt;&gt;$item]] $services.localization.render('ideas.author', ["[[$xwiki.getUserName($document.author, false)&gt;&gt;$document.author]]"]) $services.localization.render('ideas.date', [$xwiki.formatDate($document.date, 'dd/MM/yyyy hh:mm')])
+        [[$document.title&gt;&gt;$idea]] $services.localization.render('ideas.author', ["[[$xwiki.getUserName($document.author, false)&gt;&gt;$document.author]]"]) $services.localization.render('ideas.date', [$xwiki.formatDate($document.date, 'dd/MM/yyyy hh:mm')])
       )))
-      #set($i = $i + 1)
-      #if($i == $xcontext.macro.params.limit)
-        #break
-      #end
     #end
   #end
-  #if($i == 0)
+  #if($results.size() == 0)
     (% class = "ideas secondary" %)((($services.localization.render('ideas.nofiles'))))
-    #set($spaceReference = $services.model.resolveSpace("Ideas"))
-    #if($services.security.authorization.hasAccess("edit", $spaceReference))
-      (% class = "ideas" %)((([[$services.localization.render('ideas.addfiles')&gt;&gt;Ideas.WebHome||queryString="#?driveNode=WebHome"]])))
+    #set($spaceReference = $services.model.resolveSpace('Ideas'))
+    #if($services.security.authorization.hasAccess('edit', $spaceReference))
+      (% class = "ideas" %)((([[$services.localization.render('ideas.addfiles')&gt;&gt;Ideas.WebHome]])))
     #end
   #else
-    (% class = "ideas" %)((([[$services.localization.render('ideas.seeallfiles')&gt;&gt;Ideas.WebHome||queryString="#?driveNode=%2FallFiles"]])))
+    (% class = "ideas" %)((([[$services.localization.render('ideas.seeallfiles')&gt;&gt;Ideas.WebHome]])))
   #end
 {{/html}}
 {{/velocity}}</code>
