@@ -20,9 +20,9 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.2" reference="Ideas.Idea TemplateProvider" locale="">
+<xwikidoc version="1.2" reference="Ideas.IdeaTemplateProvider" locale="">
   <web>Ideas</web>
-  <name>Idea TemplateProvider</name>
+  <name>IdeaTemplateProvider</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
@@ -31,20 +31,20 @@
   <parent>XWiki.TemplateProviderClass</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1467180343000</date>
+  <date>1467185250000</date>
   <contentUpdateDate>1467180284000</contentUpdateDate>
   <version>1.1</version>
-  <title>Idea TemplateProvider</title>
+  <title>IdeaTemplateProvider</title>
   <comment/>
   <minorEdit>false</minorEdit>
-  <syntaxId>xwiki/2.0</syntaxId>
-  <hidden>false</hidden>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
   <content/>
   <object>
-    <name>Ideas.Idea TemplateProvider</name>
+    <name>Ideas.IdeaTemplateProvider</name>
     <number>0</number>
     <className>XWiki.TemplateProviderClass</className>
-    <guid>f01933c0-8cae-4216-92ad-cd00c1d97c71</guid>
+    <guid>d7ff948d-a986-4f99-8fd1-4322da9f8e03</guid>
     <class>
       <name>XWiki.TemplateProviderClass</name>
       <customClass/>
