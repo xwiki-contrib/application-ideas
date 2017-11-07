@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
- *
  * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership.
  *
@@ -19,70 +18,66 @@
  * License along with this software; if not, write to the Free
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
- *
 -->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.xwiki.commons</groupId>
-    <artifactId>xwiki-commons-pom</artifactId>
-    <version>5.4.1</version>
+    <groupId>com.xwiki.parent</groupId>
+    <artifactId>xwikisas-parent-platform</artifactId>
+    <version>8.5</version>
   </parent>
-  
-  <groupId>org.xwiki.contrib</groupId>
+  <groupId>com.xwiki.ideas</groupId>
   <artifactId>application-ideas</artifactId>
   <version>1.8.6-SNAPSHOT</version>
   <packaging>xar</packaging>
   <name>Ideas Application</name>
   <description>Ideas Management Application</description>
-  <developers>
-    <developer>
-      <id>ldubost</id>
-      <name>Ludovic Dubost</name>
-    </developer>
-    <developer>
-      <id>chalx</id>
-      <name>Alexandru Chelariu</name>
-    </developer>
-    <developer>
-      <id>sorinello</id>
-      <name>Sorin Burjan</name>
-    </developer>
-    <developer>
-      <id>fveron</id>
-      <name>Florian Véron</name>
-    </developer>
-    <developer>
-      <id>tmortagne</id>
-      <name>Thomas Mortagne</name>
-    </developer>
-    <developer>
-      <id>msmeria</id>
-      <name>Manuel Smeria</name>
-    </developer>
-    <developer>
-      <id>gabrielasmeria</id>
-      <name>Gabriela Smeria</name>
-    </developer>
-  </developers>
   <scm>
-    <connection>scm:git:git://github.com/xwiki-contrib/application-ideas.git</connection>
-    <developerConnection>scm:git:git@github.com:xwiki-contrib/application-ideas.git</developerConnection>
-    <url>https://github.com/xwiki-contrib/application-ideas</url>
+    <connection>scm:git:https://github.com/xwikisas/application-ideas.git</connection>
+    <developerConnection>scm:git:https://github.com/xwikisas/application-ideas.git</developerConnection>
+    <url>https://github.com/xwikisas/application-ideas/</url>
     <tag>HEAD</tag>
   </scm>
-  <distributionManagement>
-   <repository>
-     <id>xwiki-staging</id>
-     <name>XWiki Staging Repository</name>
-     <url>http://nexus.xwiki.org/nexus/service/local/staging/deploy/maven2/</url>
-   </repository>
-  </distributionManagement>
   <properties>
-   <!-- Don't run CLIRR here since there's no Java code. -->
-   <xwiki.clirr.skip>true</xwiki.clirr.skip>
-   <xwiki.extension.features>fveron:ideas</xwiki.extension.features>
+    <licensing.version>1.6</licensing.version>
+    <xwiki.extension.features>
+      org.xwiki.contrib:application-ideas
+    </xwiki.extension.features>
+    <!-- The list of documents that have an implicit unlimited free license. The users can view these documents without
+      buying a license or getting a trial license, but they cannot edit or delete them. -->
+    <xwiki.extension.licensing.publicDocuments>
+      Ideas.WebHome
+    </xwiki.extension.licensing.publicDocuments>
+    <!-- Name to display by the Extension Manager -->
+    <xwiki.extension.name>Ideas Application (Pro)</xwiki.extension.name>
+    <!-- Don't run CLIRR here since there's no Java code. -->
+    <xwiki.clirr.skip>true</xwiki.clirr.skip>
   </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.xwiki.licensing</groupId>
+      <artifactId>application-licensing-licensor-api</artifactId>
+      <version>${licensing.version}</version>
+    </dependency>
+  </dependencies>
+  <!-- Even though this repository is already declared in the parent POM, we still explicitly redeclare it for
+       convenience. This makes it simpler to build this project without having to declare this repository in one's own
+       Maven settings.xml file. In the future We may decide to remove this in the future and make it a rule to have the
+       XWiki SAS Nexus repository in one's settings.xml -->
+  <repositories>
+    <repository>
+      <id>public-store-releases</id>
+      <name>XWiki SAS Public Store Repository for Releases</name>
+      <url>https://nexus.xwiki.com/nexus/content/repositories/public-store-releases/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots> 
+    </repository>
+  </repositories>
   <build>
     <extensions>
       <extension>
