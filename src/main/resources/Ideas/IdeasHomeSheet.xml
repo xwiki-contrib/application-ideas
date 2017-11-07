@@ -20,7 +20,7 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.1">
+<xwikidoc version="1.2" reference="Ideas.IdeasHomeSheet" locale="">
   <web>Ideas</web>
   <name>IdeasHomeSheet</name>
   <language/>
@@ -44,5 +44,37 @@
 {{velocity}}
 #set($discard = $xwiki.ssfx.use('uicomponents/pagination/pagination.css', 'true'))
 #set($docextras = [])
+$xwiki.jsx.use("Ideas.IdeasClass")
+$xwiki.ssx.use("Ideas.IdeasClass")
+
+## Load the User Picker style for the "Assigned to" column
+#set($discard = $xwiki.ssfx.use('uicomponents/widgets/userpicker/userPicker.css'))
+
+#set ($columnsProperties = {
+  'nbvotes': {"type":"number","size":10,"html":true},
+  'nbagainst': {"type":"number","size":10,"html":true},
+  'nbestimate': {"type":"number","size":10,"html":true},
+  'doc.title': {"type":"text","size":20,"link":"view"},
+  'status': {"type":"list","size":20}, 
+  'priority': {"type":"list","size":20},
+  'assignement': {"type":"text","size":20,"link":"field", "html":true},
+  'doc.date': {"type":"text","size":10},
+  'doc.author': {"type":"text","size":10,"link":"author"},
+  '_actions': {"sortable":false,"filterable":false,"html":true,"actions":["edit","delete"]}
+})
+
+#set ($options = {
+  'className': 'Ideas.IdeasClass',
+  'translationPrefix': 'ideas.livetable.',
+  'tagCloud': true,
+  'rowCount': 15,
+  'maxPages': 10,
+  'selectedColumn': 'status',
+  'defaultOrder': 'asc',
+  'extraParams': '&amp;status=open'
+})
+
+#set ($columns = ['nbvotes','nbagainst','doc.title','nbestimate','status','priority','assignement','doc.date', 'doc.author', '_actions'])
+#livetable($doc $columns $columnsProperties $options)
 {{/velocity}}</content>
 </xwikidoc>

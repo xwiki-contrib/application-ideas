@@ -31,47 +31,21 @@
   <parent>Main.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1407330996000</date>
-  <contentUpdateDate>1407330994000</contentUpdateDate>
+  <date>1510066899000</date>
+  <contentUpdateDate>1510066873000</contentUpdateDate>
   <version>1.1</version>
   <title>$services.localization.render('platform.appwithinminutes.appHomePageTitle', $doc.space)</title>
   <comment/>
   <minorEdit>false</minorEdit>
-  <syntaxId>xwiki/2.0</syntaxId>
+  <syntaxId>xwiki/2.1</syntaxId>
   <hidden>false</hidden>
   <content>{{velocity}}
-$xwiki.jsx.use("Ideas.IdeasClass")
-$xwiki.ssx.use("Ideas.IdeasClass")
-
-## Load the User Picker style for the "Assigned to" column
-#set($discard = $xwiki.ssfx.use('uicomponents/widgets/userpicker/userPicker.css'))
-
-#set ($columnsProperties = {
-  'nbvotes': {"type":"number","size":10,"html":true},
-  'nbagainst': {"type":"number","size":10,"html":true},
-  'nbestimate': {"type":"number","size":10,"html":true},
-  'doc.title': {"type":"text","size":20,"link":"view"},
-  'status': {"type":"list","size":20}, 
-  'priority': {"type":"list","size":20},
-  'assignement': {"type":"text","size":20,"link":"field", "html":true},
-  'doc.date': {"type":"text","size":10},
-  'doc.author': {"type":"text","size":10,"link":"author"},
-  '_actions': {"sortable":false,"filterable":false,"html":true,"actions":["edit","delete"]}
-})
-
-#set ($options = {
-  'className': 'Ideas.IdeasClass',
-  'translationPrefix': 'ideas.livetable.',
-  'tagCloud': true,
-  'rowCount': 15,
-  'maxPages': 10,
-  'selectedColumn': 'status',
-  'defaultOrder': 'asc',
-  'extraParams': '&amp;status=open'
-})
-
-#set ($columns = ['nbvotes','nbagainst','doc.title','nbestimate','status','priority','assignement','doc.date', 'doc.author', '_actions'])
-#livetable($doc $columns $columnsProperties $options)
+#set ($mainPageReference = $services.model.createDocumentReference('', ['Ideas'], 'IdeasHomeSheet'))
+#if (!$services.licensing.licensor.hasLicensureForEntity($mainPageReference))
+  {{error}}
+    $services.localization.render('ideas.error.noValidLicense', ['[[', "&gt;&gt;path:$xwiki.getURL('XWiki.XWikiPreferences', 'admin', 'editor=globaladmin&amp;section=Licenses')]]"])
+  {{/error}}
+#end
 {{/velocity}}</content>
   <class>
     <name>Ideas.WebHome</name>
@@ -190,7 +164,7 @@ $services.localization.render('ideas.home.description')
       </sheet>
     </class>
     <property>
-      <sheet>IdeasHomeSheet</sheet>
+      <sheet>Ideas.IdeasHomeSheet</sheet>
     </property>
   </object>
   <object>
@@ -269,7 +243,7 @@ $services.localization.render('ideas.home.description')
       <extensionPointId>org.xwiki.platform.panels.Applications</extensionPointId>
     </property>
     <property>
-      <name>platform.panels.IdeasApplication</name>
+      <name>com.xwiki.ideas.IdeasApplication</name>
     </property>
     <property>
       <parameters>label=$services.localization.render('ideas.app.title')
