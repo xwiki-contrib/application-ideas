@@ -41,9 +41,6 @@
   </scm>
   <properties>
     <licensing.version>1.6</licensing.version>
-    <xwiki.extension.features>
-      org.xwiki.contrib:application-ideas
-    </xwiki.extension.features>
     <!-- The list of documents that have an implicit unlimited free license. The users can view these documents without
       buying a license or getting a trial license, but they cannot edit or delete them. -->
     <xwiki.extension.licensing.publicDocuments>
@@ -78,21 +75,4 @@
       </snapshots> 
     </repository>
   </repositories>
-  <build>
-    <extensions>
-      <extension>
-        <groupId>org.xwiki.commons</groupId>
-        <artifactId>xwiki-commons-tool-xar-handlers</artifactId>
-        <version>${commons.version}</version>
-      </extension>
-    </extensions>
-	<plugins>
-     <!-- The XAR packaging uses the XAR plugin and thus we need to define what version to use -->
-     <plugin>
-       <groupId>org.xwiki.commons</groupId>
-       <artifactId>xwiki-commons-tool-xar-plugin</artifactId>
-       <version>${commons.version}</version>
-     </plugin>
-   </plugins>
-  </build>
 </project>

@@ -43,7 +43,7 @@
 #set ($mainPageReference = $services.model.createDocumentReference('', ['Ideas'], 'IdeasHomeSheet'))
 #if (!$services.licensing.licensor.hasLicensureForEntity($mainPageReference))
   {{error}}
-    $services.localization.render('ideas.error.noValidLicense', ['[[', "&gt;&gt;path:$xwiki.getURL('XWiki.XWikiPreferences', 'admin', 'editor=globaladmin&amp;section=Licenses')]]"])
+    $services.localization.render('ideas.error.noValidLicense')
   {{/error}}
 #end
 {{/velocity}}</content>
