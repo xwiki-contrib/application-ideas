@@ -1,4 +1,4 @@
-# Ideas Application
+# Ideas Application (Pro)
 
 This application allows you to suggest ideas.
  
