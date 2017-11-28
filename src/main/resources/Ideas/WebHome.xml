@@ -39,12 +39,12 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>false</hidden>
-  <content>{{velocity}}
+  <content>{{include reference="Licenses.Code.VelocityMacros" /}}
+
+{{velocity}}
 #set ($mainPageReference = $services.model.createDocumentReference('', ['Ideas'], 'IdeasHomeSheet'))
 #if (!$services.licensing.licensor.hasLicensureForEntity($mainPageReference))
-  {{error}}
-    $services.localization.render('ideas.error.noValidLicense')
-  {{/error}}
+  {{error}}#getMissingLicenseMessage('ideas.extension.name'){{/error}}
 #end
 {{/velocity}}</content>
   <class>

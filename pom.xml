@@ -40,7 +40,7 @@
     <tag>HEAD</tag>
   </scm>
   <properties>
-    <licensing.version>1.7</licensing.version>
+    <licensing.version>1.8-SNAPSHOT</licensing.version>
     <!-- The list of documents that have an implicit unlimited free license. The users can view these documents without
       buying a license or getting a trial license, but they cannot edit or delete them. -->
     <xwiki.extension.licensing.publicDocuments>

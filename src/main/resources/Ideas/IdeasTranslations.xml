@@ -42,6 +42,7 @@
   <content># Titles
 ideas.app.title=Ideas
 ideas.home.title=Ideas
+ideas.extension.name=Ideas Application (Pro)
 
 # Class fields
 Ideas.IdeasClass_title1=Idea
@@ -105,7 +106,6 @@ ideas.date=on {0}
 ideas.nofiles=There are no ideas yet
 ideas.addfiles=Add idea
 ideas.seeallfiles=See all ideas
-ideas.error.noValidLicense=There is no valid license for the Ideas Application (Pro).
 
 # Recent ideas macro
 ideas.recentideas.title=Recent Ideas
