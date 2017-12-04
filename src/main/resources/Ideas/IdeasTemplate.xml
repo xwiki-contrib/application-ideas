@@ -20,29 +20,31 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc reference="Ideas.IdeasTemplate" locale="">
+<xwikidoc version="1.1">
   <web>Ideas</web>
   <name>IdeasTemplate</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
-  <parent>Ideas.WebHome</parent>
   <creator>xwiki:XWiki.Admin</creator>
-  <author>xwiki:XWiki.Admin</author>
-  <customClass/>
-  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <creationDate>1374503493000</creationDate>
-  <date>1512392603000</date>
-  <contentUpdateDate>1512392603000</contentUpdateDate>
+  <parent>Ideas.WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1374658579000</date>
+  <contentUpdateDate>1374658579000</contentUpdateDate>
   <version>1.1</version>
   <title/>
-  <defaultTemplate/>
-  <validationScript/>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
+  <content/>
   <object>
+    <name>Ideas.IdeasTemplate</name>
+    <number>0</number>
+    <className>Ideas.IdeasClass</className>
+    <guid>61b4138f-8cc7-4265-a16c-7f34b2d89bd9</guid>
     <class>
       <name>Ideas.IdeasClass</name>
       <customClass/>
@@ -117,27 +119,26 @@
     #if ($xcontext.tdoc == $xcontext.doc)
       #set ($ref = 0)
     #end
-    #set ($obj = $doc.getObject('Ideas.IdeasClass'))
-    #set ($status = $obj.getProperty('status').value)
+    #set ($document = $xwiki.getDocument($pagename))
+    #set ($obj = $document.getObject('Ideas.IdeasClass'))
     #set ($users = $obj.getProperty('against').value)
-    #if ($users.contains($xcontext.getLocalUser()))
-      #set ($addclass = "voted-con")
+    #set ($users = $users.split(",") )
+    #foreach ($user in $users)
+      #if ($user == $xcontext.getLocalUser())
+        #set ($addclass = "voted-con")
     #end
-    #set ($url = $xwiki.getURL("Ideas.IdeasVoteService", "get", "xpage=plain&amp;outputSyntax=plain&amp;page=${escapetool.url($pagename)}&amp;action=addVoteOpp"))
-    #if ($status == 'open')
-	    (% class="xvote-con #if($addclass) $addclass #end " onclick="voteagainst('against${hash}', '${url}', '$ref', 'nbvotes${hash}')" id="against${hash}"%)
-    #else
-      (% class="no-hover-con xvote-con #if($addclass) $addclass #end " id="against${hash}"%)
-    #end
-    (((
+  #end
+  #set ($url = $xwiki.getURL("Ideas.IdeasVoteService", "get", "xpage=plain&amp;outputSyntax=plain&amp;page=${escapetool.url($pagename)}&amp;action=addVoteOpp"))
+  (% class="xvote-con #if($addclass) $addclass #end " onclick="voteagainst('against${hash}', '${url}', '$ref', 'nbvotes${hash}')" id="against${hash}"%)
+  (((
     {{html clean=false}}
-    #set ($nbv = $value)
-    #if(!$nbv)
-      #set ($nbv = 0)
-    #end
-    $nbv
+      #set ($nbv = $value)
+      #if(!$nbv)
+        #set ($nbv = 0)
+      #end
+      $nbv
     {{/html}}
-    )))
+  )))
   #else
     $value
   #end
@@ -154,15 +155,7 @@
         <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
       </nbagainst>
       <nbestimate>
-        <customDisplay>{{velocity}}
-{{html}}
-#if($type == 'edit')
-  &lt;input class="form-control" id="Ideas.IdeasClass_0_nbestimate" name="Ideas.IdeasClass_0_nbestimate" type="number" value="${value}" /&gt;
-#elseif ($type == 'view')
-  $!{value}
-#end
-{{/html}}
-{{/velocity}}</customDisplay>
+        <customDisplay/>
         <disabled>0</disabled>
         <name>nbestimate</name>
         <number>8</number>
@@ -185,26 +178,25 @@
     #if ($xcontext.tdoc == $xcontext.doc)
       #set ($ref = 0)
     #end
-    #set ($obj = $doc.getObject('Ideas.IdeasClass'))
-    #set ($status = $obj.getProperty('status').value)
+    #set ($document = $xwiki.getDocument($pagename))
+    #set ($obj = $document.getObject('Ideas.IdeasClass'))
     #set ($users = $obj.getProperty('supporters').value)
-    #if ($users.contains($xcontext.getLocalUser()))
-      #set ($addclass = "voted-pro")
+    #set ($users = $users.split(",") )
+    #foreach ($user in $users)
+      #if ($user == $xcontext.getLocalUser())
+        #set ($addclass = "voted-pro")
+      #end
     #end
     #set ($url = $xwiki.getURL("Ideas.IdeasVoteService", "get", "xpage=plain&amp;outputSyntax=plain&amp;page=${escapetool.url($pagename)}&amp;action=addVote"))
-    #if($status == 'open')
-      (% class="xvote-pro #if ($addclass) $addclass #end " onclick="votefor('nbvotes${hash}', '${url}', '$ref', 'against${hash}')" id="nbvotes${hash}"%)
-    #else
-      (% class="no-hover-pro xvote-pro #if ($addclass) $addclass #end " id="nbvotes${hash}"%)
-    #end
+    (% class="xvote-pro #if ($addclass) $addclass #end " onclick="votefor('nbvotes${hash}', '${url}', '$ref', 'against${hash}')" id="nbvotes${hash}"%)
     (((
-    {{html clean=false}}
-    #set ($nbv = $value)
-    #if (!$nbv)
-      #set ($nbv = 0)
-    #end
-    $nbv
-    {{/html}}
+      {{html clean=false}}
+        #set ($nbv = $value)
+        #if (!$nbv)
+          #set ($nbv = 0)
+        #end
+        $nbv
+      {{/html}}
     )))
   #else
     $value
@@ -297,10 +289,6 @@
         <classType>com.xpn.xwiki.objects.classes.ComputedFieldClass</classType>
       </title1>
     </class>
-    <name>Ideas.IdeasTemplate</name>
-    <number>0</number>
-    <className>Ideas.IdeasClass</className>
-    <guid>61b4138f-8cc7-4265-a16c-7f34b2d89bd9</guid>
     <property>
       <against/>
     </property>
@@ -314,5 +302,4 @@
       <supporters/>
     </property>
   </object>
-  <content/>
 </xwikidoc>
