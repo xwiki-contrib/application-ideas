@@ -20,25 +20,223 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.1">
+<xwikidoc reference="Ideas.IdeasSheet" locale="">
   <web>Ideas</web>
   <name>IdeasSheet</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
-  <creator>xwiki:XWiki.Admin</creator>
-  <creationDate>1374503492000</creationDate>
   <parent>Ideas.WebHome</parent>
+  <creator>xwiki:XWiki.Admin</creator>
   <author>xwiki:XWiki.Admin</author>
+  <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1418394104000</date>
-  <contentUpdateDate>1418394104000</contentUpdateDate>
+  <creationDate>1374503492000</creationDate>
+  <date>1512394928000</date>
+  <contentUpdateDate>1512394928000</contentUpdateDate>
   <version>1.1</version>
   <title/>
+  <defaultTemplate/>
+  <validationScript/>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
+  <object>
+    <class>
+      <name>XWiki.StyleSheetExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>6</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <contenttype>PureText</contenttype>
+        <disabled>0</disabled>
+        <editor>PureText</editor>
+        <name>code</name>
+        <number>3</number>
+        <prettyName>Code</prettyName>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <contentType>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>contentType</name>
+        <number>1</number>
+        <prettyName>Content Type</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>CSS|LESS</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </contentType>
+      <name>
+        <disabled>0</disabled>
+        <name>name</name>
+        <number>2</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>5</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>4</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>currentPage|onDemand|always</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <name>Ideas.IdeasSheet</name>
+    <number>0</number>
+    <className>XWiki.StyleSheetExtension</className>
+    <guid>1562f70c-c44c-4da0-a57d-7ec5134b5516</guid>
+    <property>
+      <cache>long</cache>
+    </property>
+    <property>
+      <code>#template('colorThemeInit.vm')
+
+/* Voting Summary */
+.votes-summary dl {
+  margin-bottom: 0;
+}
+
+.votes-summary .xvote-pro, .votes-summary .xvote-con {
+  margin-top: .1em;
+  margin-left: 0;
+  margin-bottom: .5em;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 15px;
+  padding: 6px;
+}
+
+/* Participants Results */
+.result-pro {
+  color: $theme.notificationSuccessColor;
+}
+
+.result-against {
+  color: $theme.notificationErrorColor;
+}
+
+.result-own {
+  display: block;
+  color: $theme.textSecondaryColor;
+  text-indent: 2em;
+}
+
+.result-participants {
+  border-top: 1px solid $theme.borderColor;
+  margin: 1em 0 0;
+  padding: 1em 0 0;
+}
+
+/* Show/Hide Participants */
+.on_hover {
+  display: block;
+  margin-top: .5em;
+}
+
+.on_hover:hover {
+  color: $theme.linkColor;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.ideas {
+  line-height: 30px;
+  height: 100%;
+  width: 100%;
+  list-style-type: none;
+  padding: 0.1em 0;
+}
+
+.ideas .xvote-pro, .ideas .xvote-con {
+  margin: .1em .3em .5em 0;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 15px;
+  padding: 1px;
+  border-radius: 0;
+  font-size: .8em;
+}
+
+.ideas.secondary {
+  color: $theme.textSecondaryColor;
+}
+
+.ideas-recent {
+  overflow: hidden;
+  padding: 0;
+}
+
+.ideas-recent .ideas:last-of-type {
+  margin-top: 10px;
+  line-height: initial;
+}</code>
+    </property>
+    <property>
+      <contentType>CSS</contentType>
+    </property>
+    <property>
+      <name/>
+    </property>
+    <property>
+      <parse>1</parse>
+    </property>
+    <property>
+      <use>onDemand</use>
+    </property>
+  </object>
   <content>{{velocity}}
 {{html wiki="true"}}
 #set($discard = $xwiki.ssx.use("Ideas.IdeasSheet"))
@@ -254,197 +452,4 @@
 #end
 {{/html}}
 {{/velocity}}</content>
-  <object>
-    <name>Ideas.IdeasSheet</name>
-    <number>0</number>
-    <className>XWiki.StyleSheetExtension</className>
-    <guid>1562f70c-c44c-4da0-a57d-7ec5134b5516</guid>
-    <class>
-      <name>XWiki.StyleSheetExtension</name>
-      <customClass/>
-      <customMapping/>
-      <defaultViewSheet/>
-      <defaultEditSheet/>
-      <defaultWeb/>
-      <nameField/>
-      <validationScript/>
-      <cache>
-        <cache>0</cache>
-        <disabled>0</disabled>
-        <displayType>select</displayType>
-        <multiSelect>0</multiSelect>
-        <name>cache</name>
-        <number>5</number>
-        <prettyName>Caching policy</prettyName>
-        <relationalStorage>0</relationalStorage>
-        <separator> </separator>
-        <separators> ,|</separators>
-        <size>1</size>
-        <unmodifiable>0</unmodifiable>
-        <values>long|short|default|forbid</values>
-        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-      </cache>
-      <code>
-        <disabled>0</disabled>
-        <name>code</name>
-        <number>2</number>
-        <prettyName>Code</prettyName>
-        <rows>20</rows>
-        <size>50</size>
-        <unmodifiable>0</unmodifiable>
-        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-      </code>
-      <contentType>
-        <cache>0</cache>
-        <disabled>0</disabled>
-        <displayType>select</displayType>
-        <multiSelect>0</multiSelect>
-        <name>contentType</name>
-        <number>6</number>
-        <prettyName>Content Type</prettyName>
-        <relationalStorage>0</relationalStorage>
-        <separator> </separator>
-        <separators> ,|</separators>
-        <size>1</size>
-        <unmodifiable>0</unmodifiable>
-        <values>CSS|LESS</values>
-        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-      </contentType>
-      <name>
-        <disabled>0</disabled>
-        <name>name</name>
-        <number>1</number>
-        <prettyName>Name</prettyName>
-        <size>30</size>
-        <unmodifiable>0</unmodifiable>
-        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-      </name>
-      <parse>
-        <disabled>0</disabled>
-        <displayFormType>select</displayFormType>
-        <displayType>yesno</displayType>
-        <name>parse</name>
-        <number>4</number>
-        <prettyName>Parse content</prettyName>
-        <unmodifiable>0</unmodifiable>
-        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
-      </parse>
-      <use>
-        <cache>0</cache>
-        <disabled>0</disabled>
-        <displayType>select</displayType>
-        <multiSelect>0</multiSelect>
-        <name>use</name>
-        <number>3</number>
-        <prettyName>Use this extension</prettyName>
-        <relationalStorage>0</relationalStorage>
-        <separator> </separator>
-        <separators> ,|</separators>
-        <size>1</size>
-        <unmodifiable>0</unmodifiable>
-        <values>currentPage|onDemand|always</values>
-        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-      </use>
-    </class>
-    <property>
-      <cache>long</cache>
-    </property>
-    <property>
-      <code>#template('colorThemeInit.vm')
-
-/* Voting Summary */
-.votes-summary dl {
-  margin-bottom: 0;
-}
-
-.votes-summary .xvote-pro, .votes-summary .xvote-con {
-  margin-top: .1em;
-  margin-left: 0;
-  margin-bottom: .5em;
-  width: 15px;
-  height: 15px;
-  line-height: 15px;
-  font-size: 15px;
-  padding: 6px;
-}
-
-/* Participants Results */
-.result-pro {
-  color: $theme.notificationSuccessColor;
-}
-
-.result-against {
-  color: $theme.notificationErrorColor;
-}
-
-.result-own {
-  display: block;
-  color: $theme.textSecondaryColor;
-  text-indent: 2em;
-}
-
-.result-participants {
-  border-top: 1px solid $theme.borderColor;
-  margin: 1em 0 0;
-  padding: 1em 0 0;
-}
-
-/* Show/Hide Participants */
-.on_hover {
-  display: block;
-  margin-top: .5em;
-}
-
-.on_hover:hover {
-  color: $theme.linkColor;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.ideas {
-  line-height: 30px;
-  height: 100%;
-  width: 100%;
-  list-style-type: none;
-  padding: 0.1em 0;
-}
-
-.ideas .xvote-pro, .ideas .xvote-con {
-  margin: .1em .3em .5em 0;
-  width: 15px;
-  height: 15px;
-  line-height: 15px;
-  font-size: 15px;
-  padding: 1px;
-  border-radius: 0;
-  font-size: .8em;
-}
-
-.ideas.secondary {
-  color: $theme.textSecondaryColor;
-}
-
-.ideas-recent {
-  overflow: hidden;
-  padding: 0;
-}
-
-.ideas-recent .ideas:last-of-type {
-  margin-top: 10px;
-  line-height: initial;
-}</code>
-    </property>
-    <property>
-      <contentType>CSS</contentType>
-    </property>
-    <property>
-      <name/>
-    </property>
-    <property>
-      <parse>1</parse>
-    </property>
-    <property>
-      <use>onDemand</use>
-    </property>
-  </object>
 </xwikidoc>
