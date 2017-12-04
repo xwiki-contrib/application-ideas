@@ -20,59 +20,28 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.1">
+<xwikidoc reference="Ideas.WebHome" locale="">
   <web>Ideas</web>
   <name>WebHome</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
-  <creator>xwiki:XWiki.Admin</creator>
-  <creationDate>1374503492000</creationDate>
   <parent>Main.WebHome</parent>
+  <creator>xwiki:XWiki.Admin</creator>
   <author>xwiki:XWiki.Admin</author>
+  <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1407330996000</date>
-  <contentUpdateDate>1407330994000</contentUpdateDate>
+  <creationDate>1374503492000</creationDate>
+  <date>1512394929000</date>
+  <contentUpdateDate>1512394929000</contentUpdateDate>
   <version>1.1</version>
-  <title>$services.localization.render('platform.appwithinminutes.appHomePageTitle', $doc.space)</title>
+  <title>$services.localization.render('ideas.extension.name)</title>
+  <defaultTemplate/>
+  <validationScript/>
   <comment/>
   <minorEdit>false</minorEdit>
-  <syntaxId>xwiki/2.0</syntaxId>
+  <syntaxId>xwiki/2.1</syntaxId>
   <hidden>false</hidden>
-  <content>{{velocity}}
-$xwiki.jsx.use("Ideas.IdeasClass")
-$xwiki.ssx.use("Ideas.IdeasClass")
-
-## Load the User Picker style for the "Assigned to" column
-#set($discard = $xwiki.ssfx.use('uicomponents/widgets/userpicker/userPicker.css'))
-
-#set ($columnsProperties = {
-  'nbvotes': {"type":"number","size":10,"html":true},
-  'nbagainst': {"type":"number","size":10,"html":true},
-  'nbestimate': {"type":"number","size":10,"html":true},
-  'doc.title': {"type":"text","size":20,"link":"view"},
-  'status': {"type":"list","size":20}, 
-  'priority': {"type":"list","size":20},
-  'assignement': {"type":"text","size":20,"link":"field", "html":true},
-  'doc.date': {"type":"text","size":10},
-  'doc.author': {"type":"text","size":10,"link":"author"},
-  '_actions': {"sortable":false,"filterable":false,"html":true,"actions":["edit","delete"]}
-})
-
-#set ($options = {
-  'className': 'Ideas.IdeasClass',
-  'translationPrefix': 'ideas.livetable.',
-  'tagCloud': true,
-  'rowCount': 15,
-  'maxPages': 10,
-  'selectedColumn': 'status',
-  'defaultOrder': 'asc',
-  'extraParams': '&amp;status=open'
-})
-
-#set ($columns = ['nbvotes','nbagainst','doc.title','nbestimate','status','priority','assignement','doc.date', 'doc.author', '_actions'])
-#livetable($doc $columns $columnsProperties $options)
-{{/velocity}}</content>
   <class>
     <name>Ideas.WebHome</name>
     <customClass/>
@@ -94,78 +63,6 @@ $xwiki.ssx.use("Ideas.IdeasClass")
     </status_filter>
   </class>
   <object>
-    <name>Ideas.WebHome</name>
-    <number>0</number>
-    <className>AppWithinMinutes.LiveTableClass</className>
-    <guid>9ff2c63e-9013-4d79-b767-7fec4f915efb</guid>
-    <class>
-      <name>AppWithinMinutes.LiveTableClass</name>
-      <customClass/>
-      <customMapping/>
-      <defaultViewSheet/>
-      <defaultEditSheet/>
-      <defaultWeb/>
-      <nameField/>
-      <validationScript/>
-      <class>
-        <customDisplay/>
-        <disabled>0</disabled>
-        <name>class</name>
-        <number>1</number>
-        <picker>0</picker>
-        <prettyName>Class</prettyName>
-        <size>30</size>
-        <unmodifiable>0</unmodifiable>
-        <validationMessage/>
-        <validationRegExp/>
-        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-      </class>
-      <columns>
-        <customDisplay/>
-        <disabled>0</disabled>
-        <name>columns</name>
-        <number>3</number>
-        <picker>0</picker>
-        <prettyName>Columns</prettyName>
-        <size>30</size>
-        <unmodifiable>0</unmodifiable>
-        <validationMessage/>
-        <validationRegExp/>
-        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-      </columns>
-      <description>
-        <customDisplay/>
-        <disabled>0</disabled>
-        <editor>---</editor>
-        <name>description</name>
-        <number>2</number>
-        <picker>0</picker>
-        <prettyName>Description</prettyName>
-        <rows>5</rows>
-        <size>40</size>
-        <unmodifiable>0</unmodifiable>
-        <validationMessage/>
-        <validationRegExp/>
-        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-      </description>
-    </class>
-    <property>
-      <class>Ideas.IdeasClass</class>
-    </property>
-    <property>
-      <columns>nbvotes title1 doc.date doc.author _actions</columns>
-    </property>
-    <property>
-      <description>{{velocity}}
-$services.localization.render('ideas.home.description')
-{{/velocity}}</description>
-    </property>
-  </object>
-  <object>
-    <name>Ideas.WebHome</name>
-    <number>0</number>
-    <className>XWiki.DocumentSheetBinding</className>
-    <guid>756e1529-9f18-4765-a817-97ce7b08c152</guid>
     <class>
       <name>XWiki.DocumentSheetBinding</name>
       <customClass/>
@@ -189,15 +86,15 @@ $services.localization.render('ideas.home.description')
         <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
       </sheet>
     </class>
+    <name>Ideas.WebHome</name>
+    <number>0</number>
+    <className>XWiki.DocumentSheetBinding</className>
+    <guid>756e1529-9f18-4765-a817-97ce7b08c152</guid>
     <property>
-      <sheet>IdeasHomeSheet</sheet>
+      <sheet>Ideas.IdeasHomeSheet</sheet>
     </property>
   </object>
   <object>
-    <name>Ideas.WebHome</name>
-    <number>0</number>
-    <className>XWiki.UIExtensionClass</className>
-    <guid>02520f39-a29e-4601-a678-cb75ada3d781</guid>
     <class>
       <name>XWiki.UIExtensionClass</name>
       <customClass/>
@@ -209,6 +106,7 @@ $services.localization.render('ideas.home.description')
       <validationScript/>
       <content>
         <disabled>0</disabled>
+        <editor>Text</editor>
         <name>content</name>
         <number>3</number>
         <prettyName>Extension Content</prettyName>
@@ -236,7 +134,9 @@ $services.localization.render('ideas.home.description')
         <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
       </name>
       <parameters>
+        <contenttype>PureText</contenttype>
         <disabled>0</disabled>
+        <editor>PureText</editor>
         <name>parameters</name>
         <number>4</number>
         <prettyName>Extension Parameters</prettyName>
@@ -255,13 +155,17 @@ $services.localization.render('ideas.home.description')
         <prettyName>Extension Scope</prettyName>
         <relationalStorage>0</relationalStorage>
         <separator> </separator>
-        <separators> ,|</separators>
+        <separators>|, </separators>
         <size>1</size>
         <unmodifiable>0</unmodifiable>
         <values>wiki=Current Wiki|user=Current User|global=Global</values>
         <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
       </scope>
     </class>
+    <name>Ideas.WebHome</name>
+    <number>0</number>
+    <className>XWiki.UIExtensionClass</className>
+    <guid>02520f39-a29e-4601-a678-cb75ada3d781</guid>
     <property>
       <content/>
     </property>
@@ -269,7 +173,7 @@ $services.localization.render('ideas.home.description')
       <extensionPointId>org.xwiki.platform.panels.Applications</extensionPointId>
     </property>
     <property>
-      <name>platform.panels.IdeasApplication</name>
+      <name>com.xwiki.ideas.IdeasApplication</name>
     </property>
     <property>
       <parameters>label=$services.localization.render('ideas.app.title')
@@ -280,4 +184,12 @@ icon=icon:lightbulb</parameters>
       <scope>wiki</scope>
     </property>
   </object>
+  <content>{{include reference="Licenses.Code.VelocityMacros" /}}
+
+{{velocity}}
+#set ($mainPageReference = $services.model.createDocumentReference('', ['Ideas'], 'IdeasHomeSheet'))
+#if (!$services.licensing.licensor.hasLicensureForEntity($mainPageReference))
+  {{error}}#getMissingLicenseMessage('ideas.extension.name'){{/error}}
+#end
+{{/velocity}}</content>
 </xwikidoc>
