@@ -68,8 +68,7 @@ $xwiki.ssx.use("Ideas.IdeasClass")
   'rowCount': 15,
   'maxPages': 10,
   'selectedColumn': 'status',
-  'defaultOrder': 'asc',
-  'extraParams': '&amp;status=open'
+  'defaultOrder': 'asc'
 })
 #set ($columns = ['nbvotes','nbagainst','doc.title','nbestimate','status','priority','assignement','doc.date', 'doc.author', '_actions'])
 #livetable($doc $columns $columnsProperties $options)
