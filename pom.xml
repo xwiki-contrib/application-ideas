@@ -19,6 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -26,7 +27,7 @@
     <artifactId>parent-platform</artifactId>
     <version>8.4-11</version>
   </parent>
-  
+
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>application-ideas</artifactId>
   <version>1.9.3-SNAPSHOT</version>
@@ -75,6 +76,7 @@
     <xwiki.extension.features>fveron:ideas</xwiki.extension.features>
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
     <xwiki.issueManagement.jira.id>IDEAS</xwiki.issueManagement.jira.id>
+    <xwiki.extension.category>application</xwiki.extension.category>
   </properties>
   <build>
     <extensions>
