@@ -100,5 +100,7 @@ rendering.macro.ideasrecent.description=Affiche les N plus récents idées.
 rendering.macro.ideasrecent.name=Idées récents
 rendering.macro.ideasrecent.parameter.limit.description=Nombre maximum d'entrées.
 rendering.macro.ideasrecent.parameter.limit.name=Limite
+templateProvider.idea.description=Partager une idée
+templateProvider.idea.name=Idée
 </content>
 </xwikidoc>
