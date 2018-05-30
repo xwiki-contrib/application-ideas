@@ -39,39 +39,82 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>## XWiki Translation for language sk generated from http://www.l10n.xwiki.org
-Ideas.IdeasClass_against=Oponenti
-Ideas.IdeasClass_content1=Popis
-Ideas.IdeasClass_priority=Priorita
-Ideas.IdeasClass_priority_high=Vysoká
-Ideas.IdeasClass_priority_low=Nízka
-Ideas.IdeasClass_priority_medium=Stredná
-Ideas.IdeasClass_status=Status
-Ideas.IdeasClass_status_rejected=Odmietnuté
-Ideas.IdeasClass_supporters=Podporovatelia
-Ideas.IdeasClass_title1=Nápad
-ideas.addfiles=Pridať nápad
+  <content># Titles
 ideas.app.title=Nápady
 ideas.home.title=Nápady
-ideas.livetable._actions=Akcie
-ideas.livetable._actions.delete=Odstrániť
-ideas.livetable._actions.edit=Editovať
-ideas.livetable._attachments=Prílohy
-ideas.livetable._avatar=Avatar
-ideas.livetable._images=Obrázky
-ideas.livetable.content1=Popis
+
+# Class fields
+Ideas.IdeasClass_title1=Nápad
+Ideas.IdeasClass_content1=Popis
+### Missing: Ideas.IdeasClass_nbvotes=Votes
+Ideas.IdeasClass_supporters=Podporovatelia
+Ideas.IdeasClass_against=Oponenti
+Ideas.IdeasClass_status=Status
+### Missing: Ideas.IdeasClass_status_open=Open
+### Missing: Ideas.IdeasClass_status_closed=Closed
+Ideas.IdeasClass_status_rejected=Odmietnuté
+Ideas.IdeasClass_priority=Priorita
+Ideas.IdeasClass_priority_high=Vysoká
+Ideas.IdeasClass_priority_medium=Stredná
+Ideas.IdeasClass_priority_low=Nízka
+### Missing: Ideas.IdeasClass_nbestimate=Estimated cost
+### Missing: Ideas.IdeasClass_assignement=Assignee
+
+# Live table generic keys
+ideas.livetable.doc.title=Nápad
+### Missing: ideas.livetable.doc.name=Page name
+ideas.livetable.doc.space=Priestor
+### Missing: ideas.livetable.doc.fullname=Page full name
 ideas.livetable.doc.author=Posledný autor
-ideas.livetable.doc.creationDate=Dátum vytvorenia
 ideas.livetable.doc.creator=Vytvoril
 ideas.livetable.doc.date=Dátum aktualizácie
-ideas.livetable.doc.space=Priestor
-ideas.livetable.doc.title=Nápad
+ideas.livetable.doc.creationDate=Dátum vytvorenia
+ideas.livetable._avatar=Avatar
+ideas.livetable._images=Obrázky
+ideas.livetable._attachments=Prílohy
+ideas.livetable._actions=Akcie
+ideas.livetable._actions.edit=Editovať
+ideas.livetable._actions.delete=Odstrániť
 ideas.livetable.emptyvalue=-
-ideas.livetable.nbagainst=Nie
-ideas.livetable.nbvotes=Áno
-ideas.livetable.priority=Priorita
-ideas.livetable.status=Stav
-ideas.livetable.supporters=Podporovatelia
+
+# Live table specific keys
 ideas.livetable.title1=Nápad
+ideas.livetable.content1=Popis
+ideas.livetable.nbvotes=Áno
+ideas.livetable.nbagainst=Nie
+ideas.livetable.supporters=Podporovatelia
+### Missing: ideas.livetable.against=Against people
+### Missing: ideas.livetable.nbestimate=Estimated cost
+ideas.livetable.status=Stav
+### Missing: ideas.livetable.assignement=Assignee
+ideas.livetable.priority=Priorita
+
+# Ideas application keys
+### Missing: ideas.home.description=Ideas worth spreading
+### Missing: ideas.message.guess=Guest can't vote
+### Missing: ideas.message.error=Error while operating Ideas
+### Missing: ideas.ideassheet.voted=You support this idea
+### Missing: ideas.ideassheet.votedagainst=You are against this idea
+### Missing: ideas.ideassheet.hidesupp=Show/Hide supporters list.
+### Missing: ideas.ideassheet.hideagainst=Show/Hide opponents list.
+### Missing: ideas.ideassheet.unassigned=Unassigned
+
+# Generic
+### Missing: ideas.author=by {0}
+### Missing: ideas.date=on {0}
+### Missing: ideas.nofiles=There are no ideas yet
+ideas.addfiles=Pridať nápad
+### Missing: ideas.seeallfiles=See all ideas
+
+# Recent ideas macro
+### Missing: ideas.recentideas.title=Recent Ideas
+### Missing: rendering.macro.ideasrecent.name=Recent Ideas
+### Missing: rendering.macro.ideasrecent.description=Displays the N most recent ideas.
+### Missing: rendering.macro.ideasrecent.parameter.limit.name=Limit
+### Missing: rendering.macro.ideasrecent.parameter.limit.description=Number of maximum entries.
+
+# Template Provider
+### Missing: templateProvider.idea.name=Idea
+### Missing: templateProvider.idea.description=Share an idea
 </content>
 </xwikidoc>

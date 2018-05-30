@@ -39,68 +39,82 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>## XWiki Translation for language fr generated from http://www.l10n.xwiki.org
-Ideas.IdeasClass_against=Opposants
-Ideas.IdeasClass_assignement=Assigné à
+  <content># Titles
+ideas.app.title=Idées
+ideas.home.title=Idées
+
+# Class fields
+Ideas.IdeasClass_title1=Idée
 Ideas.IdeasClass_content1=Description
-Ideas.IdeasClass_nbestimate=Cout estimé
 Ideas.IdeasClass_nbvotes=Votes
+Ideas.IdeasClass_supporters=Supporteurs
+Ideas.IdeasClass_against=Opposants
+Ideas.IdeasClass_status=Statut
+Ideas.IdeasClass_status_open=Ouvert
+Ideas.IdeasClass_status_closed=Fermé
+Ideas.IdeasClass_status_rejected=Rejeté
 Ideas.IdeasClass_priority=Priorité
 Ideas.IdeasClass_priority_high=Élevée
-Ideas.IdeasClass_priority_low=Faible
 Ideas.IdeasClass_priority_medium=Moyenne
-Ideas.IdeasClass_status=Statut
-Ideas.IdeasClass_status_closed=Fermé
-Ideas.IdeasClass_status_open=Ouvert
-Ideas.IdeasClass_status_rejected=Rejeté
-Ideas.IdeasClass_supporters=Supporteurs
-Ideas.IdeasClass_title1=Idée
-ideas.addfiles=Ajouter une idée
-ideas.app.title=Idées
-ideas.author=par {0}
-ideas.date=le {0}
-ideas.home.description=Partagez vos idées
-ideas.home.title=Idées
-ideas.ideassheet.hideagainst=Afficher/Cacher la liste des opposants.
-ideas.ideassheet.hidesupp=Afficher/Cacher la liste des supporteurs.
-ideas.ideassheet.unassigned=Non assigné
-ideas.ideassheet.voted=Vous supportez cette idée
-ideas.ideassheet.votedagainst=Vous êtes contre cette idée
-ideas.livetable._actions=Actions
-ideas.livetable._actions.delete=Supprimer
-ideas.livetable._actions.edit=Editer
-ideas.livetable._attachments=Pièces jointes
-ideas.livetable._avatar=Avatar
-ideas.livetable._images=Images
-ideas.livetable.against=Opposant
-ideas.livetable.assignement=Assigné à
-ideas.livetable.content1=Description
-ideas.livetable.doc.author=Dernier auteur
-ideas.livetable.doc.creationDate=Date de création
-ideas.livetable.doc.creator=Créateur
-ideas.livetable.doc.date=Date de dernière mise à jour
-ideas.livetable.doc.fullname=Nom complet de la page
+Ideas.IdeasClass_priority_low=Faible
+Ideas.IdeasClass_nbestimate=Cout estimé
+Ideas.IdeasClass_assignement=Assigné à
+
+# Live table generic keys
+ideas.livetable.doc.title=Idée
 ideas.livetable.doc.name=Nom de la page
 ideas.livetable.doc.space=Espace
-ideas.livetable.doc.title=Idée
+ideas.livetable.doc.fullname=Nom complet de la page
+ideas.livetable.doc.author=Dernier auteur
+ideas.livetable.doc.creator=Créateur
+ideas.livetable.doc.date=Date de dernière mise à jour
+ideas.livetable.doc.creationDate=Date de création
+ideas.livetable._avatar=Avatar
+ideas.livetable._images=Images
+ideas.livetable._attachments=Pièces jointes
+ideas.livetable._actions=Actions
+ideas.livetable._actions.edit=Editer
+ideas.livetable._actions.delete=Supprimer
 ideas.livetable.emptyvalue=-
-ideas.livetable.nbagainst=Contre
-ideas.livetable.nbestimate=Coût estimé
-ideas.livetable.nbvotes=Votes
-ideas.livetable.priority=Priorité
-ideas.livetable.status=Statut
-ideas.livetable.supporters=Supporters
+
+# Live table specific keys
 ideas.livetable.title1=Idée
-ideas.message.error=Erreur inattendue lors du traitement du vote
+ideas.livetable.content1=Description
+ideas.livetable.nbvotes=Votes
+ideas.livetable.nbagainst=Contre
+ideas.livetable.supporters=Supporters
+ideas.livetable.against=Opposant
+ideas.livetable.nbestimate=Coût estimé
+ideas.livetable.status=Statut
+ideas.livetable.assignement=Assigné à
+ideas.livetable.priority=Priorité
+
+# Ideas application keys
+ideas.home.description=Partagez vos idées
 ideas.message.guess=Vous devez vous connecter pour pouvoir voter
+ideas.message.error=Erreur inattendue lors du traitement du vote
+ideas.ideassheet.voted=Vous supportez cette idée
+ideas.ideassheet.votedagainst=Vous êtes contre cette idée
+ideas.ideassheet.hidesupp=Afficher/Cacher la liste des supporteurs.
+ideas.ideassheet.hideagainst=Afficher/Cacher la liste des opposants.
+ideas.ideassheet.unassigned=Non assigné
+
+# Generic
+ideas.author=par {0}
+ideas.date=le {0}
 ideas.nofiles=Il n'y a pas d'idées
-ideas.recentideas.title=Idées récents
+ideas.addfiles=Ajouter une idée
 ideas.seeallfiles=Voir toutes les idées
-rendering.macro.ideasrecent.description=Affiche les N plus récents idées.
+
+# Recent ideas macro
+ideas.recentideas.title=Idées récents
 rendering.macro.ideasrecent.name=Idées récents
-rendering.macro.ideasrecent.parameter.limit.description=Nombre maximum d'entrées.
+rendering.macro.ideasrecent.description=Affiche les N plus récents idées.
 rendering.macro.ideasrecent.parameter.limit.name=Limite
-templateProvider.idea.description=Partager une idée
+rendering.macro.ideasrecent.parameter.limit.description=Nombre maximum d'entrées.
+
+# Template Provider
 templateProvider.idea.name=Idée
+templateProvider.idea.description=Partager une idée
 </content>
 </xwikidoc>

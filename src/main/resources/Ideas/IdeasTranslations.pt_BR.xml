@@ -39,48 +39,82 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>## XWiki Translation for language pt_BR generated from http://www.l10n.xwiki.org
-Ideas.IdeasClass_against=Oponentes
+  <content># Titles
+ideas.app.title=Ideias
+### Missing: ideas.home.title=Ideas
+
+# Class fields
+Ideas.IdeasClass_title1=Ideia
 Ideas.IdeasClass_content1=Descrição
-Ideas.IdeasClass_nbestimate=Custo Estimado
 Ideas.IdeasClass_nbvotes=Votos
+Ideas.IdeasClass_supporters=Suportada
+Ideas.IdeasClass_against=Oponentes
+Ideas.IdeasClass_status=Status
+Ideas.IdeasClass_status_open=Aberta
+Ideas.IdeasClass_status_closed=Fechada
+Ideas.IdeasClass_status_rejected=Rejeitada
 Ideas.IdeasClass_priority=Prioridades
 Ideas.IdeasClass_priority_high=Alta
-Ideas.IdeasClass_priority_low=Baixa
 Ideas.IdeasClass_priority_medium=Média
-Ideas.IdeasClass_status=Status
-Ideas.IdeasClass_status_closed=Fechada
-Ideas.IdeasClass_status_open=Aberta
-Ideas.IdeasClass_status_rejected=Rejeitada
-Ideas.IdeasClass_supporters=Suportada
-Ideas.IdeasClass_title1=Ideia
-ideas.addfiles=Adicionar Ideia
-ideas.app.title=Ideias
-ideas.author=por {0}
-ideas.date=em {0}
-ideas.ideassheet.voted=Você é a favor desta ideia
-ideas.ideassheet.votedagainst=Você não é a favor desta ideia
-ideas.livetable._actions=Ações
-ideas.livetable._actions.delete=Deletar
-ideas.livetable._actions.edit=Editar
-ideas.livetable._attachments=Anexos
-ideas.livetable._avatar=Avatar
-ideas.livetable._images=Imagens
-ideas.livetable.against=Pessoas Contra
-ideas.livetable.content1=Descrição
-ideas.livetable.doc.author=Último autor
-ideas.livetable.doc.creationDate=Data de criação
-ideas.livetable.doc.creator=Criador
-ideas.livetable.doc.date=Data de Atualização
-ideas.livetable.doc.fullname=Nome completo da Página
+Ideas.IdeasClass_priority_low=Baixa
+Ideas.IdeasClass_nbestimate=Custo Estimado
+### Missing: Ideas.IdeasClass_assignement=Assignee
+
+# Live table generic keys
+ideas.livetable.doc.title=Ideia
 ideas.livetable.doc.name=Nome da Página
 ideas.livetable.doc.space=Espaço
-ideas.livetable.doc.title=Ideia
+ideas.livetable.doc.fullname=Nome completo da Página
+ideas.livetable.doc.author=Último autor
+ideas.livetable.doc.creator=Criador
+ideas.livetable.doc.date=Data de Atualização
+ideas.livetable.doc.creationDate=Data de criação
+ideas.livetable._avatar=Avatar
+ideas.livetable._images=Imagens
+ideas.livetable._attachments=Anexos
+ideas.livetable._actions=Ações
+ideas.livetable._actions.edit=Editar
+ideas.livetable._actions.delete=Deletar
 ideas.livetable.emptyvalue=-
-ideas.livetable.nbagainst=Não
-ideas.livetable.nbestimate=Custo Estimado
+
+# Live table specific keys
+### Missing: ideas.livetable.title1=Idea
+ideas.livetable.content1=Descrição
 ideas.livetable.nbvotes=Sim
-ideas.livetable.priority=Prioridade
+ideas.livetable.nbagainst=Não
+### Missing: ideas.livetable.supporters=Supporters
+ideas.livetable.against=Pessoas Contra
+ideas.livetable.nbestimate=Custo Estimado
 ideas.livetable.status=Status
+### Missing: ideas.livetable.assignement=Assignee
+ideas.livetable.priority=Prioridade
+
+# Ideas application keys
+### Missing: ideas.home.description=Ideas worth spreading
+### Missing: ideas.message.guess=Guest can't vote
+### Missing: ideas.message.error=Error while operating Ideas
+ideas.ideassheet.voted=Você é a favor desta ideia
+ideas.ideassheet.votedagainst=Você não é a favor desta ideia
+### Missing: ideas.ideassheet.hidesupp=Show/Hide supporters list.
+### Missing: ideas.ideassheet.hideagainst=Show/Hide opponents list.
+### Missing: ideas.ideassheet.unassigned=Unassigned
+
+# Generic
+ideas.author=por {0}
+ideas.date=em {0}
+### Missing: ideas.nofiles=There are no ideas yet
+ideas.addfiles=Adicionar Ideia
+### Missing: ideas.seeallfiles=See all ideas
+
+# Recent ideas macro
+### Missing: ideas.recentideas.title=Recent Ideas
+### Missing: rendering.macro.ideasrecent.name=Recent Ideas
+### Missing: rendering.macro.ideasrecent.description=Displays the N most recent ideas.
+### Missing: rendering.macro.ideasrecent.parameter.limit.name=Limit
+### Missing: rendering.macro.ideasrecent.parameter.limit.description=Number of maximum entries.
+
+# Template Provider
+### Missing: templateProvider.idea.name=Idea
+### Missing: templateProvider.idea.description=Share an idea
 </content>
 </xwikidoc>
