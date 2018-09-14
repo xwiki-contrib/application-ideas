@@ -97,8 +97,8 @@ ideas.message.guess=Guest can't vote
 ideas.message.error=Error while operating Ideas
 ideas.ideassheet.voted=You support this idea
 ideas.ideassheet.votedagainst=You are against this idea
-ideas.ideassheet.hidesupp=Show/Hide supporters list.
-ideas.ideassheet.hideagainst=Show/Hide opponents list.
+ideas.ideassheet.hidesupp=Show / Hide supporters list.
+ideas.ideassheet.hideagainst=Show / Hide opponents list.
 ideas.ideassheet.unassigned=Unassigned
 
 # Generic

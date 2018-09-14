@@ -494,28 +494,49 @@
       var docName = xm.document;
     }
     var url = new XWiki.Document('IdeasVoteService', 'Ideas').getURL('get',
-      ('xpage=plain&amp;outputSyntax=plain&amp;page='+docName+'&amp;action='+addVote));
+      ('xpage=plain&amp;outputSyntax=plain&amp;page=' + docName + '&amp;action=' + addVote));
     // Ajax request.
     $.ajax({
       url : url,
       success : function(response) {
         var voted = Array.from($('.' + reflink));
         var opponent = Array.from($('.' + opp));
+        var supportText = $('.result-pro').next();
+        var againstText = $('.result-against').next();
+        // Changing the class acording to the vote. Updating the text that shows to the user which one is his choice.
         if(response.result) {
           voted.forEach( e =&gt; {
             if($(e).hasClass(voteClass)) {
               $(e).removeClass(voteClass);
+              supportText.empty();
+              againstText.empty();
             } else {
               $(e).addClass(voteClass);
+              if(voteClass == 'voted-pro') {
+                supportText.html("$services.localization.render('ideas.ideassheet.voted')");
+                againstText.empty();
+              } else {
+                againstText.html("$services.localization.render('ideas.ideassheet.votedagainst')");
+                supportText.empty();
+              }
             }
           });
           opponent.forEach( e =&gt; {
             $(e).removeClass(againstClass);
           });
+          // Updating the votes. Refreshing the list of users that have voted with an idea.
           if(voteClass == 'voted-pro') {
             var nbv = response.nbvotes;
+            $('#pro-participants').load(XWiki.currentDocument.getURL('get') + ' #pro-participants&gt;*', '');
+            if(response.nbagainst || response.remove) {
+              $('#against-participants').load(XWiki.currentDocument.getURL('get') + ' #against-participants&gt;*', '');
+            }
           } else {
             var nbv = response.nbagainst;
+            $('#against-participants').load(XWiki.currentDocument.getURL('get') + ' #against-participants&gt;*', '');
+            if(response.nbvotes || response.remove) {
+              $('#pro-participants').load(XWiki.currentDocument.getURL('get') + ' #pro-participants&gt;*', '');
+            }
           }
           voted.forEach( e =&gt; {
             $(e).html(nbv);
