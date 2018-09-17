@@ -129,7 +129,7 @@
       ; &lt;label for='Ideas.IdeasClass_0_priority'&gt;#if($services.icon)$services.icon.render('chart_bar') #end$escapetool.xml($doc.displayPrettyName('priority'))&lt;/label&gt;
       : $doc.display('priority')
     )))
-    (% class="col-xs-6 col-sm-3 col-md-3" %)
+    (% class="col-xs-6 col-sm-3 col-md-3 status" %)
     (((
       ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$escapetool.xml($doc.displayPrettyName('status'))&lt;/label&gt;
       : $doc.display('status')

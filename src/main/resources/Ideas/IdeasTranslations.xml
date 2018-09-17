@@ -92,6 +92,7 @@ ideas.livetable.priority=Priority
 
 # Ideas application keys
 ideas.home.description=Ideas worth spreading
+ideas.ideasclass.vote.closed=This idea is not open for voting anymore
 ideas.ideasclass.vote.error=Error while voting
 ideas.message.guess=Guest can't vote
 ideas.message.error=Error while operating Ideas
