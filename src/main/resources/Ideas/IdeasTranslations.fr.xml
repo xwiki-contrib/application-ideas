@@ -95,8 +95,8 @@ ideas.message.guess=Vous devez vous connecter pour pouvoir voter
 ideas.message.error=Erreur inattendue lors du traitement du vote
 ideas.ideassheet.voted=Vous supportez cette idée
 ideas.ideassheet.votedagainst=Vous êtes contre cette idée
-ideas.ideassheet.hidesupp=Afficher/Cacher la liste des supporteurs.
-ideas.ideassheet.hideagainst=Afficher/Cacher la liste des opposants.
+ideas.ideassheet.hidesupp=Afficher / Masquer la liste des promoteurs.
+ideas.ideassheet.hideagainst=Afficher / Masquer la liste des opposants.
 ideas.ideassheet.unassigned=Non assigné
 
 # Generic
