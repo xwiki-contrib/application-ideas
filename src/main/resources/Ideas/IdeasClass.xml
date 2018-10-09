@@ -515,7 +515,7 @@
         var againstText = $('.result-against').next();
         // Changing the class acording to the vote. Updating the text that shows to the user which one is his choice.
         if(response.result) {
-          voted.forEach( e =&gt; {
+          voted.forEach(function(e) {
             if($(e).hasClass(voteClass)) {
               $(e).removeClass(voteClass);
               supportText.empty();
@@ -531,7 +531,7 @@
               }
             }
           });
-          opponent.forEach( e =&gt; {
+          opponent.forEach(function(e) {
             $(e).removeClass(againstClass);
           });
           // Updating the votes. Refreshing the list of users that have voted with an idea.
@@ -548,7 +548,7 @@
               $('#pro-participants').load(XWiki.currentDocument.getURL('get') + ' #pro-participants&gt;*', '');
             }
           }
-          voted.forEach( e =&gt; {
+          voted.forEach(function(e) {
             $(e).html(nbv);
           });
           if(!refresh) {
@@ -556,7 +556,7 @@
           }
           else if(response.remove) {
             var nbdec = response.nbopp;
-            opponent.forEach( e =&gt; {
+            opponent.forEach(function(e) {
               $(e).html(nbdec);
             });
           }
