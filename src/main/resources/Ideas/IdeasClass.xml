@@ -307,29 +307,17 @@
       <nameField/>
       <validationScript/>
       <sheet>
-        <cache>0</cache>
-        <classname/>
         <customDisplay/>
         <disabled>0</disabled>
-        <displayType>input</displayType>
-        <hint/>
-        <idField/>
-        <multiSelect>0</multiSelect>
         <name>sheet</name>
         <number>1</number>
-        <picker>1</picker>
+        <picker>0</picker>
         <prettyName>Sheet</prettyName>
-        <relationalStorage>0</relationalStorage>
-        <separator> </separator>
-        <separators/>
         <size>30</size>
-        <sort>none</sort>
-        <sql/>
         <unmodifiable>0</unmodifiable>
         <validationMessage/>
         <validationRegExp/>
-        <valueField/>
-        <classType>com.xpn.xwiki.objects.classes.PageClass</classType>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
       </sheet>
     </class>
     <property>
@@ -351,29 +339,17 @@
       <nameField/>
       <validationScript/>
       <sheet>
-        <cache>0</cache>
-        <classname/>
         <customDisplay/>
         <disabled>0</disabled>
-        <displayType>input</displayType>
-        <hint/>
-        <idField/>
-        <multiSelect>0</multiSelect>
         <name>sheet</name>
         <number>1</number>
-        <picker>1</picker>
+        <picker>0</picker>
         <prettyName>Sheet</prettyName>
-        <relationalStorage>0</relationalStorage>
-        <separator> </separator>
-        <separators/>
         <size>30</size>
-        <sort>none</sort>
-        <sql/>
         <unmodifiable>0</unmodifiable>
         <validationMessage/>
         <validationRegExp/>
-        <valueField/>
-        <classType>com.xpn.xwiki.objects.classes.PageClass</classType>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
       </sheet>
     </class>
     <property>
@@ -395,29 +371,17 @@
       <nameField/>
       <validationScript/>
       <sheet>
-        <cache>0</cache>
-        <classname/>
         <customDisplay/>
         <disabled>0</disabled>
-        <displayType>input</displayType>
-        <hint/>
-        <idField/>
-        <multiSelect>0</multiSelect>
         <name>sheet</name>
         <number>1</number>
-        <picker>1</picker>
+        <picker>0</picker>
         <prettyName>Sheet</prettyName>
-        <relationalStorage>0</relationalStorage>
-        <separator> </separator>
-        <separators/>
         <size>30</size>
-        <sort>none</sort>
-        <sql/>
         <unmodifiable>0</unmodifiable>
         <validationMessage/>
         <validationRegExp/>
-        <valueField/>
-        <classType>com.xpn.xwiki.objects.classes.PageClass</classType>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
       </sheet>
     </class>
     <property>
@@ -551,7 +515,7 @@
         var againstText = $('.result-against').next();
         // Changing the class acording to the vote. Updating the text that shows to the user which one is his choice.
         if(response.result) {
-          $.each(voted, function(index, e) {
+          voted.forEach( e =&gt; {
             if($(e).hasClass(voteClass)) {
               $(e).removeClass(voteClass);
               supportText.empty();
@@ -567,7 +531,7 @@
               }
             }
           });
-          $.each(opponent, function(index, e) {
+          opponent.forEach( e =&gt; {
             $(e).removeClass(againstClass);
           });
           // Updating the votes. Refreshing the list of users that have voted with an idea.
@@ -584,7 +548,7 @@
               $('#pro-participants').load(XWiki.currentDocument.getURL('get') + ' #pro-participants&gt;*', '');
             }
           }
-          $.each(voted, function(index, e) {
+          voted.forEach( e =&gt; {
             $(e).html(nbv);
           });
           if(!refresh) {
@@ -592,7 +556,7 @@
           }
           else if(response.remove) {
             var nbdec = response.nbopp;
-            $.each(opponent, function(index, e) {
+            opponent.forEach( e =&gt; {
               $(e).html(nbdec);
             });
           }
