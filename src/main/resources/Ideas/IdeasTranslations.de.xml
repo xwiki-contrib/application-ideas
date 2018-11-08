@@ -111,9 +111,9 @@ ideas.recentideas.title=Neueste Ideen
 rendering.macro.ideasrecent.name=Neueste Ideen
 rendering.macro.ideasrecent.description=Zeigt die N jüngsten Ideen an.
 rendering.macro.ideasrecent.parameter.limit.name=Limit
-### Missing: rendering.macro.ideasrecent.parameter.limit.description=Number of maximum entries.
+rendering.macro.ideasrecent.parameter.limit.description=Maximale Anzahl Einträge.
 
 # Template Provider
-### Missing: templateProvider.idea.name=Idea
-### Missing: templateProvider.idea.description=Share an idea</content>
+templateProvider.idea.name=Idee
+templateProvider.idea.description=Teile eine Idee</content>
 </xwikidoc>
