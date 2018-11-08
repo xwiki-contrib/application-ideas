@@ -40,77 +40,77 @@
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
   <content># Titles
-### Missing: ideas.app.title=Ideas
-### Missing: ideas.home.title=Ideas
+ideas.app.title=Ideen
+ideas.home.title=Ideen
 
 # Class fields
-### Missing: Ideas.IdeasClass_title1=Idea
-### Missing: Ideas.IdeasClass_content1=Description
-### Missing: Ideas.IdeasClass_nbvotes=Votes
-### Missing: Ideas.IdeasClass_supporters=Supporters
-### Missing: Ideas.IdeasClass_against=Opponents
-### Missing: Ideas.IdeasClass_status=Status
-### Missing: Ideas.IdeasClass_status_open=Open
-### Missing: Ideas.IdeasClass_status_closed=Closed
-### Missing: Ideas.IdeasClass_status_rejected=Rejected
-### Missing: Ideas.IdeasClass_priority=Priority
-### Missing: Ideas.IdeasClass_priority_high=High
-### Missing: Ideas.IdeasClass_priority_medium=Medium
-### Missing: Ideas.IdeasClass_priority_low=Low
-### Missing: Ideas.IdeasClass_nbestimate=Estimated cost
-### Missing: Ideas.IdeasClass_assignement=Assignee
+Ideas.IdeasClass_title1=Idee
+Ideas.IdeasClass_content1=Beschreibung
+Ideas.IdeasClass_nbvotes=Stimmen
+Ideas.IdeasClass_supporters=Unterstützer
+Ideas.IdeasClass_against=Gegner
+Ideas.IdeasClass_status=Status
+Ideas.IdeasClass_status_open=Offen
+Ideas.IdeasClass_status_closed=Geschlossen
+Ideas.IdeasClass_status_rejected=Abgelehnt
+Ideas.IdeasClass_priority=Priorität
+Ideas.IdeasClass_priority_high=Hoch
+Ideas.IdeasClass_priority_medium=Mittel
+Ideas.IdeasClass_priority_low=Niedrig
+Ideas.IdeasClass_nbestimate=Geschätzte Kosten
+Ideas.IdeasClass_assignement=Beauftragter
 
 # Live table generic keys
-### Missing: ideas.livetable.doc.title=Idea
-### Missing: ideas.livetable.doc.name=Page name
-### Missing: ideas.livetable.doc.space=Space
-### Missing: ideas.livetable.doc.fullname=Page full name
-### Missing: ideas.livetable.doc.author=Last author
-### Missing: ideas.livetable.doc.creator=Creator
-### Missing: ideas.livetable.doc.date=Update date
-### Missing: ideas.livetable.doc.creationDate=Creation date
-### Missing: ideas.livetable._avatar=Avatar
-### Missing: ideas.livetable._images=Images
-### Missing: ideas.livetable._attachments=Attachments
-### Missing: ideas.livetable._actions=Actions
-### Missing: ideas.livetable._actions.edit=Edit
-### Missing: ideas.livetable._actions.delete=Delete
-### Missing: ideas.livetable.emptyvalue=-
+ideas.livetable.doc.title=Idee
+ideas.livetable.doc.name=Seitenname
+ideas.livetable.doc.space=Bereich
+ideas.livetable.doc.fullname=Vollständiger Seitenname
+ideas.livetable.doc.author=Letzter Autor
+ideas.livetable.doc.creator=Ersteller
+ideas.livetable.doc.date=Aktualisierungsdatum
+ideas.livetable.doc.creationDate=Erstellungsdatum
+ideas.livetable._avatar=Profilbild
+ideas.livetable._images=Bilder
+ideas.livetable._attachments=Anhänge
+ideas.livetable._actions=Aktionen
+ideas.livetable._actions.edit=Bearbeiten
+ideas.livetable._actions.delete=Löschen
+ideas.livetable.emptyvalue=-
 
 # Live table specific keys
-### Missing: ideas.livetable.title1=Idea
-### Missing: ideas.livetable.content1=Description
-### Missing: ideas.livetable.nbvotes=Yes
-### Missing: ideas.livetable.nbagainst=No
-### Missing: ideas.livetable.supporters=Supporters
-### Missing: ideas.livetable.against=Against people
-### Missing: ideas.livetable.nbestimate=Estimated cost
-### Missing: ideas.livetable.status=Status
-### Missing: ideas.livetable.assignement=Assignee
-### Missing: ideas.livetable.priority=Priority
+ideas.livetable.title1=Idee
+ideas.livetable.content1=Beschreibung
+ideas.livetable.nbvotes=Ja
+ideas.livetable.nbagainst=Nein
+ideas.livetable.supporters=Unterstützer
+ideas.livetable.against=Gegner
+ideas.livetable.nbestimate=Geschätzte Kosten
+ideas.livetable.status=Status
+ideas.livetable.assignement=Beauftragter
+ideas.livetable.priority=Priorität
 
 # Ideas application keys
-### Missing: ideas.home.description=Ideas worth spreading
-### Missing: ideas.message.guess=Guest can't vote
-### Missing: ideas.message.error=Error while operating Ideas
-### Missing: ideas.ideassheet.voted=You support this idea
-### Missing: ideas.ideassheet.votedagainst=You are against this idea
-### Missing: ideas.ideassheet.hidesupp=Show/Hide supporters list.
-### Missing: ideas.ideassheet.hideagainst=Show/Hide opponents list.
-### Missing: ideas.ideassheet.unassigned=Unassigned
+ideas.home.description=Ideen, die es Wert sind verbreitet zu werden
+ideas.message.guess=Gäste können nicht abstimmen
+ideas.message.error=Fehler beim Verarbeiten von Ideen
+ideas.ideassheet.voted=Sie unterstützen diese Idee
+ideas.ideassheet.votedagainst=Sie sind gegen diese Idee
+ideas.ideassheet.hidesupp=Unterstützerliste ein-/ausblenden.
+ideas.ideassheet.hideagainst=Gegnerliste ein-/ausblenden.
+ideas.ideassheet.unassigned=Nicht zugewiesen
 
 # Generic
-### Missing: ideas.author=by {0}
-### Missing: ideas.date=on {0}
-### Missing: ideas.nofiles=There are no ideas yet
-### Missing: ideas.addfiles=Add idea
-### Missing: ideas.seeallfiles=See all ideas
+ideas.author=Von {0}
+ideas.date=am {0}
+ideas.nofiles=Es gibt noch keine Ideen
+ideas.addfiles=Idee hinzufügen
+ideas.seeallfiles=All Ideas anzeigen
 
 # Recent ideas macro
-### Missing: ideas.recentideas.title=Recent Ideas
-### Missing: rendering.macro.ideasrecent.name=Recent Ideas
-### Missing: rendering.macro.ideasrecent.description=Displays the N most recent ideas.
-### Missing: rendering.macro.ideasrecent.parameter.limit.name=Limit
+ideas.recentideas.title=Neueste Ideen
+rendering.macro.ideasrecent.name=Neueste Ideen
+rendering.macro.ideasrecent.description=Zeigt die N jüngsten Ideen an.
+rendering.macro.ideasrecent.parameter.limit.name=Limit
 ### Missing: rendering.macro.ideasrecent.parameter.limit.description=Number of maximum entries.
 
 # Template Provider
