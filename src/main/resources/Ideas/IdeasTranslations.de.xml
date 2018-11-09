@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.1">
+  <web>Ideas</web>
+  <name>IdeasTranslations</name>
+  <language>de</language>
+  <defaultLanguage>en</defaultLanguage>
+  <translation>1</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <creationDate>1389708432000</creationDate>
+  <parent>Ideas.WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1418394453000</date>
+  <contentUpdateDate>1418394453000</contentUpdateDate>
+  <version>1.1</version>
+  <title>Ideas Translations</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content># Titles
+ideas.app.title=Ideen
+ideas.home.title=Ideen
+
+# Class fields
+Ideas.IdeasClass_title1=Idee
+Ideas.IdeasClass_content1=Beschreibung
+Ideas.IdeasClass_nbvotes=Stimmen
+Ideas.IdeasClass_supporters=Unterstützer
+Ideas.IdeasClass_against=Gegner
+Ideas.IdeasClass_status=Status
+Ideas.IdeasClass_status_open=Offen
+Ideas.IdeasClass_status_closed=Geschlossen
+Ideas.IdeasClass_status_rejected=Abgelehnt
+Ideas.IdeasClass_priority=Priorität
+Ideas.IdeasClass_priority_high=Hoch
+Ideas.IdeasClass_priority_medium=Mittel
+Ideas.IdeasClass_priority_low=Niedrig
+Ideas.IdeasClass_nbestimate=Geschätzte Kosten
+Ideas.IdeasClass_assignement=Beauftragter
+
+# Live table generic keys
+ideas.livetable.doc.title=Idee
+ideas.livetable.doc.name=Seitenname
+ideas.livetable.doc.space=Bereich
+ideas.livetable.doc.fullname=Vollständiger Seitenname
+ideas.livetable.doc.author=Letzter Autor
+ideas.livetable.doc.creator=Ersteller
+ideas.livetable.doc.date=Aktualisierungsdatum
+ideas.livetable.doc.creationDate=Erstellungsdatum
+ideas.livetable._avatar=Profilbild
+ideas.livetable._images=Bilder
+ideas.livetable._attachments=Anhänge
+ideas.livetable._actions=Aktionen
+ideas.livetable._actions.edit=Bearbeiten
+ideas.livetable._actions.delete=Löschen
+ideas.livetable.emptyvalue=-
+
+# Live table specific keys
+ideas.livetable.title1=Idee
+ideas.livetable.content1=Beschreibung
+ideas.livetable.nbvotes=Ja
+ideas.livetable.nbagainst=Nein
+ideas.livetable.supporters=Unterstützer
+ideas.livetable.against=Gegner
+ideas.livetable.nbestimate=Geschätzte Kosten
+ideas.livetable.status=Status
+ideas.livetable.assignement=Beauftragter
+ideas.livetable.priority=Priorität
+
+# Ideas application keys
+ideas.home.description=Ideen, die es Wert sind verbreitet zu werden
+ideas.message.guess=Gäste können nicht abstimmen
+ideas.message.error=Fehler beim Verarbeiten von Ideen
+ideas.ideassheet.voted=Sie unterstützen diese Idee
+ideas.ideassheet.votedagainst=Sie sind gegen diese Idee
+ideas.ideassheet.hidesupp=Unterstützerliste ein-/ausblenden.
+ideas.ideassheet.hideagainst=Gegnerliste ein-/ausblenden.
+ideas.ideassheet.unassigned=Nicht zugewiesen
+
+# Generic
+ideas.author=Von {0}
+ideas.date=am {0}
+ideas.nofiles=Es gibt noch keine Ideen
+ideas.addfiles=Idee hinzufügen
+ideas.seeallfiles=All Ideas anzeigen
+
+# Recent ideas macro
+ideas.recentideas.title=Neueste Ideen
+rendering.macro.ideasrecent.name=Neueste Ideen
+rendering.macro.ideasrecent.description=Zeigt die N jüngsten Ideen an.
+rendering.macro.ideasrecent.parameter.limit.name=Limit
+rendering.macro.ideasrecent.parameter.limit.description=Maximale Anzahl Einträge.
+
+# Template Provider
+templateProvider.idea.name=Idee
+templateProvider.idea.description=Teile eine Idee</content>
+</xwikidoc>
