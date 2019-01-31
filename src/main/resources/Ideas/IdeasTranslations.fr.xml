@@ -115,6 +115,5 @@ rendering.macro.ideasrecent.parameter.limit.description=Nombre maximum d'entrée
 
 # Template Provider
 templateProvider.idea.name=Idée
-templateProvider.idea.description=Partager une idée
-</content>
+templateProvider.idea.description=Partager une idée</content>
 </xwikidoc>
