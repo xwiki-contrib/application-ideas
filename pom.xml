@@ -62,6 +62,15 @@
       <artifactId>application-licensing-licensor-api</artifactId>
       <version>${licensing.version}</version>
     </dependency>
+    <!-- This application is needed to preselect the Ideas template at creation step according to
+      https://github.com/xwikisas/application-ideas/issues/9 only for xwiki versions until 9.5 -->
+    <dependency>
+      <groupId>com.xwiki.defaultPageTemplate</groupId>
+      <artifactId>application-defaultPageTemplate</artifactId>
+      <version>1.1</version>
+      <scope>runtime</scope>
+      <type>xar</type>
+    </dependency>
   </dependencies>
   <!-- Even though this repository is already declared in the parent POM, we still explicitly redeclare it for
        convenience. This makes it simpler to build this project without having to declare this repository in one's own

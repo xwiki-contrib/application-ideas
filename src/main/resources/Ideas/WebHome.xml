@@ -63,6 +63,38 @@
     </status_filter>
   </class>
   <object>
+    <name>Ideas.WebHome</name>
+    <number>0</number>
+    <className>XWiki.DefaultPageTemplateClass</className>
+    <guid>87b5885c-4d72-4a99-9b1a-5337056239a4</guid>
+    <class>
+      <name>XWiki.DefaultPageTemplateClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <defaultPageTemplate>
+        <disabled>0</disabled>
+        <name>defaultPageTemplate</name>
+        <number>1</number>
+        <prettyName>defaultPageTemplate</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </defaultPageTemplate>
+    </class>
+    <property>
+      <defaultPageTemplate>Ideas.IdeaTemplateProvider</defaultPageTemplate>
+    </property>
+  </object>
+  <object>
+    <name>Ideas.WebHome</name>
+    <number>0</number>
+    <className>XWiki.DocumentSheetBinding</className>
+    <guid>756e1529-9f18-4765-a817-97ce7b08c152</guid>
     <class>
       <name>XWiki.DocumentSheetBinding</name>
       <customClass/>
