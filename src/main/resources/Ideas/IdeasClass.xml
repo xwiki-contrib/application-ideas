@@ -571,7 +571,7 @@
     });
     return false;
   }
-  $(window).on("load", function() {
+  $(document).ready(function() {
     $('.xvote-pro').click(function() {
       vote('voted-pro', 'voted-con', $(this));
     });
