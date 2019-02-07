@@ -72,9 +72,12 @@
         (% class="xHint" %)$services.localization.render('')
       #if($doc.isNew())
         &lt;select id="Ideas.IdeasClass_0_status" name="Ideas.IdeasClass_0_status"&gt;
-          &lt;option label="Open" value="open"&gt;Open&lt;/option&gt;
-          &lt;option label="Closed" value="close" disabled &gt;Closed&lt;/option&gt;
-          &lt;option label="Rejected" value="rejected" disabled&gt;Rejected&lt;/option&gt;
+          &lt;option label="$services.localization.render('Ideas.IdeasClass_status_open')"
+            value="open"&gt;&lt;/option&gt;
+          &lt;option label="$services.localization.render('Ideas.IdeasClass_status_closed')"
+            value="closed" disabled&gt;&lt;/option&gt;
+          &lt;option label="$services.localization.render('Ideas.IdeasClass_status_rejected')"
+            value="rejected" disabled&gt;&lt;/option&gt;
         &lt;/select&gt;
       #else
         : $doc.display('status')

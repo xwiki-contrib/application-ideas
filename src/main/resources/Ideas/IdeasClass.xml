@@ -255,7 +255,7 @@
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
-      <values>open=Open|close=Closed|rejected=Rejected</values>
+      <values>open=Open|closed=Closed|rejected=Rejected</values>
       <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
     </status>
     <supporters>
