@@ -482,7 +482,7 @@
     if(xm.document != 'Ideas.WebHome') {
       status = $('.status dd').text();
     }
-    if(status != 'Open') {
+    if(status != "$services.localization.render('Ideas.IdeasClass_status_open')") {
       new XWiki.widgets.Notification(
         "$services.localization.render('ideas.ideasclass.vote.closed')", 'warning');
       return;
