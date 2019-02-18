@@ -478,7 +478,7 @@
    */
   var vote = function(voteClass, againstClass, button) {
     // Checking if the vote is open before voting. Don't execute the following code if the idea is not available.
-    var status = $('.status').text();
+    var status = button.parent().siblings('.status').text();
     if(xm.document != 'Ideas.WebHome') {
       status = $('.status dd').text();
     }
@@ -571,13 +571,11 @@
     });
     return false;
   }
-  $(document).ready(function() {
-    $('.xvote-pro').click(function() {
-      vote('voted-pro', 'voted-con', $(this));
-    });
-    $('.xvote-con').click(function() {
-      vote('voted-con', 'voted-pro', $(this));
-    });
+  $(document).on('click', '.xvote-pro', function() {
+    vote('voted-pro', 'voted-con', $(this));
+  });
+  $(document).on('click', '.xvote-con', function() {
+    vote('voted-con', 'voted-pro', $(this));
   });
 });</code>
     </property>
