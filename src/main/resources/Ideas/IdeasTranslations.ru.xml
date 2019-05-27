@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.1">
+  <web>Ideas</web>
+  <name>IdeasTranslations</name>
+  <language>ru</language>
+  <defaultLanguage>en</defaultLanguage>
+  <translation>1</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <creationDate>1389708432000</creationDate>
+  <parent>Ideas.WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1418394453000</date>
+  <contentUpdateDate>1418394453000</contentUpdateDate>
+  <version>1.1</version>
+  <title>Ideas Translations</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content># Titles
+ideas.app.title=Идеи
+ideas.home.title=Идеи
+
+# Class fields
+Ideas.IdeasClass_title1=Идея
+Ideas.IdeasClass_content1=Описание
+Ideas.IdeasClass_nbvotes=Голоса
+Ideas.IdeasClass_supporters=Сторонники
+Ideas.IdeasClass_against=Противники
+Ideas.IdeasClass_status=Статус
+Ideas.IdeasClass_status_open=Открыта
+Ideas.IdeasClass_status_closed=Закрыта
+Ideas.IdeasClass_status_rejected=Отклонена
+Ideas.IdeasClass_priority=Приоритет
+Ideas.IdeasClass_priority_high=Высокий
+Ideas.IdeasClass_priority_medium=Средний
+Ideas.IdeasClass_priority_low=Низкий
+Ideas.IdeasClass_nbestimate=Ориентировочная стоимость
+Ideas.IdeasClass_assignement=Уполномоченный
+
+# Live table generic keys
+ideas.livetable.doc.title=Идея
+ideas.livetable.doc.name=Имя страницы
+ideas.livetable.doc.space=Пространство
+ideas.livetable.doc.fullname=Полное имя страницы
+ideas.livetable.doc.author=Последний автор
+ideas.livetable.doc.creator=Создатель
+ideas.livetable.doc.date=Дата изменения
+ideas.livetable.doc.creationDate=Дата создания
+ideas.livetable._avatar=Аватар
+ideas.livetable._images=Изображения
+ideas.livetable._attachments=Вложения
+ideas.livetable._actions=Действия
+ideas.livetable._actions.edit=Правка
+ideas.livetable._actions.delete=Удалить
+ideas.livetable.emptyvalue=-
+
+# Live table specific keys
+ideas.livetable.title1=Идея
+ideas.livetable.content1=Описание
+ideas.livetable.nbvotes=Да
+ideas.livetable.nbagainst=Нет
+ideas.livetable.supporters=Сторонники
+ideas.livetable.against=Противники
+ideas.livetable.nbestimate=Ориентировочная стоимость
+ideas.livetable.status=Статус
+ideas.livetable.assignement=Уполномоченный
+ideas.livetable.priority=Приоритет
+
+# Ideas application keys
+ideas.home.description=Идеи, которыми стоит поделиться
+ideas.message.guess=Голосовать могут только зарегистрированные пользователи
+ideas.message.error=Ошибка при обработке идеи
+ideas.ideassheet.voted=Вы поддерживаете эту идею
+ideas.ideassheet.votedagainst=Вы против этой идеи
+ideas.ideassheet.hidesupp=Показать/скрыть список сторонников.
+ideas.ideassheet.hideagainst=Показать/скрыть список противников.
+ideas.ideassheet.unassigned=Не назначенная
+
+# Generic
+ideas.author={0}
+ideas.date={0}
+ideas.nofiles=Пока нет идей
+ideas.addfiles=Добавить идею
+ideas.seeallfiles=Просмотр всех идей
+
+# Recent ideas macro
+ideas.recentideas.title=Последние идеи
+rendering.macro.ideasrecent.name=Последние идеи
+rendering.macro.ideasrecent.description=Отображает N самых свежих идей.
+rendering.macro.ideasrecent.parameter.limit.name=Ограничение
+rendering.macro.ideasrecent.parameter.limit.description=Максимальное количество записей.
+
+# Template Provider
+templateProvider.idea.name=Идея
+templateProvider.idea.description=Поделитесь идеей</content>
+  
+</xwikidoc>

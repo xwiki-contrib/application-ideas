@@ -102,14 +102,14 @@ ideas.ideassheet.unassigned=Non assigné
 # Generic
 ideas.author=par {0}
 ideas.date=le {0}
-ideas.nofiles=Il n'y a pas d'idées
+ideas.nofiles=Il n'y a pas d'idées encore
 ideas.addfiles=Ajouter une idée
 ideas.seeallfiles=Voir toutes les idées
 
 # Recent ideas macro
-ideas.recentideas.title=Idées récents
-rendering.macro.ideasrecent.name=Idées récents
-rendering.macro.ideasrecent.description=Affiche les N plus récents idées.
+ideas.recentideas.title=Idées récentes
+rendering.macro.ideasrecent.name=Idées récentes
+rendering.macro.ideasrecent.description=Affiche les N idées les plus récentes
 rendering.macro.ideasrecent.parameter.limit.name=Limite
 rendering.macro.ideasrecent.parameter.limit.description=Nombre maximum d'entrées.
 
