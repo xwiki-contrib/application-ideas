@@ -57,7 +57,7 @@ Ideas.IdeasClass_priority=Priorité
 Ideas.IdeasClass_priority_high=Élevée
 Ideas.IdeasClass_priority_medium=Moyenne
 Ideas.IdeasClass_priority_low=Faible
-Ideas.IdeasClass_nbestimate=Cout estimé
+Ideas.IdeasClass_nbestimate=Coût estimé
 Ideas.IdeasClass_assignement=Assigné à
 
 # Live table generic keys
@@ -73,7 +73,7 @@ ideas.livetable._avatar=Avatar
 ideas.livetable._images=Images
 ideas.livetable._attachments=Pièces jointes
 ideas.livetable._actions=Actions
-ideas.livetable._actions.edit=Editer
+ideas.livetable._actions.edit=Éditer
 ideas.livetable._actions.delete=Supprimer
 ideas.livetable.emptyvalue=-
 
