@@ -176,14 +176,15 @@
   #foreach($idea in $results)
     #set($document = $xwiki.getDocument($idea))
     #if($document.hasAccessLevel('view', $xcontext.user) == 'true')
-      (% class = "ideas secondary" %)
-      (((
+      &lt;div class="ideas secondary"&gt;
         #if($xcontext.action == 'view')
           $document.display('nbvotes')
           $document.display('nbagainst')
         #end
         [[$document.title&gt;&gt;$idea]] $services.localization.render('ideas.author', ["[[$xwiki.getUserName($document.author, false)&gt;&gt;$document.author]]"]) $services.localization.render('ideas.date', [$xwiki.formatDate($document.date, 'dd/MM/yyyy hh:mm')])
-      )))
+        &lt;span class="hidden status"&gt;$document.status&lt;/span&gt;
+        &lt;span class="hidden fullName"&gt;$document.fullName&lt;/span&gt;
+      &lt;/div&gt;
     #end
   #end
   #if($results.size() == 0)
