@@ -482,6 +482,13 @@
     if(xm.document != 'Ideas.WebHome') {
       status = $('.status dd').text();
     }
+
+    // Set the docName of an idea from a page that uses the Recent Idea macro.
+    if (button.closest('.ideas-recent').length &gt; 0) {
+      var docName = button.siblings('.fullName').text();
+      status = button.siblings('.status').text();
+    }
+
     if(status != "$services.localization.render('Ideas.IdeasClass_status_open')") {
       new XWiki.widgets.Notification(
         "$services.localization.render('ideas.ideasclass.vote.closed')", 'warning');
@@ -500,7 +507,7 @@
     if(xm.document == 'Ideas.WebHome') {
       var docName = xm.space + '.' +
         button.parent().siblings('.doc_title').text() + '.' + xm.page;
-    } else {
+    } else if (docName === '') {
       var docName = xm.document;
     }
     var url = new XWiki.Document('IdeasVoteService', 'Ideas').getURL('get',
