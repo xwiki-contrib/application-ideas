@@ -10,7 +10,7 @@ This application allows you to suggest ideas.
 * Minimal XWiki version supported: XWiki 5.4.1
 * License: LGPL 2.1+.
 * [Translations](http://l10n.xwiki.org/xwiki/bin/view/Contrib/IdeasIdeasTranslations)
-* Continuous Integration Status: [![Build Status](http://ci.xwiki.org/buildStatus/icon?job=Contrib%20-%20Ideas%20Application)](http://ci.xwiki.org/job/Contrib%20-%20Ideas%20Application/)
+* Continuous Integration Status: [![Build Status](https://ci.xwiki.org/buildStatus/icon?job=XWiki+Contrib%2Fapplication-ideas%2Fmaster)](https://ci.xwiki.org/view/All/job/XWiki%20Contrib/job/application-ideas/job/master/)
 
 ## Ideas Listing
 
