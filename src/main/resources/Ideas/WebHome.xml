@@ -39,14 +39,7 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>false</hidden>
-  <content>{{include reference="Licenses.Code.VelocityMacros" /}}
-
-{{velocity}}
-#set ($mainPageReference = $services.model.createDocumentReference('', ['Ideas'], 'IdeasHomeSheet'))
-#if (!$services.licensing.licensor.hasLicensureForEntity($mainPageReference))
-  {{error}}#getMissingLicenseMessage('ideas.extension.name'){{/error}}
-#end
-{{/velocity}}</content>
+  <content/>
   <class>
     <name>Ideas.WebHome</name>
     <customClass/>
