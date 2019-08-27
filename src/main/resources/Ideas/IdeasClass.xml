@@ -483,10 +483,22 @@
       status = $('.status dd').text();
     }
 
+    var docName = xm.document;
+
     // Set the docName of an idea from a page that uses the Recent Idea macro.
     if (button.closest('.ideas-recent').length &gt; 0) {
-      var docName = button.siblings('.fullName').text();
+      docName = button.siblings('.fullName').text();
       status = button.siblings('.status').text();
+    }
+
+    if(xm.document == 'Ideas.WebHome') {
+      var docTitle = button.parent().siblings('.doc_title');
+      docName = xm.space + '.' + docTitle.text();
+      // Compute the docName for a non terminal idea (the url ends with a "/").
+      var docUrl = docTitle.children('a').get(0).href;
+      if (docUrl.length - docUrl.lastIndexOf('/') == 1) {
+        docName += '.' + 'WebHome';
+      }
     }
 
     if(status != "$services.localization.render('Ideas.IdeasClass_status_open')") {
@@ -504,12 +516,7 @@
     } else {
       var addVote = 'addVoteOpp';
     }
-    if(xm.document == 'Ideas.WebHome') {
-      var docName = xm.space + '.' +
-        button.parent().siblings('.doc_title').text() + '.' + xm.page;
-    } else if (docName === '') {
-      var docName = xm.document;
-    }
+
     var url = new XWiki.Document('IdeasVoteService', 'Ideas').getURL('get',
       ('xpage=plain&amp;outputSyntax=plain&amp;page=' + docName + '&amp;action=' + addVote));
     // Ajax request.
