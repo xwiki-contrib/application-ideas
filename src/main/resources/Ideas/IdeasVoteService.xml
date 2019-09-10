@@ -81,8 +81,6 @@ if(request.page &amp;&amp; request.action) {
         nbvotes = nbvotes + 1;
         }
         mydoc.set("nbvotes", nbvotes);
-        // Save document
-        mydoc.saveWithProgrammingRights();
         result.put("result", true);
         result.put("nbvotes", nbvotes);
       }
@@ -117,8 +115,6 @@ if(request.page &amp;&amp; request.action) {
         nbvotes = nbvotes + 1;
         }
         mydoc.set("nbagainst", nbvotes);
-        // Save document
-        mydoc.saveWithProgrammingRights();
         result.put("result", true);
         result.put("nbagainst", nbvotes);
       }
@@ -136,8 +132,6 @@ if(request.page &amp;&amp; request.action) {
       // Decrease vote by one
       nbvotes = nbvotes - 1;
       mydoc.set("nbvotes", nbvotes);
-      // Save document
-      mydoc.saveWithProgrammingRights();
       result.put("result", true);
       result.put("nbvotes", nbvotes);
     }
@@ -153,8 +147,6 @@ if(request.page &amp;&amp; request.action) {
       // Decrease vote by one
       nbvotes = nbvotes - 1;
       mydoc.set("nbagainst", nbvotes);
-      // Save document
-      mydoc.saveWithProgrammingRights();
       result.put("result", true);
       result.put("nbagainst", nbvotes);
     }
@@ -165,6 +157,8 @@ if(request.page &amp;&amp; request.action) {
     result.put("result", false);
     result.put("msg", services.localization.render('ideas.message.error'));
   }
+  // Save document
+  mydoc.saveWithProgrammingRights();
 }
 } else {
   result.put("result", false);
