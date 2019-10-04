@@ -67,7 +67,7 @@
     <dependency>
       <groupId>com.xwiki.defaultPageTemplate</groupId>
       <artifactId>application-defaultPageTemplate</artifactId>
-      <version>1.2</version>
+      <version>1.4</version>
       <scope>runtime</scope>
       <type>xar</type>
     </dependency>
