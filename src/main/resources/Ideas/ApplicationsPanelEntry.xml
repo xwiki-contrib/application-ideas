@@ -127,7 +127,7 @@ target=Ideas.WebHome
 icon=icon:lightbulb</parameters>
     </property>
     <property>
-      <scope>global</scope>
+      <scope>wiki</scope>
     </property>
   </object>
 </xwikidoc>
