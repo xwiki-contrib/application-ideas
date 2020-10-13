@@ -50,6 +50,7 @@ $xwiki.ssx.use("Ideas.IdeasClass")
 ## Load the User Picker style for the "Assigned to" column
 #set($discard = $xwiki.ssfx.use('uicomponents/widgets/userpicker/userPicker.css'))
 #set ($columnsProperties = {
+  'doc.fullName': {'type': 'text'},
   'nbvotes': {"type":"number","size":10,"html":true},
   'nbagainst': {"type":"number","size":10,"html":true},
   'nbestimate': {"type":"number","size":10,"html":true},
@@ -70,7 +71,7 @@ $xwiki.ssx.use("Ideas.IdeasClass")
   'selectedColumn': 'status',
   'defaultOrder': 'asc'
 })
-#set ($columns = ['nbvotes','nbagainst','doc.title','nbestimate','status','priority','assignement','doc.date', 'doc.author', '_actions'])
+#set ($columns = ['doc.fullName', 'nbvotes','nbagainst','doc.title', 'nbestimate','status','priority','assignement','doc.date', 'doc.author', '_actions'])
 #livetable($doc $columns $columnsProperties $options)
 {{/velocity}}</content>
 </xwikidoc>

@@ -493,12 +493,7 @@
 
     if(xm.document == 'Ideas.WebHome') {
       var docTitle = button.parent().siblings('.doc_title');
-      docName = xm.space + '.' + docTitle.text();
-      // Compute the docName for a non terminal idea (the url ends with a "/").
-      var docUrl = docTitle.children('a').get(0).href;
-      if (docUrl.length - docUrl.lastIndexOf('/') == 1) {
-        docName += '.' + 'WebHome';
-      }
+      docName = button.parent().siblings('.doc_fullName').text();
     }
 
     if(status != "$services.localization.render('Ideas.IdeasClass_status_open')") {
@@ -518,7 +513,7 @@
     }
 
     var url = new XWiki.Document('IdeasVoteService', 'Ideas').getURL('get',
-      ('xpage=plain&amp;outputSyntax=plain&amp;page=' + docName + '&amp;action=' + addVote));
+      ('xpage=plain&amp;outputSyntax=plain&amp;page=' + encodeURIComponent(docName) + '&amp;action=' + addVote));
     // Ajax request.
     $.ajax({
       url : url,
@@ -736,6 +731,11 @@
 }
 .no-hover-con:hover, .no-hover-pro:hover {
   opacity: 0.5;
+}
+.xwiki-livetable-display-header tr th:first-child,
+.xwiki-livetable-display-header tr td:first-child,
+.xwiki-livetable-display-body tr td:first-child {
+  display: none;
 }</code>
     </property>
     <property>
