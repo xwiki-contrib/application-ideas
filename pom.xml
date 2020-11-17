@@ -33,7 +33,7 @@
   <version>1.9.3-SNAPSHOT</version>
   <packaging>xar</packaging>
   <name>Ideas Application</name>
-  <description>Ideas Management Application</description>
+  <description>Empower innovation inside your team. Make proposals and share ideas. Vote on other users initiatives.</description>
   <developers>
     <developer>
       <id>ldubost</id>
