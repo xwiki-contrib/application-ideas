@@ -71,17 +71,12 @@
     <url>https://github.com/xwiki-contrib/application-ideas</url>
     <tag>HEAD</tag>
   </scm>
-  <distributionManagement>
-   <repository>
-     <id>xwiki-staging</id>
-     <name>XWiki Staging Repository</name>
-     <url>http://nexus.xwiki.org/nexus/service/local/staging/deploy/maven2/</url>
-   </repository>
-  </distributionManagement>
   <properties>
-   <!-- Don't run CLIRR here since there's no Java code. -->
-   <xwiki.clirr.skip>true</xwiki.clirr.skip>
-   <xwiki.extension.features>fveron:ideas</xwiki.extension.features>
+    <!-- Don't run CLIRR here since there's no Java code. -->
+    <xwiki.clirr.skip>true</xwiki.clirr.skip>
+    <xwiki.extension.features>fveron:ideas</xwiki.extension.features>
+    <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
+    <xwiki.issueManagement.jira.id>IDEAS</xwiki.issueManagement.jira.id>
   </properties>
   <build>
     <extensions>
