@@ -147,6 +147,8 @@ if(request.page &amp;&amp; request.action) {
       result.put("result", true);
       result.put("nbagainst", nbvotes);
     }
+    // Save document
+    mydoc.saveWithProgrammingRights();
   } else if (xcontext.user == "XWiki.XWikiGuest") {
     result.put("result", false);
     result.put("msg", services.localization.render('ideas.message.guess'));
@@ -154,8 +156,6 @@ if(request.page &amp;&amp; request.action) {
     result.put("result", false);
     result.put("msg", services.localization.render('ideas.message.error'));
   }
-  // Save document
-  mydoc.saveWithProgrammingRights();
 }
 } else {
   result.put("result", false);
