@@ -77,6 +77,10 @@
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
     <xwiki.issueManagement.jira.id>IDEAS</xwiki.issueManagement.jira.id>
     <xwiki.extension.category>application</xwiki.extension.category>
+    <!-- Components -->
+    <xwiki.extension.components>
+      org.xwiki.rendering.macro.Macro/ideasrecent
+    </xwiki.extension.components>
   </properties>
   <build>
     <extensions>
