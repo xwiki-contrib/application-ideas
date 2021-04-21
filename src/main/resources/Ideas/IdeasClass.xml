@@ -637,15 +637,16 @@ function voteagainst(reflink, url, refresh, opp) {
   box-sizing: content-box;
   color: $theme.pageContentBackgroundColor;
   cursor: pointer;
-  float: left; 
-  font-size: 30px; 
+  float: left;
+  font-size: 30px;
   height: 30px;
   line-height: 30px;
   margin: 8px;
-  opacity: 0.5; 
-  padding: 15px; 
+  opacity: 0.5;
+  padding: 15px;
+  padding-top: 20px;
   text-align: center;
-  width: 30px;   
+  width: 35px;
 }
 .xvote-con, .no-hover-con {
   background-color: $theme.notificationErrorColor;
