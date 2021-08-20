@@ -7,7 +7,7 @@ This application allows you to suggest ideas.
 * [Issue Tracker](http://jira.xwiki.org/browse/IDEAS)
 * Communication: [Mailing List](http://dev.xwiki.org/xwiki/bin/view/Community/MailingLists>), [IRC]( http://dev.xwiki.org/xwiki/bin/view/Community/IRC)
 * [Development Practices](http://dev.xwiki.org)
-* Minimal XWiki version supported: XWiki 9.11
+* Minimal XWiki version supported: XWiki 11.10
 * License: LGPL 2.1+
 * [Translations](http://l10n.xwiki.org/xwiki/bin/view/Contrib/IdeasIdeasTranslations)
 * Continuous Integration Status: [![Build Status](https://ci.xwiki.org/buildStatus/icon?job=XWiki+Contrib%2Fapplication-ideas%2Fmaster)](https://ci.xwiki.org/view/All/job/XWiki%20Contrib/job/application-ideas/job/master/)
