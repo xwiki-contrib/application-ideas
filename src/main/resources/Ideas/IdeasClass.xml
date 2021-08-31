@@ -608,7 +608,8 @@
             });
           }
         } else {
-          new XWiki.widgets.Notification(response.msg, 'error');
+          new XWiki.widgets.Notification(
+            response.msg || "$services.localization.render('ideas.ideasclass.vote.error')", 'error');
         }
       },
       error : function() {
