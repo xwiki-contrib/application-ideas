@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.1" encoding="UTF-8"?>
 
 <!--
  * See the NOTICE file distributed with this work for additional
@@ -92,7 +92,7 @@ ideas.livetable.priority=Priorität
 # Ideas application keys
 ideas.home.description=Ideen, die es Wert sind verbreitet zu werden
 ideas.message.guess=Gäste können nicht abstimmen
-ideas.message.error=Fehler beim Verarbeiten von Ideen
+ideas.message.error=Fehler beim Verarbeiten der Ideen
 ideas.ideassheet.voted=Sie unterstützen diese Idee
 ideas.ideassheet.votedagainst=Sie sind gegen diese Idee
 ideas.ideassheet.hidesupp=Unterstützerliste ein-/ausblenden.
@@ -104,7 +104,7 @@ ideas.author=Von {0}
 ideas.date=am {0}
 ideas.nofiles=Es gibt noch keine Ideen
 ideas.addfiles=Idee hinzufügen
-ideas.seeallfiles=All Ideas anzeigen
+ideas.seeallfiles=Alle Ideen anzeigen
 
 # Recent ideas macro
 ideas.recentideas.title=Neueste Ideen
@@ -115,5 +115,6 @@ rendering.macro.ideasrecent.parameter.limit.description=Maximale Anzahl Einträg
 
 # Template Provider
 templateProvider.idea.name=Idee
-templateProvider.idea.description=Teile eine Idee</content>
+templateProvider.idea.description=Teile eine Idee
+</content>
 </xwikidoc>
