@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>application-ideas-pom</artifactId>
+    <groupId>com.xwiki.ideas</groupId>
+    <version>1.13.3-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>application-ideas</artifactId>
+  <packaging>xar</packaging>
+  <name>Ideas Application</name>
+  <description>Empower innovation inside your team. Make proposals and share ideas. Vote on other users initiatives. The app can be purchased individually or part of the XWiki Pro package. Try it free.</description>
+  <properties>
+    <!-- Name to display by the Extension Manager -->
+    <xwiki.extension.name>Ideas Application (Pro)</xwiki.extension.name>
+    <xwiki.extension.category>application</xwiki.extension.category>
+    <xwiki.extension.licensing.publicDocuments>
+      Ideas.WebHome
+    </xwiki.extension.licensing.publicDocuments>
+    <!-- Don't run CLIRR here since there's no Java code. -->
+    <xwiki.clirr.skip>true</xwiki.clirr.skip>
+
+    <!-- Components -->
+    <xwiki.extension.components>
+      org.xwiki.rendering.macro.Macro/ideasrecent
+    </xwiki.extension.components>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.xwiki.ideas</groupId>
+      <artifactId>application-ideas-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.xwiki.licensing</groupId>
+      <artifactId>application-licensing-licensor-api</artifactId>
+      <version>${licensing.version}</version>
+    </dependency>
+  </dependencies>
+</project>

@@ -106,10 +106,10 @@
   $xwiki.ssx.use("Ideas.IdeasClass")
   #set ($pagename = $object.name)
   #set ($hash = $pagename.hashCode())
-  #set ($ref = 1)
+  #set ($ref = 0)
   #if ($type == "view")
     #if ($xcontext.tdoc == $xcontext.doc)
-      #set ($ref = 0)
+      #set ($ref = 1)
     #end
     #set ($obj = $doc.getObject('Ideas.IdeasClass'))
     #set ($status = $obj.getProperty('status').value)
@@ -173,10 +173,10 @@
   $xwiki.ssx.use("Ideas.IdeasClass")
   #set ($pagename = $object.name)
   #set ($hash = $pagename.hashCode())
-  #set ($ref = 1)
+  #set ($ref = 0)
   #if ($type == "view")
     #if ($xcontext.tdoc == $xcontext.doc)
-      #set ($ref = 0)
+      #set ($ref = 1)
     #end
     #set ($obj = $doc.getObject('Ideas.IdeasClass'))
     #set ($status = $obj.getProperty('status').value)
@@ -508,121 +508,101 @@
       <cache>long</cache>
     </property>
     <property>
-      <code>require(['jquery', 'xwiki-meta'], function($,xm) {
+      <code>require(['jquery', 'xwiki-meta'], function ($, xm) {
   /**
    * The function used for voting. Changes the classes so each button will
    * have a given design according to the vote, changes the number of votes,
    * shows a notification in case of error or an empty response from server.
    */
-  var vote = function(voteClass, againstClass, button) {
+  var vote = function (voteClass, againstClass, button) {
     // Checking if the vote is open before voting. Don't execute the following code if the idea is not available.
     var status = button.parent().siblings('.status').text();
-    if(xm.document != 'Ideas.WebHome') {
+    if (xm.document !== 'Ideas.WebHome') {
       status = $('.status dd').text();
     }
 
-    var docName = xm.document;
-
-    // Set the docName of an idea from a page that uses the Recent Idea macro.
+    // Get the REST url for the Document Reference passed
+    // The vote is cast from the Idea page
+    var url = XWiki.currentDocument.getRestURL('idea');
+    var docName = '';
+    // The vote is cast from a page that uses the Recent Ideas Macro
     if (button.closest('.ideas-recent').length &gt; 0) {
-      docName = button.siblings('.fullName').text();
-      status = button.siblings('.status').text();
+      docName = button.siblings('.fullName').data('reference');
+      status = button.siblings('.status').data('status');
     }
-
-    if(xm.document == 'Ideas.WebHome') {
-      var docTitle = button.parent().siblings('.doc_title');
+    // The vote is cast from the livetable of Ideas.Webhome
+    if (xm.document === 'Ideas.WebHome') {
       docName = button.parent().siblings('.doc_fullName').text();
     }
 
-    if(status != "$services.localization.render('Ideas.IdeasClass_status_open')") {
+    if (status !== "$services.localization.render('Ideas.IdeasClass_status_open')") {
       new XWiki.widgets.Notification(
         "$services.localization.render('ideas.ideasclass.vote.closed')", 'warning');
       return;
     }
+    if (docName != '') {
+      var docRef = XWiki.Model.resolve(docName, XWiki.EntityType.DOCUMENT, [xm.wiki]);
+      url = new XWiki.Document(docRef).getRestURL('idea');
+    }
     var reflink = button.attr('class').split(' ')[1];
     var opp = button.data('opp');
     var refresh = button.data('ref');
-    // Creating the url according to the space from where the request was made
-    // and the type of action that is nedded.
-    if(voteClass == 'voted-pro') {
-      var addVote = 'addVote';
-    } else {
-      var addVote = 'addVoteOpp';
-    }
-
-    var url = new XWiki.Document('IdeasVoteService', 'Ideas').getURL('get',
-      ('xpage=plain&amp;outputSyntax=plain&amp;page=' + encodeURIComponent(docName) + '&amp;action=' + addVote));
+    // Determine url and the action.
+    var valueParam = voteClass === 'voted-pro';
+    var action = button.hasClass(voteClass) ? 'DELETE' : 'PUT';
+    url = url + '?value=' + valueParam;
     // Ajax request.
     $.ajax({
-      url : url,
-      success : function(response) {
-        var voted = Array.from($('.' + reflink));
-        var opponent = Array.from($('.' + opp));
+      headers: {
+        Accept: "application/json"
+      },
+      url: url,
+      type: action,
+      success: function (response) {
+        var voted = $('.' + reflink);
+        var opponent = $('.' + opp);
         var supportText = $('.result-pro').next();
         var againstText = $('.result-against').next();
         // Changing the class acording to the vote. Updating the text that shows to the user which one is his choice.
-        if(response.result) {
-          voted.forEach(function(e) {
-            if($(e).hasClass(voteClass)) {
-              $(e).removeClass(voteClass);
-              supportText.empty();
-              againstText.empty();
-            } else {
-              $(e).addClass(voteClass);
-              if(voteClass == 'voted-pro') {
-                supportText.html("$services.localization.render('ideas.ideassheet.voted')");
-                againstText.empty();
-              } else {
-                againstText.html("$services.localization.render('ideas.ideassheet.votedagainst')");
-                supportText.empty();
-              }
-            }
-          });
-          opponent.forEach(function(e) {
-            $(e).removeClass(againstClass);
-          });
-          // Updating the votes. Refreshing the list of users that have voted with an idea.
-          if(voteClass == 'voted-pro') {
-            var nbv = response.nbvotes;
-            $('#pro-participants').load(XWiki.currentDocument.getURL('get') + ' #pro-participants&gt;*', '');
-            if(response.nbagainst || response.remove) {
-              $('#against-participants').load(XWiki.currentDocument.getURL('get') + ' #against-participants&gt;*', '');
-            }
+        voted.toggleClass(voteClass);
+        supportText.empty();
+        againstText.empty();
+        if (voted.hasClass(voteClass)) {
+          if (voteClass === 'voted-pro') {
+            supportText.html($jsontool.serialize($services.localization.render('ideas.ideassheet.voted')));
           } else {
-            var nbv = response.nbagainst;
-            $('#against-participants').load(XWiki.currentDocument.getURL('get') + ' #against-participants&gt;*', '');
-            if(response.nbvotes || response.remove) {
-              $('#pro-participants').load(XWiki.currentDocument.getURL('get') + ' #pro-participants&gt;*', '');
-            }
+            againstText.html($jsontool.serialize($services.localization.render('ideas.ideassheet.votedagainst')));
           }
-          voted.forEach(function(e) {
-            $(e).html(nbv);
-          });
-          if(!refresh) {
-            location.reload();
-          }
-          else if(response.remove) {
-            var nbdec = response.nbopp;
-            opponent.forEach(function(e) {
-              $(e).html(nbdec);
-            });
-          }
+        }
+
+        opponent.removeClass(againstClass);
+        // Updating the votes. Refreshing the list of users that have voted with an idea.
+        if (voteClass === 'voted-pro') {
+          var nbv = response.supporters.length;
+          var nbop = response.opponents.length;
         } else {
-          new XWiki.widgets.Notification(
-            response.msg || "$services.localization.render('ideas.ideasclass.vote.error')", 'error');
+          var nbv = response.opponents.length;
+          var nbop = response.supporters.length;
+        }
+        $('#pro-participants').load(XWiki.currentDocument.getURL('get') + ' #pro-participants>*', '');
+        $('#against-participants').load(XWiki.currentDocument.getURL('get') + ' #against-participants>*', '');
+        voted.html(nbv);
+        opponent.html(nbop);
+        if (refresh) {
+          location.reload();
         }
       },
-      error : function() {
+      error: function (response) {
         new XWiki.widgets.Notification(
           "$services.localization.render('ideas.ideasclass.vote.error')", 'error');
       }
     });
     return false;
   }
-  $(document).on('click', '.xvote-pro', function() {
+  $(document).on('click', '.xvote-pro', function () {
     vote('voted-pro', 'voted-con', $(this));
   });
-  $(document).on('click', '.xvote-con', function() {
+  $(document).on('click', '.xvote-con', function () {
     vote('voted-con', 'voted-pro', $(this));
   });
 });</code>

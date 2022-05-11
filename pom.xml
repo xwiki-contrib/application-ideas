@@ -99,4 +99,8 @@
      </plugin>
    </plugins>
   </build>
+  <modules>
+    <module>application-ideas-api</module>
+    <module>application-ideas-ui</module>
+  </modules>
 </project>

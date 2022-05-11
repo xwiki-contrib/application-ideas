@@ -1,0 +1,2 @@
+com.xwiki.ideas.internal.DefaultIdeasManager
+com.xwiki.ideas.internal.rest.DefaultIdeasResource

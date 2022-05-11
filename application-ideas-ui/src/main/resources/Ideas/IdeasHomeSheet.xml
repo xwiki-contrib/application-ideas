@@ -44,7 +44,7 @@ $xwiki.ssx.use("Ideas.IdeasClass")
 ## Load the User Picker style for the "Assigned to" column
 #set($discard = $xwiki.ssfx.use('uicomponents/widgets/userpicker/userPicker.css'))
 #set ($columnsProperties = {
-  'doc.fullName': {'type': 'text'},
+  'doc.fullName': {'type': 'text', 'headerClass' : 'hidden'},
   'nbvotes': {"type":"number","size":10,"html":true},
   'nbagainst': {"type":"number","size":10,"html":true},
   'nbestimate': {"type":"number","size":10,"html":true},
