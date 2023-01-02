@@ -1,0 +1,120 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.1" locale="ja">
+  <web>Ideas</web>
+  <name>IdeasTranslations</name>
+  <language>ja</language>
+  <defaultLanguage>en</defaultLanguage>
+  <translation>1</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <creationDate>1389708432000</creationDate>
+  <parent>Ideas.WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1418394453000</date>
+  <contentUpdateDate>1418394453000</contentUpdateDate>
+  <version>1.1</version>
+  <title>Ideas Translations</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content># Titles
+ideas.app.title=アイディア
+ideas.home.title=アイディア
+
+# Class fields
+Ideas.IdeasClass_title1=アイディア
+Ideas.IdeasClass_content1=説明
+Ideas.IdeasClass_nbvotes=投票
+Ideas.IdeasClass_supporters=支持者
+Ideas.IdeasClass_against=反対者
+Ideas.IdeasClass_status=状態
+### Missing: Ideas.IdeasClass_status_open=Open
+### Missing: Ideas.IdeasClass_status_closed=Closed
+### Missing: Ideas.IdeasClass_status_rejected=Rejected
+Ideas.IdeasClass_priority=優先度
+Ideas.IdeasClass_priority_high=高
+Ideas.IdeasClass_priority_medium=中
+Ideas.IdeasClass_priority_low=低
+Ideas.IdeasClass_nbestimate=概算費用
+Ideas.IdeasClass_assignement=担当者
+
+# Live table generic keys
+ideas.livetable.doc.title=アイディア
+ideas.livetable.doc.name=ページ名
+ideas.livetable.doc.space=スペース
+ideas.livetable.doc.fullname=ページの完全な名称
+ideas.livetable.doc.author=最終更新者
+ideas.livetable.doc.creator=作成者
+ideas.livetable.doc.date=更新日
+ideas.livetable.doc.creationDate=作成日
+ideas.livetable._avatar=アバター
+ideas.livetable._images=画像
+ideas.livetable._attachments=添付ファイル
+ideas.livetable._actions=アクション
+ideas.livetable._actions.edit=編集
+ideas.livetable._actions.delete=削除
+ideas.livetable.emptyvalue=-
+
+# Live table specific keys
+ideas.livetable.title1=アイディア
+ideas.livetable.content1=説明
+ideas.livetable.nbvotes=はい
+ideas.livetable.nbagainst=いいえ
+ideas.livetable.supporters=支持者
+ideas.livetable.against=反対者
+ideas.livetable.nbestimate=概算費用
+ideas.livetable.status=状態
+ideas.livetable.assignement=担当者
+ideas.livetable.priority=優先度
+
+# Ideas application keys
+### Missing: ideas.home.description=Ideas worth spreading
+ideas.message.guess=ゲストは投票できません
+ideas.message.error=アイディアを操作している際にエラーが発生しました
+ideas.ideassheet.voted=このアイディアを支持しています
+ideas.ideassheet.votedagainst=このアイディアに反対しています
+ideas.ideassheet.hidesupp=支持者の一覧を表示または非表示。
+ideas.ideassheet.hideagainst=反対者の一覧を表示または非表示。
+### Missing: ideas.ideassheet.unassigned=Unassigned
+
+# Generic
+### Missing: ideas.author=by {0}
+### Missing: ideas.date=on {0}
+ideas.nofiles=まだアイディアがありません
+ideas.addfiles=アイディアを追加
+ideas.seeallfiles=全てのアイディアを閲覧
+
+# Recent ideas macro
+ideas.recentideas.title=最近のアイディア
+rendering.macro.ideasrecent.name=最近のアイディア
+### Missing: rendering.macro.ideasrecent.description=Displays the N most recent ideas.
+rendering.macro.ideasrecent.parameter.limit.name=制限
+rendering.macro.ideasrecent.parameter.limit.description=最大のエントリー数。
+
+# Template Provider
+templateProvider.idea.name=アイディア
+templateProvider.idea.description=アイディアを共有
+</content>
+  </xwikidoc>
