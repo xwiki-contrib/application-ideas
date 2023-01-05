@@ -111,7 +111,7 @@ ideas.recentideas.title=最近のアイディア
 rendering.macro.ideasrecent.name=最近のアイディア
 ### Missing: rendering.macro.ideasrecent.description=Displays the N most recent ideas.
 rendering.macro.ideasrecent.parameter.limit.name=制限
-rendering.macro.ideasrecent.parameter.limit.description=最大のエントリー数。
+rendering.macro.ideasrecent.parameter.limit.description=エントリーの最大数。
 
 # Template Provider
 templateProvider.idea.name=アイディア
