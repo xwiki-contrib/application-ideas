@@ -20,7 +20,7 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Ideas.IdeasTemplate" locale="">
+<xwikidoc version="1.4" reference="Ideas.IdeasTemplate" locale="">
   <web>Ideas</web>
   <name>IdeasTemplate</name>
   <language/>
@@ -301,9 +301,6 @@
       <assignement/>
     </property>
     <property>
-      <content1/>
-    </property>
-    <property>
       <nbagainst>0</nbagainst>
     </property>
     <property>
@@ -320,9 +317,6 @@
     </property>
     <property>
       <supporters/>
-    </property>
-    <property>
-      <title1/>
     </property>
   </object>
 </xwikidoc>

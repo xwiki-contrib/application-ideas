@@ -54,10 +54,5 @@
       <artifactId>application-ideas-api</artifactId>
       <version>${project.version}</version>
     </dependency>
-    <dependency>
-      <groupId>com.xwiki.licensing</groupId>
-      <artifactId>application-licensing-licensor-api</artifactId>
-      <version>${licensing.version}</version>
-    </dependency>
   </dependencies>
 </project>

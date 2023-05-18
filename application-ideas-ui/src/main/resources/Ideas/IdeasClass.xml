@@ -20,7 +20,7 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Ideas.IdeasClass" locale="">
+<xwikidoc version="1.4" reference="Ideas.IdeasClass" locale="">
   <web>Ideas</web>
   <name>IdeasClass</name>
   <language/>
@@ -584,8 +584,8 @@
           var nbv = response.opponents.length;
           var nbop = response.supporters.length;
         }
-        $('#pro-participants').load(XWiki.currentDocument.getURL('get') + ' #pro-participants>*', '');
-        $('#against-participants').load(XWiki.currentDocument.getURL('get') + ' #against-participants>*', '');
+        $('#pro-participants').load(XWiki.currentDocument.getURL('get') + ' #pro-participants&gt;*', '');
+        $('#against-participants').load(XWiki.currentDocument.getURL('get') + ' #against-participants&gt;*', '');
         voted.html(nbv);
         opponent.html(nbop);
         if (refresh) {
