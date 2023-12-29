@@ -107,14 +107,14 @@ ideas.addfiles=이 저장되었지만, 일부 새롭게 실패한 검사가 있�
 ideas.seeallfiles=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 콜론(:)
 
 # Recent ideas macro
-### Missing: ideas.recentideas.title=Recent Ideas
-### Missing: rendering.macro.ideasrecent.name=Recent Ideas
-### Missing: rendering.macro.ideasrecent.description=Displays the N most recent ideas.
-### Missing: rendering.macro.ideasrecent.parameter.limit.name=Limit
-### Missing: rendering.macro.ideasrecent.parameter.limit.description=Number of maximum entries.
+ideas.recentideas.title=최근 아이디어
+rendering.macro.ideasrecent.name=최근 아이디어
+rendering.macro.ideasrecent.description=N개의 최신 아이디어를 표시합니다.
+rendering.macro.ideasrecent.parameter.limit.name=한계
+rendering.macro.ideasrecent.parameter.limit.description=최대 항목 수입니다.
 
 # Template Provider
-### Missing: templateProvider.idea.name=Idea
-### Missing: templateProvider.idea.description=Share an idea
+templateProvider.idea.name=아이디어
+templateProvider.idea.description=아이디어 공유
 </content>
   </xwikidoc>
