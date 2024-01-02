@@ -41,7 +41,7 @@
   <hidden>true</hidden>
   <content># Titles
 ideas.app.title=아이디어
-ideas.home.title=번역이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+ideas.home.title=아이디어
 
 # Class fields
 Ideas.IdeasClass_title1=아이디어
@@ -70,41 +70,41 @@ ideas.livetable.doc.creator=창조자
 ideas.livetable.doc.date=업데이트 날짜
 ideas.livetable.doc.creationDate=생산 일
 ideas.livetable._avatar=화신
-ideas.livetable._images=역이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
+ideas.livetable._images=이미지
 ideas.livetable._attachments=첨부파일
 ideas.livetable._actions=행위
-ideas.livetable._actions.edit=삭제 진행 중...
-ideas.livetable._actions.delete=삭제 진행 중...
-ideas.livetable.emptyvalue=삭제 진행 중...
+ideas.livetable._actions.edit=편집하다
+ideas.livetable._actions.delete=삭제
+ideas.livetable.emptyvalue=-
 
 # Live table specific keys
-ideas.livetable.title1=삭제 진행 중...
-ideas.livetable.content1=삭제 진행 중...
-ideas.livetable.nbvotes=삭제 진행 중...
-ideas.livetable.nbagainst=삭제 진행 중...
-ideas.livetable.supporters=삭제 진행 중...
-ideas.livetable.against=삭제 진행 중...
-ideas.livetable.nbestimate=삭제 진행 중...
-ideas.livetable.status=삭제 진행 중...
-ideas.livetable.assignement=삭제 진행 중...
-ideas.livetable.priority=삭제 진행 중...
+ideas.livetable.title1=아이디어
+ideas.livetable.content1=설명
+ideas.livetable.nbvotes=예
+ideas.livetable.nbagainst=아니요
+ideas.livetable.supporters=서포터즈
+ideas.livetable.against=사람을 상대로
+ideas.livetable.nbestimate=예상 비용
+ideas.livetable.status=상태
+ideas.livetable.assignement=양수인
+ideas.livetable.priority=우선 사항
 
 # Ideas application keys
-ideas.home.description=삭제 진행 중...
-ideas.message.guess=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.), 일치하지 않는 물음표(?)
-ideas.message.error=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.), 일치하지 않는 물음표(?)
-ideas.ideassheet.voted=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.), 일치하지 않는 물음표(?)
-ideas.ideassheet.votedagainst=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
-ideas.ideassheet.hidesupp=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
-ideas.ideassheet.hideagainst=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
-ideas.ideassheet.unassigned=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 콜론(:)
+ideas.home.description=확산 가치가 아이디어
+ideas.message.guess=게스트는 투표할 수 없습니다
+ideas.message.error=아이디어 운영 중 오류 발생
+ideas.ideassheet.voted=당신은 이 아이디어를 지지합니다
+ideas.ideassheet.votedagainst=당신은 이 생각에 반대합니다
+ideas.ideassheet.hidesupp=지지자 목록 표시/숨기기.
+ideas.ideassheet.hideagainst=상대 목록을 표시하거나 숨깁니다.
+ideas.ideassheet.unassigned=할당되지 않음
 
 # Generic
-ideas.author=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
-ideas.date=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 콜론(:)
-ideas.nofiles=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 콜론(:)
-ideas.addfiles=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 마침표(.)
-ideas.seeallfiles=이 저장되었지만, 일부 새롭게 실패한 검사가 있습니다: 일치하지 않는 콜론(:)
+ideas.author={0}까지
+ideas.date={0}에
+ideas.nofiles=아직 아이디어가 없습니다
+ideas.addfiles=아이디어 추가
+ideas.seeallfiles=모든 아이디어 보기
 
 # Recent ideas macro
 ideas.recentideas.title=최근 아이디어
