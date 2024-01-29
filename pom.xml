@@ -29,7 +29,7 @@
   
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>application-ideas</artifactId>
-  <version>1.9.1-SNAPSHOT</version>
+  <version>1.9.1</version>
   <packaging>xar</packaging>
   <name>Ideas Application</name>
   <description>Ideas Management Application</description>
@@ -67,7 +67,7 @@
     <connection>scm:git:git://github.com/xwiki-contrib/application-ideas.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/application-ideas.git</developerConnection>
     <url>https://github.com/xwiki-contrib/application-ideas</url>
-    <tag>HEAD</tag>
+    <tag>application-ideas-1.9.1</tag>
   </scm>
   <properties>
     <!-- Don't run CLIRR here since there's no Java code. -->
