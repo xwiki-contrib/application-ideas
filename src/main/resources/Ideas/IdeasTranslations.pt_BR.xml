@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.1" encoding="UTF-8"?>
 
 <!--
  * See the NOTICE file distributed with this work for additional
@@ -58,7 +58,7 @@ Ideas.IdeasClass_priority_high=Alta
 Ideas.IdeasClass_priority_medium=Média
 Ideas.IdeasClass_priority_low=Baixa
 Ideas.IdeasClass_nbestimate=Custo Estimado
-### Missing: Ideas.IdeasClass_assignement=Assignee
+Ideas.IdeasClass_assignement=Cessionário
 
 # Live table generic keys
 ideas.livetable.doc.title=Ideia
@@ -82,38 +82,39 @@ ideas.livetable.emptyvalue=-
 ideas.livetable.content1=Descrição
 ideas.livetable.nbvotes=Sim
 ideas.livetable.nbagainst=Não
-### Missing: ideas.livetable.supporters=Supporters
+ideas.livetable.supporters=Apoiadores
 ideas.livetable.against=Pessoas Contra
 ideas.livetable.nbestimate=Custo Estimado
 ideas.livetable.status=Status
-### Missing: ideas.livetable.assignement=Assignee
+ideas.livetable.assignement=Cessionário
 ideas.livetable.priority=Prioridade
 
 # Ideas application keys
-### Missing: ideas.home.description=Ideas worth spreading
-### Missing: ideas.message.guess=Guest can't vote
-### Missing: ideas.message.error=Error while operating Ideas
+ideas.home.description=Ideias que valem a pena divulgar
+ideas.message.guess=O convidado não pode votar
+ideas.message.error=Erro ao operar ideias
 ideas.ideassheet.voted=Você é a favor desta ideia
 ideas.ideassheet.votedagainst=Você não é a favor desta ideia
-### Missing: ideas.ideassheet.hidesupp=Show/Hide supporters list.
-### Missing: ideas.ideassheet.hideagainst=Show/Hide opponents list.
-### Missing: ideas.ideassheet.unassigned=Unassigned
+ideas.ideassheet.hidesupp=Mostrar/Ocultar lista de apoiadores.
+ideas.ideassheet.hideagainst=Mostrar/ocultar lista de oponentes.
+ideas.ideassheet.unassigned=Não atribuído
 
 # Generic
 ideas.author=por {0}
 ideas.date=em {0}
-### Missing: ideas.nofiles=There are no ideas yet
+ideas.nofiles=Ainda não há ideias
 ideas.addfiles=Adicionar Ideia
-### Missing: ideas.seeallfiles=See all ideas
+ideas.seeallfiles=Ver todas as ideias
 
 # Recent ideas macro
 ### Missing: ideas.recentideas.title=Recent Ideas
 ### Missing: rendering.macro.ideasrecent.name=Recent Ideas
-### Missing: rendering.macro.ideasrecent.description=Displays the N most recent ideas.
-### Missing: rendering.macro.ideasrecent.parameter.limit.name=Limit
-### Missing: rendering.macro.ideasrecent.parameter.limit.description=Number of maximum entries.
+rendering.macro.ideasrecent.description=Exibe as N ideias mais recentes.
+rendering.macro.ideasrecent.parameter.limit.name=Limite
+rendering.macro.ideasrecent.parameter.limit.description=Número máximo de entradas.
 
 # Template Provider
 ### Missing: templateProvider.idea.name=Idea
-### Missing: templateProvider.idea.description=Share an idea</content>
+templateProvider.idea.description=Compartilhe uma ideia
+</content>
 </xwikidoc>
