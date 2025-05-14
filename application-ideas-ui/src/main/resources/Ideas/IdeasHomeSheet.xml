@@ -66,6 +66,6 @@ $xwiki.ssx.use("Ideas.IdeasClass")
   'defaultOrder': 'asc'
 })
 #set ($columns = ['doc.fullName', 'nbvotes','nbagainst','doc.title', 'nbestimate','status','priority','assignement','doc.date', 'doc.author', '_actions'])
-#livetable($doc $columns $columnsProperties $options)
+#livetable('ideas-home-livetable' $columns $columnsProperties $options)
 {{/velocity}}</content>
 </xwikidoc>
