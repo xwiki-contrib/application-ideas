@@ -48,7 +48,7 @@ Ideas.IdeasClass_title1=想法
 Ideas.IdeasClass_content1=描述
 Ideas.IdeasClass_nbvotes=投票
 Ideas.IdeasClass_supporters=支持者
-### Missing: Ideas.IdeasClass_against=Opponents
+Ideas.IdeasClass_against=反对者
 Ideas.IdeasClass_status=状态
 Ideas.IdeasClass_status_open=打开
 Ideas.IdeasClass_status_closed=关闭的
@@ -57,64 +57,64 @@ Ideas.IdeasClass_priority=优先级
 Ideas.IdeasClass_priority_high=高优先级
 Ideas.IdeasClass_priority_medium=中等
 Ideas.IdeasClass_priority_low=低
-### Missing: Ideas.IdeasClass_nbestimate=Estimated cost
-### Missing: Ideas.IdeasClass_assignement=Assignee
+Ideas.IdeasClass_nbestimate=预计成本
+Ideas.IdeasClass_assignement=代理人
 
 # Live table generic keys
 ### Missing: ideas.livetable.doc.title=Idea
 ideas.livetable.doc.name=页面名称
-### Missing: ideas.livetable.doc.space=Space
+ideas.livetable.doc.space=空间
 ### Missing: ideas.livetable.doc.fullname=Page full name
-### Missing: ideas.livetable.doc.author=Last author
-### Missing: ideas.livetable.doc.creator=Creator
+ideas.livetable.doc.author=最后作者
+ideas.livetable.doc.creator=创建者
 ### Missing: ideas.livetable.doc.date=Update date
 ### Missing: ideas.livetable.doc.creationDate=Creation date
 ### Missing: ideas.livetable._avatar=Avatar
-### Missing: ideas.livetable._images=Images
-### Missing: ideas.livetable._attachments=Attachments
+ideas.livetable._images=图像
+ideas.livetable._attachments=附件
 ### Missing: ideas.livetable._actions=Actions
-### Missing: ideas.livetable._actions.edit=Edit
+ideas.livetable._actions.edit=编辑
 ### Missing: ideas.livetable._actions.delete=Delete
 ### Missing: ideas.livetable.emptyvalue=-
 
 # Live table specific keys
 ### Missing: ideas.livetable.title1=Idea
 ### Missing: ideas.livetable.content1=Description
-### Missing: ideas.livetable.nbvotes=Yes
+ideas.livetable.nbvotes=Yes同意
 ### Missing: ideas.livetable.nbagainst=No
-### Missing: ideas.livetable.supporters=Supporters
-### Missing: ideas.livetable.against=Against people
-### Missing: ideas.livetable.nbestimate=Estimated cost
+ideas.livetable.supporters=支持者
+ideas.livetable.against=反对群体
+ideas.livetable.nbestimate=预计成本
 ### Missing: ideas.livetable.status=Status
-### Missing: ideas.livetable.assignement=Assignee
-### Missing: ideas.livetable.priority=Priority
+ideas.livetable.assignement=代理人
+ideas.livetable.priority=优先级
 
 # Ideas application keys
-### Missing: ideas.home.description=Ideas worth spreading
-### Missing: ideas.message.guess=Guest can't vote
-### Missing: ideas.message.error=Error while operating Ideas
-### Missing: ideas.ideassheet.voted=You support this idea
-### Missing: ideas.ideassheet.votedagainst=You are against this idea
-### Missing: ideas.ideassheet.hidesupp=Show/Hide supporters list.
-### Missing: ideas.ideassheet.hideagainst=Show/Hide opponents list.
-### Missing: ideas.ideassheet.unassigned=Unassigned
+ideas.home.description=值得传播的想法
+ideas.message.guess=访客无法投票
+ideas.message.error=操作想法Ideas时出错
+ideas.ideassheet.voted=你支持这个想法
+ideas.ideassheet.votedagainst=你反对这个想法
+ideas.ideassheet.hidesupp=显示/隐藏支持者列表。
+ideas.ideassheet.hideagainst=显示/隐藏反对者列表。
+ideas.ideassheet.unassigned=未分配的
 
 # Generic
 ### Missing: ideas.author=by {0}
 ### Missing: ideas.date=on {0}
-### Missing: ideas.nofiles=There are no ideas yet
+ideas.nofiles=这里还没有想法ideas
 ### Missing: ideas.addfiles=Add idea
-### Missing: ideas.seeallfiles=See all ideas
+ideas.seeallfiles=查看所有想法ideas
 
 # Recent ideas macro
 ### Missing: ideas.recentideas.title=Recent Ideas
 ### Missing: rendering.macro.ideasrecent.name=Recent Ideas
-### Missing: rendering.macro.ideasrecent.description=Displays the N most recent ideas.
-### Missing: rendering.macro.ideasrecent.parameter.limit.name=Limit
-### Missing: rendering.macro.ideasrecent.parameter.limit.description=Number of maximum entries.
+rendering.macro.ideasrecent.description=显示最近的N个想法。
+rendering.macro.ideasrecent.parameter.limit.name=限制
+rendering.macro.ideasrecent.parameter.limit.description=最大条目数。
 
 # Template Provider
 ### Missing: templateProvider.idea.name=Idea
-### Missing: templateProvider.idea.description=Share an idea
+templateProvider.idea.description=分享一个想法idea
 </content>
   </xwikidoc>
