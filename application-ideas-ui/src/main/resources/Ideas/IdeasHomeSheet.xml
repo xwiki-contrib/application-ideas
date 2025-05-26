@@ -49,7 +49,7 @@ $xwiki.ssx.use("Ideas.IdeasClass")
   'nbagainst': {"type":"number","size":10,"html":true},
   'nbestimate': {"type":"number","size":10,"html":true},
   'doc.title': {"type":"text","size":20,"link":"view"},
-  'status': {"type":"list","size":20},
+  'status': {"type":"list","size":20,"html":true},
   'priority': {"type":"list","size":20},
   'assignement': {"type":"text","size":20,"link":"field", "html":true},
   'doc.date': {"type":"text","size":10},

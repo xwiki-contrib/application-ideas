@@ -49,8 +49,12 @@
     <against>
       <cache>0</cache>
       <customDisplay/>
+      <defaultValue/>
       <disabled>0</disabled>
       <displayType>input</displayType>
+      <freeText/>
+      <hint/>
+      <largeStorage>0</largeStorage>
       <multiSelect>1</multiSelect>
       <name>against</name>
       <number>6</number>
@@ -70,8 +74,12 @@
     <assignement>
       <cache>0</cache>
       <customDisplay/>
+      <defaultValue/>
       <disabled>0</disabled>
       <displayType>input</displayType>
+      <freeText/>
+      <hint/>
+      <largeStorage>0</largeStorage>
       <multiSelect>0</multiSelect>
       <name>assignement</name>
       <number>7</number>
@@ -91,6 +99,7 @@
     <content1>
       <customDisplay>{{include reference="AppWithinMinutes.Content"/}}</customDisplay>
       <disabled>0</disabled>
+      <hint/>
       <name>content1</name>
       <number>2</number>
       <prettyName>Description</prettyName>
@@ -117,7 +126,7 @@
     #if ($users.contains($xcontext.getLocalUser()))
       #set ($addclass = "voted-con")
     #end
-    #if ($status == 'open')
+    #if ($services.ideas.isOpenToVote($status))
       (% class="xvote-con against${hash} #if($addclass) $addclass #end" data-ref="$ref" data-opp="nbvotes${hash}"%)
     #else
       (% class="no-hover-con xvote-con against${hash} #if($addclass) $addclass #end"%)
@@ -136,6 +145,7 @@
   #end
 {{/velocity}}</customDisplay>
       <disabled>0</disabled>
+      <hint/>
       <name>nbagainst</name>
       <number>4</number>
       <numberType>integer</numberType>
@@ -157,6 +167,7 @@
 {{/html}}
 {{/velocity}}</customDisplay>
       <disabled>0</disabled>
+      <hint/>
       <name>nbestimate</name>
       <number>8</number>
       <numberType>long</numberType>
@@ -184,7 +195,7 @@
     #if ($users.contains($xcontext.getLocalUser()))
       #set ($addclass = "voted-pro")
     #end
-    #if($status == 'open')
+    #if($services.ideas.isOpenToVote($status))
       (% class="xvote-pro nbvotes${hash} #if ($addclass) $addclass #end" data-ref="$ref" data-opp="against${hash}"%)
     #else
       (% class="no-hover-pro xvote-pro nbvotes${hash} #if ($addclass) $addclass #end"%)
@@ -203,6 +214,7 @@
   #end
 {{/velocity}}</customDisplay>
       <disabled>0</disabled>
+      <hint/>
       <name>nbvotes</name>
       <number>3</number>
       <numberType>integer</numberType>
@@ -216,8 +228,12 @@
     <priority>
       <cache>0</cache>
       <customDisplay/>
+      <defaultValue/>
       <disabled>0</disabled>
       <displayType>select</displayType>
+      <freeText/>
+      <hint/>
+      <largeStorage>0</largeStorage>
       <multiSelect>0</multiSelect>
       <name>priority</name>
       <number>10</number>
@@ -236,9 +252,15 @@
     </priority>
     <status>
       <cache>0</cache>
+      <classname>Ideas.Code.StatusClass</classname>
       <customDisplay/>
+      <defaultValue/>
       <disabled>0</disabled>
       <displayType>select</displayType>
+      <freeText/>
+      <hint/>
+      <idField>status</idField>
+      <largeStorage>0</largeStorage>
       <multiSelect>0</multiSelect>
       <name>status</name>
       <number>9</number>
@@ -246,20 +268,25 @@
       <prettyName>Status</prettyName>
       <relationalStorage>0</relationalStorage>
       <separator> </separator>
-      <separators> ,|</separators>
+      <separators/>
       <size>1</size>
       <sort>none</sort>
+      <sql/>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
-      <values>open=Open|closed=Closed|rejected=Rejected</values>
-      <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      <valueField/>
+      <classType>com.xpn.xwiki.objects.classes.DBListClass</classType>
     </status>
     <supporters>
       <cache>0</cache>
       <customDisplay/>
+      <defaultValue/>
       <disabled>0</disabled>
       <displayType>select</displayType>
+      <freeText/>
+      <hint/>
+      <largeStorage>0</largeStorage>
       <multiSelect>1</multiSelect>
       <name>supporters</name>
       <number>5</number>
@@ -279,6 +306,7 @@
     <title1>
       <customDisplay>{{include reference="AppWithinMinutes.Title"/}}</customDisplay>
       <disabled>0</disabled>
+      <hint/>
       <name>title1</name>
       <number>1</number>
       <prettyName>Idea</prettyName>
@@ -536,11 +564,6 @@
       docName = button.parent().siblings('.doc_fullName').text();
     }
 
-    if (status !== "$services.localization.render('Ideas.IdeasClass_status_open')") {
-      new XWiki.widgets.Notification(
-        "$services.localization.render('ideas.ideasclass.vote.closed')", 'warning');
-      return;
-    }
     if (docName != '') {
       var docRef = XWiki.Model.resolve(docName, XWiki.EntityType.DOCUMENT, [xm.wiki]);
       url = new XWiki.Document(docRef).getRestURL('idea');
@@ -594,8 +617,13 @@
         }
       },
       error: function (response) {
-        new XWiki.widgets.Notification(
-          "$services.localization.render('ideas.ideasclass.vote.error')", 'error');
+        if (response.status === 403) {
+          new XWiki.widgets.Notification(
+            "$services.localization.render('ideas.ideasclass.vote.closed')", 'warning');
+        } else {
+          new XWiki.widgets.Notification(
+            "$services.localization.render('ideas.ideasclass.vote.error')", 'error');
+        }
       }
     });
     return false;

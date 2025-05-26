@@ -1,2 +1,3 @@
 com.xwiki.ideas.internal.DefaultIdeasManager
 com.xwiki.ideas.internal.rest.DefaultIdeasResource
+com.xwiki.ideas.script.IdeasScriptService

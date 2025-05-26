@@ -67,15 +67,7 @@
     (((
       ; &lt;label for="Ideas.IdeasClass_0_status"&gt;#if($services.icon)$services.icon.render('control_play') #end$escapetool.xml($doc.displayPrettyName('status'))&lt;/label&gt;##
         (% class="xHint" %)$services.localization.render('')
-      #if($doc.isNew())
-        &lt;select id="Ideas.IdeasClass_0_status" name="Ideas.IdeasClass_0_status"&gt;
-          &lt;option value="open"&gt;$services.localization.render('Ideas.IdeasClass_status_open')&lt;/option&gt;
-          &lt;option value="closed" disabled&gt;$services.localization.render('Ideas.IdeasClass_status_closed')&lt;/option&gt;
-          &lt;option value="rejected" disabled&gt;$services.localization.render('Ideas.IdeasClass_status_rejected')&lt;/option&gt;
-        &lt;/select&gt;
-      #else
-        : $doc.display('status')
-      #end
+      : $doc.display('status')
     )))
     (% class="col-xs-12 col-md-6" %)
     (((

@@ -39,6 +39,12 @@
     <xwiki.extension.licensing.publicDocuments>
       Ideas.WebHome
     </xwiki.extension.licensing.publicDocuments>
+    <xwiki.extension.licensing.excludedDocuments>
+      Ideas.Code.Administration,
+      Ideas.Code.Statuses.Status_open,
+      Ideas.Code.Statuses.Status_closed,
+      Ideas.Code.Statuses.Status_rejected
+    </xwiki.extension.licensing.excludedDocuments>
     <!-- Don't run CLIRR here since there's no Java code. -->
     <xwiki.clirr.skip>true</xwiki.clirr.skip>
 

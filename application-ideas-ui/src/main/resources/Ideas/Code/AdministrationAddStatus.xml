@@ -1,0 +1,106 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.5" reference="Ideas.Code.AdministrationAddStatus" locale="">
+  <web>Ideas.Code</web>
+  <name>AdministrationAddStatus</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title>Add Status</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content>{{velocity}}
+#if ($hasAdmin)
+  #set ($status = $request.status)
+  #set ($openToVote = $request.openToVote)
+  #if ($stringtool.isNotBlank($status) &amp;&amp; $services.csrf.isTokenValid($request.form_token))
+    #set ($document = $xwiki.getDocument("Ideas.Code.Statuses.Status_$status"))
+    #set ($discard = $document.setTitle($status))
+    #set ($discard = $document.setHidden(true))
+    #set ($object = $document.getObject('Ideas.Code.StatusClass', true))
+    #set ($discard = $object.set('status', $status))
+    #if ("$!openToVote" != '')
+      #set ($discard = $object.set('openToVote', 1))
+    #else
+      #set ($discard = $object.set('openToVote', 0))
+    #end
+    #set ($discard = $document.save())
+  #end
+
+  {{html}}
+    &lt;form class="xform" method="post"&gt;
+      &lt;input type="hidden" name="form_token" value="$!{services.csrf.getToken()}" /&gt;
+      &lt;dl&gt;
+        &lt;dt&gt;
+          &lt;label for="status"&gt;$escapetool.xml($services.localization.render('Ideas.administration.addStatus.status.label'))&lt;/label&gt;
+          &lt;span class="xHint"&gt;$escapetool.xml($services.localization.render('Ideas.administration.addStatus.status.hint'))&lt;/span&gt;
+        &lt;/dt&gt;
+        &lt;dd&gt;
+          &lt;input id="status" name="status" type="text" size="20" required
+            placeholder="$escapetool.xml($services.localization.render('Ideas.administration.addStatus.status.placeholder'))"/&gt;
+        &lt;/dd&gt;
+      &lt;/dl&gt;
+      &lt;dl&gt;
+        &lt;dt&gt;
+          &lt;label for="openToVote"&gt;$escapetool.xml($services.localization.render('Ideas.administration.addStatus.openToVote.label'))&lt;/label&gt;
+          &lt;span class="xHint"&gt;$escapetool.xml($services.localization.render('Ideas.administration.addStatus.openToVote.hint'))&lt;/span&gt;
+        &lt;/dt&gt;
+        &lt;dd&gt;
+          &lt;input id="openToVote" name="openToVote" type="checkbox" size="5"/&gt;
+        &lt;/dd&gt;
+      &lt;/dl&gt;
+      &lt;span class="buttonwrapper"&gt;
+        &lt;button class="button" type="submit"&gt;$escapetool.xml($services.localization.render('Ideas.administration.addStatus.submit'))&lt;/button&gt;
+      &lt;/span&gt;
+    &lt;/form&gt;
+  {{/html}}
+
+  #set ($liveDataConfig = {'meta': { 'propertyDescriptors': [
+        {'id': 'status', 'displayer': {'id': 'link', 'propertyHref': 'doc.url'}},
+        {'id': '_actions', 'displayer': {'id': 'actions', 'actions': ['delete']}}
+  ]}})
+  #set ($options = {
+    'translationPrefix' : 'ideas.livetable.',
+    'className' : 'Ideas.Code.StatusClass',
+    'queryFilters': 'currentlanguage'
+  })
+{{liveData
+  id="ideaStatuses"
+  properties="status,openToVote,doc.date,doc.author,_actions"
+  source="liveTable"
+  sourceParameters="$escapetool.url($options)"
+}}
+$jsontool.serialize($liveDataConfig)
+{{/liveData}}
+#else
+  {{warning}}{{translation key="Ideas.administration.noRights"/}}{{/warning}}
+#end
+{{/velocity}}</content>
+</xwikidoc>
