@@ -561,7 +561,7 @@
     }
     // The vote is cast from the livetable of Ideas.Webhome
     if (xm.document === 'Ideas.WebHome') {
-      docName = button.parent().siblings('.doc_fullName').text();
+      docName = button.parent().siblings('.doc_fullName').first().text();
     }
 
     if (docName != '') {
@@ -788,7 +788,9 @@
 .no-hover-con:hover, .no-hover-pro:hover {
   opacity: 0.5;
 }
-#ideas-home-livetable .xwiki-livetable-display-body tr td:first-child {
+#ideas-home-livetable .xwiki-livetable-display-body tr td:first-child,
+  #ideas-home-livetable .xwiki-livetable-display-header tr th:first-child,
+  #ideas-home-livetable .xwiki-livetable-display-header tr.xwiki-livetable-display-filters td:first-child {
   display: none;
 }</code>
     </property>

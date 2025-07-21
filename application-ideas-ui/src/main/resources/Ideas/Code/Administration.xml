@@ -49,6 +49,85 @@
   <object>
     <name>Ideas.Code.Administration</name>
     <number>0</number>
+    <className>Ideas.Code.ConfigurationClass</className>
+    <guid>d5502b1e-7eef-4f36-ac8d-20bf026859e5</guid>
+    <class>
+      <name>Ideas.Code.ConfigurationClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <homepageLivetableColumns>
+        <cache>0</cache>
+        <customDisplay>{{velocity output="false"}}
+#template('pickers_macros.vm')
+{{/velocity}}{{velocity}}
+#set ($columns = $object.getProperty($name).getPropertyClass().getListValues())
+#set ($options = [])
+## Workaround for selectize reordering the already selected values.
+#foreach ($col in $value)
+  #set ($discard = $options.add({ 'name': $col, 'value': $col}))
+#end
+#foreach ($col in $columns)
+  #if (!$options.contains($col))
+    #set ($discard = $options.add({ 'name': $col, 'value': $col}))
+  #end
+#end
+#set ($parameters = {
+  'name': "${object.getxWikiClass().name}_${object.number}_${name}",
+  'value': $value,
+  'multiple': 'multiple',
+  'prefix': 'ideas.livetable.',
+  'options': $options
+})
+{{html}}
+#staticSelectPicker($parameters)
+{{/html}}
+{{/velocity}}</customDisplay>
+        <defaultValue/>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText/>
+        <hint/>
+        <largeStorage>0</largeStorage>
+        <multiSelect>1</multiSelect>
+        <name>homepageLivetableColumns</name>
+        <number>1</number>
+        <picker>1</picker>
+        <prettyName/>
+        <relationalStorage>0</relationalStorage>
+        <separator>, </separator>
+        <separators>, </separators>
+        <size>1</size>
+        <sort/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <values>nbvotes|nbagainst|doc.title|nbestimate|status|priority|assignement|doc.date|doc.author|_actions</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </homepageLivetableColumns>
+    </class>
+    <property>
+      <homepageLivetableColumns>
+        <value>nbvotes</value>
+        <value>nbagainst</value>
+        <value>doc.title</value>
+        <value>nbestimate</value>
+        <value>status</value>
+        <value>priority</value>
+        <value>assignement</value>
+        <value>doc.date</value>
+        <value>doc.author</value>
+        <value>_actions</value>
+      </homepageLivetableColumns>
+    </property>
+  </object>
+  <object>
+    <name>Ideas.Code.Administration</name>
+    <number>0</number>
     <className>XWiki.ConfigurableClass</className>
     <guid>6115da9f-52ce-444a-bdbf-a27fe489caeb</guid>
     <class>
@@ -277,7 +356,7 @@
 ----</codeToExecute>
     </property>
     <property>
-      <configurationClass/>
+      <configurationClass>Ideas.Code.ConfigurationClass</configurationClass>
     </property>
     <property>
       <displayBeforeCategory/>

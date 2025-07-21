@@ -62,7 +62,7 @@ Ideas.IdeasClass_assignement=Assignee
 ideas.livetable.doc.title=Idea
 ideas.livetable.doc.name=Page name
 ideas.livetable.doc.space=Space
-ideas.livetable.doc.fullname=Page full name
+ideas.livetable.doc.fullName=Page full name
 ideas.livetable.doc.author=Last author
 ideas.livetable.doc.creator=Creator
 ideas.livetable.doc.date=Update date
@@ -127,7 +127,9 @@ Ideas.administration.addStatus.status.hint=The name of the new status
 Ideas.administration.addStatus.status.placeholder=name
 Ideas.administration.addStatus.openToVote.label=Open to vote
 Ideas.administration.addStatus.openToVote.hint=Should ideas with this status be open for voting?
-Ideas.administration.addStatus.submit=Add Status</content>
+Ideas.administration.addStatus.submit=Add Status
+Ideas.Code.ConfigurationClass_homepageLivetableColumns=Homepage Livetable Columns
+Ideas.Code.ConfigurationClass_homepageLivetableColumns.hint=The columns to display for each idea in the livetable on the Ideas homepage.</content>
   <object>
     <name>Ideas.IdeasTranslations</name>
     <number>0</number>
