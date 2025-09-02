@@ -71,7 +71,7 @@
     <tag>HEAD</tag>
   </scm>
   <properties>
-    <xwikiprocommons.version>1.0.4</xwikiprocommons.version>
+    <xwikiprocommons.version>1.3.0</xwikiprocommons.version>
     <!-- Don't run CLIRR here since there's no Java code. -->
     <xwiki.clirr.skip>true</xwiki.clirr.skip>
     <xwiki.extension.features>fveron:ideas</xwiki.extension.features>
