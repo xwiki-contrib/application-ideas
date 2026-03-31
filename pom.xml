@@ -103,5 +103,6 @@
   <modules>
     <module>application-ideas-api</module>
     <module>application-ideas-ui</module>
+    <module>application-ideas-xip</module>
   </modules>
 </project>
