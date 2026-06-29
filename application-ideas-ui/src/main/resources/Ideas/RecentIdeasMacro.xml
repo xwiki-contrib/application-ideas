@@ -252,40 +252,60 @@
       <async_enabled/>
     </property>
     <property>
-      <code>{{velocity}}
-#set($discard = $xwiki.jsx.use('Ideas.IdeasClass'))
-#set($discard = $xwiki.ssx.use('Ideas.IdeasSheet'))
-#set($limit = $xcontext.macro.params.limit)
+      <code>{{velocity output="false"}}
+#macro(htmlLink $url, $label)
+&lt;a href="$!escapetool.xml($url)"&gt;
+  $escapetool.xml($label)
+&lt;/a&gt;
+#end
+{{/velocity}}{{velocity}}
+#set ($discard = $xwiki.jsx.use('Ideas.IdeasClass'))
+#set ($discard = $xwiki.ssx.use('Ideas.IdeasSheet'))
+#set ($limit = $xcontext.macro.params.limit)
 ##
-#set($query = "from doc.object(Ideas.IdeasClass) as idea where doc.fullName &lt;&gt; 'Ideas.IdeasTemplate' order by doc.creationDate desc")
-#set($results = $services.query.xwql($query).setLimit($limit).execute())
-##
-{{html wiki=true}}
-  (% class="ideas-recent" %)
-  (((
-  #foreach($idea in $results)
-    #set($document = $xwiki.getDocument($idea))
-    #if($document.hasAccessLevel('view', $xcontext.user) == 'true')
+#set ($query = "from doc.object(Ideas.IdeasClass) as idea where doc.fullName &lt;&gt; 'Ideas.IdeasTemplate' "
+  + 'order by doc.creationDate desc')
+#set ($results = $services.query.xwql($query).setLimit($limit).execute())
+{{html clean="false"}}
+&lt;div class="ideas-recent"&gt;
+  #foreach ($idea in $results)
+    #set ($document = $xwiki.getDocument($idea))
+    #if ($document.hasAccessLevel('view', $xcontext.user) == 'true')
       &lt;div class="ideas secondary"&gt;
-        #if($xcontext.action == 'view')
-          $document.display('nbvotes')
-          $document.display('nbagainst')
+        #if ($xcontext.action == 'view')
+          {{/html}}##
+          $document.display('nbvotes')##
+          $document.display('nbagainst')##
+          {{html clean="false"}}
         #end
-        [[$document.title&gt;&gt;$idea]] $services.localization.render('ideas.author', ["[[$xwiki.getUserName($document.author, false)&gt;&gt;$document.author]]"]) $services.localization.render('ideas.date', [$xwiki.formatDate($document.date, 'dd/MM/yyyy hh:mm')])
-        &lt;span class="hidden status" data-status="$!escapetool.xml($document.status)"&gt;&lt;/span&gt;
-        &lt;span class="hidden fullName" data-reference="$!escapetool.xml($document.documentReference)"&gt;&lt;/span&gt;
+        #htmlLink($document.getURL(), $document.title)
+        $escapetool.xml($services.localization.render('ideas.author', ['__url__'])).replace(
+          '__url__', "$xwiki.getUserName($document.author, true)")
+        $escapetool.xml(
+          $services.localization.render('ideas.date', [$xwiki.formatDate($document.date, 'dd/MM/yyyy hh:mm')]))
+        &lt;span class="hidden status"
+          data-status="$!escapetool.xml($document.status)"&gt;&lt;/span&gt;
+        &lt;span class="hidden fullName"
+          data-reference="$!escapetool.xml($services.model.serialize($document.documentReference))"&gt;&lt;/span&gt;
       &lt;/div&gt;
     #end
   #end
-  #if($results.size() == 0)
-    (% class = "ideas secondary" %)((($services.localization.render('ideas.nofiles'))))
-    #set($spaceReference = $services.model.resolveSpace('Ideas'))
-    #if($services.security.authorization.hasAccess('edit', $spaceReference))
-      (% class = "ideas" %)((([[$services.localization.render('ideas.addfiles')&gt;&gt;Ideas.WebHome]])))
+  #if ($results.isEmpty())
+    &lt;div class="ideas secondary"&gt;
+      $escapetool.xml($services.localization.render('ideas.nofiles'))
+    &lt;/div&gt;
+    #set ($spaceReference = $services.model.resolveSpace('Ideas'))
+    #if ($services.security.authorization.hasAccess('edit', $spaceReference))
+      &lt;div class="ideas"&gt;
+        #htmlLink($xwiki.getDocument('Ideas.WebHome').getURL(), $services.localization.render('ideas.addfiles'))
+      &lt;/div&gt;
     #end
   #else
-    (% class = "ideas" %)((([[$services.localization.render('ideas.seeallfiles')&gt;&gt;Ideas.WebHome]])))
+    &lt;div class="ideas"&gt;
+      #htmlLink($xwiki.getDocument('Ideas.WebHome').getURL(), $services.localization.render('ideas.seeallfiles'))
+    &lt;/div&gt;
   #end
+&lt;/div&gt;
 {{/html}}
 {{/velocity}}</code>
     </property>
