@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.ideas.rest;
+package org.xwiki.ideas.rest;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -26,14 +26,13 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 
+import org.xwiki.ideas.model.jaxb.Idea;
 import org.xwiki.rest.XWikiRestException;
 import org.xwiki.stability.Unstable;
 
-import com.xwiki.ideas.model.jaxb.Idea;
-
 /**
  * @version $Id$
- * @since 1.14
+ * @since 1.10
  */
 @Path("/wikis/{wikiName}/spaces/{spaceName: .+}/pages/{pageName}/idea")
 @Unstable
@@ -43,7 +42,7 @@ public interface IdeasResource
      * @param xwikiName The name of the wiki in which the page resides
      * @param spaceName The spaces associated with the page
      * @param pageName The name of the page
-     * @return A response containing a serialized version of a {@link com.xwiki.ideas.model.jaxb.Idea} in case it exists
+     * @return A response containing a serialized version of a {@link Idea} in case it exists
      *     or an appropriate response code otherwise.
      * @throws XWikiRestException if the URL is malformed
      */
@@ -61,7 +60,7 @@ public interface IdeasResource
      * @param spaceName The spaces associated with the page
      * @param pageName The name of the page
      * @param value The value of the vote, usually true or false, to vote for or against the Idea
-     * @return A response containing a serialized version of a {@link com.xwiki.ideas.model.jaxb.Idea} in case of
+     * @return A response containing a serialized version of a {@link Idea} in case of
      *     success or an appropriate response code otherwise.
      * @throws XWikiRestException when the document is missing or lacks an Ideas poll
      */
@@ -79,7 +78,7 @@ public interface IdeasResource
      * @param xwikiName The name of the wiki in which the page resides
      * @param spaceName The spaces associated with the page
      * @param pageName The name of the page
-     * @return A response containing a serialized version of a {@link com.xwiki.ideas.model.jaxb.Idea} in case of
+     * @return A response containing a serialized version of a {@link Idea} in case of
      *     success or an appropriate response code otherwise.
      * @throws XWikiRestException when the document is missing or lacks an Ideas poll
      */

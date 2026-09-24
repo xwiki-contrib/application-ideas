@@ -17,39 +17,31 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.ideas.model;
+package org.xwiki.ideas.internal;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.xwiki.stability.Unstable;
+import org.xwiki.ideas.model.jaxb.Idea;
 
 /**
- * Represents a serializable version of a vote result.
+ * A utility class used to convert an {@link org.xwiki.ideas.model.Idea} object to an {@link Idea} one.
  *
  * @version $Id$
- * @since 1.14
+ * @since 1.10
  */
-@Unstable
-public class Idea
+public final class IdeaMapper
 {
-    protected final List<String> supporters = new ArrayList<>();
-
-    protected final List<String> opponents = new ArrayList<>();
-
-    /**
-     * @return the reference to the list of supporters
-     */
-    public List<String> getSupporters()
+    private IdeaMapper()
     {
-        return this.supporters;
     }
 
     /**
-     * @return the reference to the list of opponents
+     * @param idea an Idea that we want to convert
+     * @return a clone of the Idea
      */
-    public List<String> getOpponents()
+    public static Idea from(org.xwiki.ideas.model.Idea idea)
     {
-        return this.opponents;
+        Idea convertedIdea = new Idea();
+        convertedIdea.getSupporters().addAll(idea.getSupporters());
+        convertedIdea.getOpponents().addAll(idea.getOpponents());
+        return convertedIdea;
     }
 }

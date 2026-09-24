@@ -23,9 +23,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>application-ideas-pom</artifactId>
-    <groupId>com.xwiki.ideas</groupId>
-    <version>1.13.3-SNAPSHOT</version>
+    <groupId>org.xwiki.contrib</groupId>
+    <artifactId>application-ideas</artifactId>
+    <version>1.9.3-SNAPSHOT</version>
   </parent>
   <artifactId>application-ideas-api</artifactId>
   <packaging>jar</packaging>
@@ -86,7 +86,7 @@
             <id>default</id>
             <configuration>
               <excludes>
-                com/xwiki/ideas/model/jaxb/*.java
+                org/xwiki/ideas/model/jaxb/*.java
               </excludes>
             </configuration>
           </execution>

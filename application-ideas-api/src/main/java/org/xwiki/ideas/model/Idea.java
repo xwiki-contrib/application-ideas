@@ -17,42 +17,39 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.ideas.script;
+package org.xwiki.ideas.model;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.inject.Singleton;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.xwiki.component.annotation.Component;
-import org.xwiki.script.service.ScriptService;
 import org.xwiki.stability.Unstable;
 
-import com.xwiki.ideas.IdeasException;
-import com.xwiki.ideas.IdeasManager;
-
 /**
- * Script service for retrieving information about the Ideas Application.
+ * Represents a serializable version of a vote result.
  *
  * @version $Id$
- * @since 1.16
+ * @since 1.10
  */
-@Component
-@Named("ideas")
-@Singleton
 @Unstable
-public class IdeasScriptService implements ScriptService
+public class Idea
 {
-    @Inject
-    private IdeasManager ideasManager;
+    protected final List<String> supporters = new ArrayList<>();
+
+    protected final List<String> opponents = new ArrayList<>();
 
     /**
-     * Check if an idea with the given status allows voting.
-     *
-     * @param status the status to check
-     * @return true if an idea with the given status is open for voting, false otherwise
+     * @return the reference to the list of supporters
      */
-    public boolean isOpenToVote(String status) throws IdeasException
+    public List<String> getSupporters()
     {
-        return ideasManager.isOpenToVote(status);
+        return this.supporters;
+    }
+
+    /**
+     * @return the reference to the list of opponents
+     */
+    public List<String> getOpponents()
+    {
+        return this.opponents;
     }
 }

@@ -17,18 +17,18 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.ideas;
+package org.xwiki.ideas;
 
 import org.xwiki.stability.Unstable;
 
 /**
- * Any exception raised when a document operation fails.
+ * Any exception raised when handling Ideas business.
  *
  * @version $Id$
- * @since 1.14
+ * @since 1.10
  */
 @Unstable
-public class IdeasDocumentOperationException extends Exception
+public class IdeasException extends Exception
 {
     /**
      * Class ID for serialization.
@@ -42,7 +42,7 @@ public class IdeasDocumentOperationException extends Exception
      * @param cause the cause (which is saved for later retrieval by the {@link #getCause()} method). A null value
      *     is permitted, and indicates that the cause is nonexistent or unknown
      */
-    public IdeasDocumentOperationException(String message, Throwable cause)
+    public IdeasException(String message, Throwable cause)
     {
         super(message, cause);
     }
@@ -53,7 +53,7 @@ public class IdeasDocumentOperationException extends Exception
      *
      * @param message the detail message (which is saved for later retrieval by the {@link #getMessage()} method)
      */
-    public IdeasDocumentOperationException(String message)
+    public IdeasException(String message)
     {
         super(message);
     }

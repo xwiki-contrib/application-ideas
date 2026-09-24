@@ -25,14 +25,14 @@
   <parent>
     <groupId>org.xwiki.contrib</groupId>
     <artifactId>parent-platform</artifactId>
-    <version>15.10</version>
+    <version>15.10-8</version>
   </parent>
 
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>application-ideas</artifactId>
   <version>1.9.3-SNAPSHOT</version>
-  <packaging>xar</packaging>
-  <name>Ideas Application</name>
+  <packaging>pom</packaging>
+  <name>Ideas Application POM</name>
   <description>Empower innovation inside your team. Make proposals and share ideas. Vote on other users initiatives.</description>
   <developers>
     <developer>
@@ -77,11 +77,6 @@
     <xwiki.extension.features>fveron:ideas</xwiki.extension.features>
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
     <xwiki.issueManagement.jira.id>IDEAS</xwiki.issueManagement.jira.id>
-    <xwiki.extension.category>application</xwiki.extension.category>
-    <!-- Components -->
-    <xwiki.extension.components>
-      org.xwiki.rendering.macro.Macro/ideasrecent
-    </xwiki.extension.components>
   </properties>
   <build>
     <extensions>

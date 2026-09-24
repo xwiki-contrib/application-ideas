@@ -23,28 +23,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>application-ideas-pom</artifactId>
-    <groupId>com.xwiki.ideas</groupId>
-    <version>1.13.3-SNAPSHOT</version>
+    <groupId>org.xwiki.contrib</groupId>
+    <artifactId>application-ideas</artifactId>
+    <version>1.9.3-SNAPSHOT</version>
   </parent>
 
-  <artifactId>application-ideas</artifactId>
+  <artifactId>application-ideas-ui</artifactId>
   <packaging>xar</packaging>
-  <name>Ideas Application</name>
-  <description>Empower innovation inside your team. Make proposals and share ideas. Vote on other users initiatives. The app can be purchased individually or part of the XWiki Pro package. Try it free.</description>
+  <name>Ideas Application UI</name>
+  <description>Empower innovation inside your team. Make proposals and share ideas. Vote on other users initiatives.</description>
   <properties>
     <!-- Name to display by the Extension Manager -->
-    <xwiki.extension.name>Ideas Application (Pro)</xwiki.extension.name>
+    <xwiki.extension.name>Ideas Application</xwiki.extension.name>
     <xwiki.extension.category>application</xwiki.extension.category>
-    <xwiki.extension.licensing.publicDocuments>
-      Ideas.WebHome
-    </xwiki.extension.licensing.publicDocuments>
-    <xwiki.extension.licensing.excludedDocuments>
-      Ideas.Code.Administration,
-      Ideas.Code.Statuses.Status_open,
-      Ideas.Code.Statuses.Status_closed,
-      Ideas.Code.Statuses.Status_rejected
-    </xwiki.extension.licensing.excludedDocuments>
     <!-- Don't run CLIRR here since there's no Java code. -->
     <xwiki.clirr.skip>true</xwiki.clirr.skip>
 
@@ -56,7 +47,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.xwiki.ideas</groupId>
+      <groupId>org.xwiki.contrib</groupId>
       <artifactId>application-ideas-api</artifactId>
       <version>${project.version}</version>
     </dependency>
@@ -66,6 +57,12 @@
       <version>${xwikiprocommons.version}</version>
       <type>xar</type>
       <scope>runtime</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-resource-api</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
 </project>

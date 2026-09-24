@@ -17,31 +17,23 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.ideas.internal;
+package org.xwiki.ideas.internal;
 
-import com.xwiki.ideas.model.jaxb.Idea;
+import com.xpn.xwiki.XWikiContext;
+import com.xpn.xwiki.objects.BaseObject;
 
 /**
- * A utility class used to convert an {@link com.xwiki.ideas.model.Idea} object to an {@link Idea} one.
+ * An interface that represents an action that can be performed over the contents of an Idea.
  *
  * @version $Id$
- * @since 1.14
+ * @since 1.10
  */
-public final class IdeaMapper
+public interface IdeaAction
 {
-    private IdeaMapper()
-    {
-    }
-
     /**
-     * @param idea an Idea that we want to convert
-     * @return a clone of the Idea
+     * @param ideasObj the Idea containing the data we want to change
+     * @param user the user that performs the changes
+     * @param xcontext the current XWiki context
      */
-    public static Idea from(com.xwiki.ideas.model.Idea idea)
-    {
-        Idea convertedIdea = new Idea();
-        convertedIdea.getSupporters().addAll(idea.getSupporters());
-        convertedIdea.getOpponents().addAll(idea.getOpponents());
-        return convertedIdea;
-    }
+    void perform(BaseObject ideasObj, String user, XWikiContext xcontext);
 }

@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.ideas.internal;
+package org.xwiki.ideas.internal;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,13 +45,13 @@ import com.xpn.xwiki.XWikiContext;
 import com.xpn.xwiki.XWikiException;
 import com.xpn.xwiki.doc.XWikiDocument;
 import com.xpn.xwiki.objects.BaseObject;
-import com.xwiki.ideas.IdeasException;
-import com.xwiki.ideas.IdeasManager;
-import com.xwiki.ideas.model.Idea;
+import org.xwiki.ideas.IdeasException;
+import org.xwiki.ideas.IdeasManager;
+import org.xwiki.ideas.model.Idea;
 
 /**
  * @version $Id$
- * @since 1.14
+ * @since 1.10
  */
 @Component
 @Singleton
@@ -133,7 +133,7 @@ public class DefaultIdeasManager implements IdeasManager
     public Idea get(DocumentReference documentReference) throws IdeasException
     {
         try {
-            XWikiContext xcontext = contextProvider.get();
+            XWikiContext xcontext = this.contextProvider.get();
             XWiki xWiki = xcontext.getWiki();
             XWikiDocument ideasDoc = xWiki.getDocument(documentReference, xcontext);
             BaseObject ideasObj = ideasDoc.getXObject(IDEA_CLASS_REFERENCE);
@@ -153,7 +153,7 @@ public class DefaultIdeasManager implements IdeasManager
     public boolean exists(DocumentReference documentReference) throws IdeasException
     {
         try {
-            XWikiContext xcontext = contextProvider.get();
+            XWikiContext xcontext = this.contextProvider.get();
             XWiki xWiki = xcontext.getWiki();
             XWikiDocument ideasDoc = xWiki.getDocument(documentReference, xcontext);
             BaseObject ideasObject = ideasDoc.getXObject(IDEA_CLASS_REFERENCE);
@@ -167,7 +167,7 @@ public class DefaultIdeasManager implements IdeasManager
     public boolean isOpenToVote(String status)
     {
         try {
-            XWikiContext xcontext = contextProvider.get();
+            XWikiContext xcontext = this.contextProvider.get();
             XWiki xWiki = xcontext.getWiki();
             XWikiDocument ideasStatusDoc = xWiki.getDocument(
                 new LocalDocumentReference(List.of(IDEAS_SPACE, CODE_SPACE, "Statuses"), "Status_" + status), xcontext);
@@ -178,7 +178,7 @@ public class DefaultIdeasManager implements IdeasManager
                 return ideasStatusObject.getIntValue("openToVote") == 1;
             }
         } catch (XWikiException e) {
-            logger.warn("Failed to retrieve the openToVote property for the idea status [{}]. Root cause is: [{}]",
+            this.logger.warn("Failed to retrieve the openToVote property for the idea status [{}]. Root cause is: [{}]",
                 status, ExceptionUtils.getRootCauseMessage(e));
             return false;
         }
@@ -187,7 +187,7 @@ public class DefaultIdeasManager implements IdeasManager
     private Idea performIdeaActions(DocumentReference documentReference, Boolean pro, IdeaAction proAction,
         IdeaAction againstAction) throws IdeasException
     {
-        XWikiContext xcontext = contextProvider.get();
+        XWikiContext xcontext = this.contextProvider.get();
         XWiki xWiki = xcontext.getWiki();
         try {
             XWikiDocument ideasDoc = xWiki.getDocument(documentReference, xcontext).clone();
@@ -195,7 +195,7 @@ public class DefaultIdeasManager implements IdeasManager
             BaseObject ideasObj = ideasDoc.getXObject(IDEA_CLASS_REFERENCE);
             DocumentReference user = xcontext.getUserReference();
             if (null != ideasObj) {
-                String serializedUser = serializer.serialize(user, documentReference.getWikiReference());
+                String serializedUser = this.serializer.serialize(user, documentReference.getWikiReference());
 
                 if (pro == null) {
                     proAction.perform(ideasObj, serializedUser, xcontext);

@@ -37,13 +37,8 @@
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
   <content>{{velocity}}
-#if (!$services.licensing.licensor.hasLicensureForEntity(
-    $services.model.createDocumentReference('', 'Ideas', 'IdeasClass')))
-  {{missingLicenseMessage extensionName="ideas.extension.name"/}}
-#else
   == $services.localization.render('Ideas.administration.addStatus') ==
   {{include reference="Ideas.Code.AdministrationAddStatus"/}}
-#end
 {{/velocity}}
 </content>
   <object>

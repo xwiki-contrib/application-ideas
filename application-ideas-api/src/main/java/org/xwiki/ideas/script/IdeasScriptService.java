@@ -17,23 +17,42 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.ideas.internal;
+package org.xwiki.ideas.script;
 
-import com.xpn.xwiki.XWikiContext;
-import com.xpn.xwiki.objects.BaseObject;
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
+
+import org.xwiki.component.annotation.Component;
+import org.xwiki.script.service.ScriptService;
+import org.xwiki.stability.Unstable;
+
+import org.xwiki.ideas.IdeasException;
+import org.xwiki.ideas.IdeasManager;
 
 /**
- * An interface that represents an action that can be performed over the contents of an Idea.
+ * Script service for retrieving information about the Ideas Application.
  *
  * @version $Id$
- * @since 1.14
+ * @since 1.10
  */
-public interface IdeaAction
+@Component
+@Named("ideas")
+@Singleton
+@Unstable
+public class IdeasScriptService implements ScriptService
 {
+    @Inject
+    private IdeasManager ideasManager;
+
     /**
-     * @param ideasObj the Idea containing the data we want to change
-     * @param user the user that performs the changes
-     * @param xcontext the current XWiki context
+     * Check if an idea with the given status allows voting.
+     *
+     * @param status the status to check
+     * @return true if an idea with the given status is open for voting, false otherwise
      */
-    void perform(BaseObject ideasObj, String user, XWikiContext xcontext);
+    public boolean isOpenToVote(String status) throws IdeasException
+    {
+        return this.ideasManager.isOpenToVote(status);
+    }
 }

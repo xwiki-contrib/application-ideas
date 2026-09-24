@@ -20,8 +20,8 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  *
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xwiki.com/ideas/model/jaxb"
-  xmlns:idea="http://www.xwiki.com/ideas/model/jaxb" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xwiki.org/ideas/model/jaxb"
+  xmlns:idea="http://www.xwiki.org/ideas/model/jaxb" elementFormDefault="qualified">
 
   <xs:element name="idea" type="idea:Idea"/>
 

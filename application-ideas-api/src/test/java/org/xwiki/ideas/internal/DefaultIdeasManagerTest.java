@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.ideas.internal;
+package org.xwiki.ideas.internal;
 
 import java.util.Arrays;
 
@@ -40,7 +40,7 @@ import com.xpn.xwiki.XWikiContext;
 import com.xpn.xwiki.XWikiException;
 import com.xpn.xwiki.doc.XWikiDocument;
 import com.xpn.xwiki.objects.BaseObject;
-import com.xwiki.ideas.IdeasException;
+import org.xwiki.ideas.IdeasException;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -53,7 +53,7 @@ import static org.mockito.Mockito.when;
  * Unit tests for {@link DefaultIdeasManager}.
  *
  * @version $Id$
- * @since 1.14
+ * @since 1.10
  */
 @ComponentTest
 class DefaultIdeasManagerTest
@@ -91,7 +91,7 @@ class DefaultIdeasManagerTest
     void setup()
     {
         when(this.contextProvider.get()).thenReturn(this.xWikiContext);
-        when(this.xWikiContext.getWiki()).thenReturn(wiki);
+        when(this.xWikiContext.getWiki()).thenReturn(this.wiki);
     }
 
     @Test
@@ -99,9 +99,9 @@ class DefaultIdeasManagerTest
     {
         DocumentReference input = new DocumentReference(XWIKI, Arrays.asList(SPACE_1, SPACE_2), PAGE);
 
-        when(document.isNew()).thenReturn(false);
-        when(document.clone()).thenReturn(document);
-        when(wiki.getDocument(input, this.xWikiContext)).thenReturn(document);
+        when(this.document.isNew()).thenReturn(false);
+        when(this.document.clone()).thenReturn(this.document);
+        when(this.wiki.getDocument(input, this.xWikiContext)).thenReturn(this.document);
 
         IdeasException e = assertThrows(IdeasException.class, () -> this.manager.vote(input, true));
         assertTrue(e.getMessage().contains(input.toString()));
@@ -119,7 +119,7 @@ class DefaultIdeasManagerTest
         when(this.document.getXObject(IDEA_CLASS_REFERENCE)).thenReturn(ideaObj);
         when(this.xWikiContext.getUserReference()).thenReturn(user);
         when(this.document.isNew()).thenReturn(false);
-        when(this.document.clone()).thenReturn(document);
+        when(this.document.clone()).thenReturn(this.document);
         when(this.serializer.serialize(user, input.getWikiReference())).thenReturn(userName);
         when(ideaObj.getStringValue(DefaultIdeasManager.VOTERS_FOR_KEY)).thenReturn("");
         when(ideaObj.getStringValue(DefaultIdeasManager.VOTERS_AGAINST_KEY)).thenReturn("");
@@ -133,9 +133,9 @@ class DefaultIdeasManagerTest
     {
         BaseObject statusObj = mock(BaseObject.class);
         when(statusObj.getIntValue("openToVote")).thenReturn(1);
-        when(this.xWiki.getDocument(any(EntityReference.class), any())).thenReturn(this.document);
+        when(this.wiki.getDocument(any(EntityReference.class), any())).thenReturn(this.document);
         when(this.document.getXObject(any(EntityReference.class))).thenReturn(statusObj);
 
-        assertTrue(manager.isOpenToVote("open"));
+        assertTrue(this.manager.isOpenToVote("open"));
     }
 }

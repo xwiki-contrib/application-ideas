@@ -18,23 +18,23 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.xwiki.ideas</groupId>
-    <artifactId>application-ideas-pom</artifactId>
-    <version>1.17.1-SNAPSHOT</version>
+    <groupId>org.xwiki.contrib</groupId>
+    <artifactId>application-ideas</artifactId>
+    <version>1.9.3-SNAPSHOT</version>
   </parent>
 
   <artifactId>application-ideas-xip</artifactId>
 
-  <name>Ideas Application (Pro) - XIP</name>
+  <name>Ideas Application - XIP</name>
   <packaging>xip</packaging>
-  <description>Package containing everything needed to install Ideas Application (Pro) offline.</description>
+  <description>Package containing everything needed to install Ideas Application offline.</description>
   <dependencies>
     <dependency>
-      <artifactId>application-ideas</artifactId>
-      <groupId>com.xwiki.ideas</groupId>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>application-ideas-ui</artifactId>
       <version>${project.version}</version>
       <type>xar</type>
     </dependency>

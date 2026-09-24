@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.ideas.internal.rest;
+package org.xwiki.ideas.internal.rest;
 
 import javax.inject.Provider;
 
@@ -25,6 +25,7 @@ import org.junit.jupiter.api.Test;
 import org.xwiki.component.manager.ComponentManager;
 import org.xwiki.context.Execution;
 import org.xwiki.context.ExecutionContext;
+import org.xwiki.ideas.model.jaxb.Idea;
 import org.xwiki.model.reference.DocumentReference;
 import org.xwiki.rest.XWikiRestException;
 import org.xwiki.security.authorization.ContextualAuthorizationManager;
@@ -40,9 +41,8 @@ import com.xpn.xwiki.XWikiContext;
 import com.xpn.xwiki.XWikiException;
 import com.xpn.xwiki.doc.XWikiDocument;
 import com.xpn.xwiki.objects.BaseObject;
-import com.xwiki.ideas.IdeasException;
-import com.xwiki.ideas.IdeasManager;
-import com.xwiki.ideas.model.Idea;
+import org.xwiki.ideas.IdeasException;
+import org.xwiki.ideas.IdeasManager;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -54,10 +54,10 @@ import static org.mockito.Mockito.when;
  * Unit tests for {@link DefaultIdeasResource}.
  *
  * @version $Id$
- * @since 1.14
+ * @since 1.10
  */
 @ComponentTest
-public class DefaultIdeasResourceTest
+class DefaultIdeasResourceTest
 {
     @MockComponent
     protected Provider<XWikiContext> xcontextProvider;
@@ -98,17 +98,17 @@ public class DefaultIdeasResourceTest
     void castVoteTest() throws IdeasException, XWikiRestException, XWikiException
     {
         int nOfVotes = 1;
-        Idea voteResult = new Idea();
+        org.xwiki.ideas.model.Idea voteResult = new org.xwiki.ideas.model.Idea();
         voteResult.getSupporters().add("");
-        when(authorizationManager.hasAccess(any(), any())).thenReturn(true);
-        when(manager.exists(any())).thenReturn(true);
+        when(this.authorizationManager.hasAccess(any(), any())).thenReturn(true);
+        when(this.manager.exists(any())).thenReturn(true);
         XWikiDocument statusDocument = mock(XWikiDocument.class);
         when(statusDocument.getXObject(any(DocumentReference.class))).thenReturn(mock(BaseObject.class));
-        when(xWiki.getDocument(new DocumentReference("page", ideasResource.getSpaceReference("space", "wiki")),
+        when(this.xWiki.getDocument(new DocumentReference("page", this.ideasResource.getSpaceReference("space", "wiki")),
             this.xWikiContext)).thenReturn(statusDocument);
-        when(manager.isOpenToVote(any())).thenReturn(true);
-        when(manager.vote(any(), anyBoolean())).thenReturn(voteResult);
-        com.xwiki.ideas.model.jaxb.Idea response = this.ideasResource.vote("wiki", "space", "page", "true");
+        when(this.manager.isOpenToVote(any())).thenReturn(true);
+        when(this.manager.vote(any(), anyBoolean())).thenReturn(voteResult);
+        Idea response = this.ideasResource.vote("wiki", "space", "page", "true");
 
         assertEquals(nOfVotes, response.getSupporters().size());
     }

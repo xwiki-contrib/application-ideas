@@ -237,10 +237,6 @@
         <classType>com.xpn.xwiki.objects.classes.DBListClass</classType>
       </visibilityRestrictions>
     </class>
-    <name>Ideas.IdeaTemplateProvider</name>
-    <number>0</number>
-    <className>XWiki.TemplateProviderClass</className>
-    <guid>d7ff948d-a986-4f99-8fd1-4322da9f8e03</guid>
     <property>
       <action>edit</action>
     </property>
@@ -276,5 +272,4 @@
       </visibilityRestrictions>
     </property>
   </object>
-  <content/>
 </xwikidoc>
