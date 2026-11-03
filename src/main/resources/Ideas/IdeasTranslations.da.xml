@@ -1,0 +1,120 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.1" locale="da">
+  <web>Ideas</web>
+  <name>IdeasTranslations</name>
+  <language>da</language>
+  <defaultLanguage>en</defaultLanguage>
+  <translation>1</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <creationDate>1389708432000</creationDate>
+  <parent>Ideas.WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1418394453000</date>
+  <contentUpdateDate>1418394453000</contentUpdateDate>
+  <version>1.1</version>
+  <title>Ideas Translations</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>plain/1.0</syntaxId>
+  <hidden>true</hidden>
+  <content># Titles
+ideas.app.title=Idéer
+ideas.home.title=Idéer
+
+# Class fields
+Ideas.IdeasClass_title1=Idé
+Ideas.IdeasClass_content1=Beskrivelse
+Ideas.IdeasClass_nbvotes=Stemmer
+Ideas.IdeasClass_supporters=Tilhængere
+Ideas.IdeasClass_against=Modstandere
+Ideas.IdeasClass_status=Status
+Ideas.IdeasClass_status_open=Åben
+Ideas.IdeasClass_status_closed=Lukket
+Ideas.IdeasClass_status_rejected=Afvist
+Ideas.IdeasClass_priority=Prioritet
+Ideas.IdeasClass_priority_high=Høj
+Ideas.IdeasClass_priority_medium=Mellem
+Ideas.IdeasClass_priority_low=Lav
+Ideas.IdeasClass_nbestimate=Anslåede omkostninger
+Ideas.IdeasClass_assignement=Ansvarlig
+
+# Live table generic keys
+ideas.livetable.doc.title=Idé
+ideas.livetable.doc.name=Sidenavn
+ideas.livetable.doc.space=Område
+ideas.livetable.doc.fullname=Sidens fulde navn
+ideas.livetable.doc.author=Seneste forfatter
+ideas.livetable.doc.creator=Opretter
+ideas.livetable.doc.date=Opdateringsdato
+ideas.livetable.doc.creationDate=Oprettelsesdato
+ideas.livetable._avatar=Avatar
+ideas.livetable._images=Billeder
+ideas.livetable._attachments=Bilag
+ideas.livetable._actions=Handlinger
+ideas.livetable._actions.edit=Rediger
+ideas.livetable._actions.delete=Slet
+ideas.livetable.emptyvalue=-
+
+# Live table specific keys
+ideas.livetable.title1=Idé
+ideas.livetable.content1=Beskrivelse
+ideas.livetable.nbvotes=Ja
+ideas.livetable.nbagainst=Nej
+ideas.livetable.supporters=Tilhængere
+ideas.livetable.against=Modstandere
+ideas.livetable.nbestimate=Anslåede omkostninger
+ideas.livetable.status=Status
+ideas.livetable.assignement=Ansvarlig
+ideas.livetable.priority=Prioritet
+
+# Ideas application keys
+ideas.home.description=Idéer, der er værd at udbrede
+ideas.message.guess=Gæster kan ikke stemme
+ideas.message.error=Der opstod en fejl i programmet Idéer
+ideas.ideassheet.voted=Du støtter denne idé
+ideas.ideassheet.votedagainst=Du er imod denne idé
+ideas.ideassheet.hidesupp=Vis/skjul listen over tilhængere.
+ideas.ideassheet.hideagainst=Vis/skjul listen over modstandere.
+ideas.ideassheet.unassigned=Ikke tildelt
+
+# Generic
+ideas.author=af {0}
+ideas.date=den {0}
+ideas.nofiles=Der er ingen idéer endnu
+ideas.addfiles=Tilføj idé
+ideas.seeallfiles=Se alle idéer
+
+# Recent ideas macro
+ideas.recentideas.title=Seneste idéer
+rendering.macro.ideasrecent.name=Seneste idéer
+rendering.macro.ideasrecent.description=Viser de N seneste idéer.
+rendering.macro.ideasrecent.parameter.limit.name=Grænse
+rendering.macro.ideasrecent.parameter.limit.description=Højeste antal poster.
+
+# Template Provider
+templateProvider.idea.name=Idé
+templateProvider.idea.description=Del en idé
+</content>
+</xwikidoc>
